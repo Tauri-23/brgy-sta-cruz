@@ -1,0 +1,31 @@
+.nav1 {
+    position: sticky;
+	top: 0;
+    width: 100%;
+    padding: 10px 50px;
+    background: var(--blue1);
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+}
+.nav1-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: var(--grey1);
+}
+.nav1-links {
+    display: flex;
+    gap: 10px;
+    color: var(--white2);
+    align-items: center;
+}
+.nav1-link {
+    padding: 5px 10px;
+    border-radius: var(--border-radius1);
+}
+.nav1-link.active {
+    color: var(--black2);
+    background: var(--white2);
+}
