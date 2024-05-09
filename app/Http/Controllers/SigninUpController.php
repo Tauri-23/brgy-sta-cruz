@@ -54,6 +54,27 @@ class SigninUpController extends Controller
                 'message' => 'Error'
             ]);
         }
+    }
+
+
+    public function signInPost(Request $request) {
+        $resident = Residents::where('email', $request->email)->where('password', $request->password)->first();
+
+        if(!$resident) {
+            //TODO:: also check for admins table then proceed if admin
+            return response()->json([
+                'status' => 401,
+                'message' => 'credentials doesnt match'
+            ]);
+        }
+
+        if($resident->is_activated) {//if verified
+            $request->session()->put('logged_resident', $resident->id);
+            return response()->json([
+                'status' => 200,
+                'message' => 'success'
+            ]);
+        }
 
         // $otp = $this->generateOTP();
         // $this->sendOTPEmail($request->email, $otp);
@@ -63,6 +84,11 @@ class SigninUpController extends Controller
         // $verification->otp = $otp;
 
         // $verification->save();
+
+        return response()->json([
+            'status' => 201,
+            'message' => 'need verification'
+        ]);
     }
 
 
@@ -111,5 +137,13 @@ class SigninUpController extends Controller
     private function sendOTPEmail($email, $otp)
     {
         Mail::to($email)->send(new SignupOTP($otp));
+    }
+
+
+
+    public function signout() {
+        auth()->logout();
+        session()->flush();
+        return redirect('/');
     }
 }

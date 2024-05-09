@@ -8,8 +8,10 @@ Route::get('/', function () {
 });
 
 // signin singup
+Route::get('/signout', [SigninUpController::class, 'signout']);
 Route::get('/signin', [SigninUpController::class, 'signIn']);
 Route::get('/signup', [SigninUpController::class, 'signUp']);
 
+Route::post('/signinPost', [SigninUpController::class, 'signInPost']);
 Route::post('/signupPost', [SigninUpController::class, 'signUpPost']);
 Route::post('/verifyEmail', [SigninUpController::class, 'validateOtp']);
