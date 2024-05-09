@@ -10,10 +10,13 @@ class navbar extends Component
 {
     public $navType;
     public $activeLink;
-    public function __construct($navType, $activeLink)
+
+    public $pfp;
+    public function __construct($navType, $activeLink, $pfp)
     {
         $this->navType = $navType;
         $this->activeLink = $activeLink;
+        $this->pfp = $pfp;
     }
 
     /**

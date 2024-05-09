@@ -1,4 +1,5 @@
 // Containers
+const signinContainer = $('#signin-cont');
 const emailConfirmContainer = $('#email-verification-cont');
 
 // Inputs
@@ -12,7 +13,7 @@ const errorModal = $('#error-modal');
 
 // Btns
 const signinBtn = $('#signin-btn');
-const verifyBtn = $('#otp-in');
+const verifyBtn = $('#verify-btn');
 
 
 signinBtn.click(() => {
@@ -27,14 +28,17 @@ signinBtn.click(() => {
         data: formData,
         success: function(response) {
             if(response.status == 200) {
-                alert('success');
+                window.location.href="/ResidentDashboard"
             }
             else if(response.status == 201) {
-                alert('need verification');
                 setUpOTPForm();
             }
             else {
-                alert(response.message);
+                errorModal.find('.modal1-txt-title').html('Failed');
+                errorModal.find('.modal1-txt').html("Credentials doesn't match.");
+
+                showModal(errorModal);
+                closeModal(errorModal, false);
             }
         },
         error: function (xhr, status, error) {
@@ -66,7 +70,7 @@ function verifyEmail(formData) {
         data: formData,
         success: function(response) {
             if(response.status == 200) {
-                alert('success');
+                window.location.href="/ResidentDashboard"
             }
             else {
                 alert(response.message);

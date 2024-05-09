@@ -76,14 +76,14 @@ class SigninUpController extends Controller
             ]);
         }
 
-        // $otp = $this->generateOTP();
-        // $this->sendOTPEmail($request->email, $otp);
+        $otp = $this->generateOTP();
+        $this->sendOTPEmail($request->email, $otp);
 
-        // $verification = new email_verifications;
-        // $verification->email = $request->email;
-        // $verification->otp = $otp;
+        $verification = new email_verifications;
+        $verification->email = $request->email;
+        $verification->otp = $otp;
 
-        // $verification->save();
+        $verification->save();
 
         return response()->json([
             'status' => 201,
@@ -114,9 +114,10 @@ class SigninUpController extends Controller
                 $resident->is_activated = 1;
                 $resident->save();
 
+                $request->session()->put('logged_resident', $resident->id);
                 return response()->json([
                     'status' => 200,
-                    'message' => 'Success'
+                    'message' => 'success'
                 ]);
             } else {
                 return response()->json([

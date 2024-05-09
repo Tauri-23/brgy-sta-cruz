@@ -33,13 +33,13 @@
         <x-modals modalType="error"/>
 
         {{-- Navs --}}
-        <x-navbar navType="landing-page" activeLink="7"/>
+        <x-navbar navType="landing-page" activeLink="7" pfp="null"/>
 
         {{-- Content --}}
         <div class="d-flex justify-content-center padding-top-1 padding-bottom-1">
             <form method="post">
                 @csrf
-                <div class="signin-box mar-bottom-1">
+                <div class="signin-box mar-bottom-1" id="signin-cont">
                     <div class="text-l1 fw-bold">Signin</div>
                     <div class="d-flex flex-direction-y gap3">
                         <div>
@@ -59,27 +59,29 @@
                     </div>
                 </div>
             </form>
+
+            {{-- Email Verification --}}
+            <form method="post">
+                @csrf
+                <div class="signin-box mar-bottom-1 d-none" id="email-verification-cont">
+                    <div class="text-l1 fw-bold">Email Verification</div>
+                    <div class="d-flex flex-direction-y gap3">
+                        <div>
+                            <label for="otp-in" class="text-m1">Please check your email for the 6-digit code</label>
+                            <input type="text" class="edit-text-1 w-100" id="otp-in">
+                        </div>
+                    </div>
+        
+                    <div class="d-flex flex-direction-y gap3">
+                        <div class="primary-btn-blue1 text-m1 text-center" id="verify-btn">Verify</div>
+                        <div class="secondary-btn-blue1 text-m1 text-center color-blue1" id="resend-otp-btn">Resend Code</div>
+                    </div>
+                </div>
+            </form>
             
         </div>
 
-        {{-- Email Verification --}}
-        <form method="post">
-            @csrf
-            <div class="signin-box mar-bottom-1 d-none" id="email-verification-cont">
-                <div class="text-l1 fw-bold">Email Verification</div>
-                <div class="d-flex flex-direction-y gap3">
-                    <div>
-                        <label for="otp-in" class="text-m1">Please check your email for the 6-digit code</label>
-                        <input type="text" class="edit-text-1 w-100" id="otp-in">
-                    </div>
-                </div>
-    
-                <div class="d-flex flex-direction-y gap3">
-                    <div class="primary-btn-blue1 text-m1 text-center" id="verify-btn">Verify</div>
-                    <div class="secondary-btn-blue1 text-m1 text-center color-blue1" id="resend-otp-btn">Resend Code</div>
-                </div>
-            </div>
-        </form>
+        
         
 
         {{-- footer --}}

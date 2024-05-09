@@ -33,7 +33,7 @@
         <x-modals modalType="error"/>
         
         {{-- Navs --}}
-        <x-navbar navType="landing-page" activeLink="7"/>
+        <x-navbar navType="landing-page" activeLink="7" pfp="null"/>
 
         {{-- Content --}}
         <div class="d-flex justify-content-center padding-top-1 padding-bottom-1">

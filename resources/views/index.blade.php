@@ -29,7 +29,7 @@
     </head>
     <body>
         {{-- Navs --}}
-        <x-navbar navType="landing-page" activeLink="1"/>
+        <x-navbar navType="landing-page" activeLink="1" pfp="null"/>
 
         {{-- Content --}}
         <div class="banner-cont">
