@@ -71,33 +71,12 @@ body, html {
 | colors
 |----------------------------------------
 */
-.bg-app-blue {
-    background:var(--AppBlue);
-}
-.bg-app-red {
-    background: var(--AppRed);
-}
-.bg-app-green {
-    background: var(--AppGreen);
-}
-.bg-AppBlueLight2 {
-    background: var(--AppBlueLight2);
-}
-.bg-AppGreenLight1 {
-    background: var(--AppgreenLight1);
-}
-.bg-AppGoldLight1 {
-    background: var(--AppGoldLight1);
+.bg-blue1 {
+    background:var(--blue1);
 }
 
-.color-AppBlue {
-    color: var(--AppBlue);
-}
-.color-AppGold {
-    color: var(--AppGold);
-}
-.color-AppGreen {
-    color: var(--AppGreen);
+.color-blue1 {
+    color: var(--blue1);
 }
 .color-white {
     color: var(--white);
@@ -110,9 +89,6 @@ body, html {
 }
 .color-black-2 {
     color: var(--black2);
-}
-.color-AppRed {
-    color: var(--AppRed);
 }
 
 
