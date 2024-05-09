@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('gender');
             $table->string('bdate');
             $table->string('password');
+            $table->boolean('is_activated')->default(0);
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('created_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

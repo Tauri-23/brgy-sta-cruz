@@ -9,3 +9,7 @@ Route::get('/', function () {
 
 // signin singup
 Route::get('/signin', [SigninUpController::class, 'signIn']);
+Route::get('/signup', [SigninUpController::class, 'signUp']);
+
+Route::post('/signupPost', [SigninUpController::class, 'signUpPost']);
+Route::post('/verifyEmail', [SigninUpController::class, 'validateOtp']);

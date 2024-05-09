@@ -33,8 +33,8 @@
 
         {{-- Content --}}
         <div class="d-flex justify-content-center padding-top-1 padding-bottom-1">
-            <div class="signin-box">
-                <div class="text-l1 fw-bold mar-bottom-1">Signin</div>
+            <div class="signin-box mar-bottom-1">
+                <div class="text-l1 fw-bold">Signin</div>
                 <div class="d-flex flex-direction-y gap3">
                     <div>
                         <label for="username-in" class="text-m1">Username</label>
@@ -49,7 +49,7 @@
 
                 <div class="d-flex flex-direction-y gap3">
                     <div class="primary-btn-blue1 text-m1 text-center">Signin</div>
-                    <div class="secondary-btn-blue1 text-m1 text-center color-blue1">Signin</div>
+                    <a href="/signup" class="secondary-btn-blue1 text-m1 text-center color-blue1">Signup</a>
                 </div>
             </div>
         </div>
