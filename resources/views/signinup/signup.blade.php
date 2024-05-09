@@ -30,6 +30,7 @@
     <body>
         {{-- modals --}}
         <x-modals modalType="success"/>
+        <x-modals modalType="error"/>
         
         {{-- Navs --}}
         <x-navbar navType="landing-page" activeLink="7"/>
@@ -48,7 +49,7 @@
                             <input type="text" class="edit-text-1 w-100" id="fname-in">
                         </div>
                         <div class="flex-grow-1">
-                            <label for="mname-in" class="text-m1">Middlename</label>
+                            <label for="mname-in" class="text-m1">Middlename <span class="text-m3">(optional)</span></label>
                             <input type="text" class="edit-text-1 w-100" id="mname-in">
                         </div>
                         <div class="flex-grow-1">

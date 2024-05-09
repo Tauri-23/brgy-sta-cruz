@@ -24,6 +24,10 @@ const otpIn = $('#otp-in');
 const signinBtn = $('#signup-btn1');
 const verifyBtn =$('#verify-btn');
 
+// Modals
+const successModal = $('#success-modal');
+const errorModal = $('#error-modal');
+
 formatPhoneNumIn(phoneIn);
 
 signinBtn.click(function() {
@@ -31,12 +35,21 @@ signinBtn.click(function() {
         isEmptyOrSpaces(phoneIn.val()) || isEmptyOrSpaces(bdateIn.val()) || isEmptyOrSpaces(genderIn.val()) ||
         isEmptyOrSpaces(passIn.val()) || isEmptyOrSpaces(conPassIn.val()) || isEmptyOrSpaces(addressIn.val())) {
         
-        alert("Empty fields");
+            errorModal.find('.modal1-txt-title').html('Failed');
+            errorModal.find('.modal1-txt').html('Please fill up all the required fields.');
+
+            showModal(errorModal);
+            closeModalRedirect(errorModal, false);
         return;
     }
 
     if(passIn.val() != conPassIn.val()) {
-        alert("Password and Confirm password doesn't match.");
+        errorModal.find('.modal1-txt-title').html('Failed');
+        errorModal.find('.modal1-txt').html("Password and Confirm password doesn't match.");
+
+        showModal(errorModal);
+        closeModalRedirect(errorModal, false);
+        
         return;
     }
 
@@ -65,10 +78,18 @@ function createResident(formData) {
         data: formData,
         success: function(response) {
             if(response.status == 200) {
+                successModal.find('.modal1-txt-title').html('Success');
+                successModal.find('.modal1-txt').html('Account successfuly created');
 
+                showModal(successModal);
+                closeModalRedirect(successModal, '/signin');
             }
             else {
-                
+                errorModal.find('.modal1-txt-title').html('Failed');
+                errorModal.find('.modal1-txt').html('Something went wrong.');
+
+                showModal(errorModal);
+                closeModalRedirect(errorModal, false);
             }
         },
         error: function (xhr, status, error) {

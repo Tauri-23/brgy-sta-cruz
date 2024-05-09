@@ -1,14 +1,44 @@
 @if ($modalType == 'success') 
-    <div class="modal1 " id="success-modal">
-        <div class="modal1-box-small d-flex">
-            <div class="modal1-icon">
-                <i id="modal-close-btn" class="modal1-x-icon fa-solid fa-xmark"></i>
-                <img src="/assets/media/icons/check.svg"/>
+    <div class="modal1 d-none" id="success-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 align-items-center">
+                
+                <div class="modal1-icon">
+                    <img src="/assets/media/icons/check.svg"/>
+                </div>
+                <div>
+                    <div class="modal1-txt-title text-l3 modal-text">
+                        Title
+                    </div>
+                    <div class="modal1-txt text-m1 modal-text">
+                        text
+                    </div>
+                </div>
             </div>
-            <div class="modal1-txt text-center modal-text">
-            </div>
+            
         </div>
     </div>
-@else
+@elseif($modalType == 'error')
+    <div class="modal1 d-none" id="error-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 align-items-center">
+                
+                <div class="modal1-icon">
+                    <img src="/assets/media/icons/x-mark.svg"/>
+                </div>
+                <div>
+                    <div class="modal1-txt-title text-l3 modal-text">
+                        Title
+                    </div>
+                    <div class="modal1-txt text-m1 modal-text">
+                        text
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     
 @endif
