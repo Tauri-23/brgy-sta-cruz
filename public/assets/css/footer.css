@@ -1,0 +1,9 @@
+.footer1 {
+    width: 100%;
+    padding: 50px;
+    background: var(--blue1);
+}
+.footer-link {
+    color: var(--white2);
+    font-size: var(--text-l1);
+}
