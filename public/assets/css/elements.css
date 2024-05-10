@@ -136,3 +136,24 @@
     font-size: var(--text-l1);
     cursor: pointer;
 }
+
+
+
+
+
+/*
+|----------------------------------------
+| Illustrations
+|----------------------------------------
+*/
+.placeholder-illustrations {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.placeholder-illustrations img {
+    width: 150px;
+    height: 150px;
+}

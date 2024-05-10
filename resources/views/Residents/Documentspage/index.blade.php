@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="/assets/css/footer.css">
         <link rel="stylesheet" href="/assets/css/forms.css">
         <link rel="stylesheet" href="/assets/css/documents.css">
+        <link rel="stylesheet" href="/assets/css/tables.css">
 
         {{-- Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -77,17 +78,102 @@
 
             {{-- Pending Documents --}}
             <div class="long-cont d-flex align-items-center" id="pending-cont">
+                @if ($documentsPending->count() < 1)
+                    <div class="placeholder-illustrations">
+                        <div class="d-flex flex-direction-y gap2">
+                            <img src="/assets/media/illustrations/empty1.svg">  
+                            <div class="text-l3 text-center">No Records</div>
+                        </div>
+                    </div>
+                @else
+                    <div class="table1">
+                        <div class="table1-header">
+                            <small class="text-m2 form-data-col">Resident Name</small>
+                            <small class="text-m2 form-data-col">Document</small>
+                            <small class="text-m2 form-data-col">Date Requested</small>
+                            <small class="text-m2 form-data-col">Status</small>
+                        </div>
                 
+                
+                        {{--Data Fetched from the database this is for ui for now--}}
+                        @foreach ($documentsPending as $doc)
+                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->created_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif                
             </div>
+
+
+
+
 
             {{-- Rejected Documents --}}
             <div class="long-cont d-flex align-items-center" id="rejected-cont">
+                @if ($documentsRejected->count() < 1)
+                    <div class="placeholder-illustrations">
+                        <div class="d-flex flex-direction-y gap2">
+                            <img src="/assets/media/illustrations/empty1.svg">  
+                            <div class="text-l3 text-center">No Records</div>
+                        </div>
+                    </div>
+                @else
+                    <div class="table1">
+                        <div class="table1-header">
+                            <small class="text-m2 form-data-col">Resident Name</small>
+                            <small class="text-m2 form-data-col">Document</small>
+                            <small class="text-m2 form-data-col">Date Rejected</small>
+                            <small class="text-m2 form-data-col">Status</small>
+                        </div>
                 
+                
+                        {{--Data Fetched from the database this is for ui for now--}}
+                        @foreach ($documentsRejected as $doc)
+                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->updated_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif                
             </div>
 
             {{-- Completed Documents --}}
             <div class="long-cont d-flex align-items-center" id="completed-cont">
+                @if ($documentsCompleted->count() < 1)
+                    <div class="placeholder-illustrations">
+                        <div class="d-flex flex-direction-y gap2">
+                            <img src="/assets/media/illustrations/empty1.svg">  
+                            <div class="text-l3 text-center">No Records</div>
+                        </div>
+                    </div>
+                @else
+                    <div class="table1">
+                        <div class="table1-header">
+                            <small class="text-m2 form-data-col">Resident Name</small>
+                            <small class="text-m2 form-data-col">Document</small>
+                            <small class="text-m2 form-data-col">Date Rejected</small>
+                            <small class="text-m2 form-data-col">Status</small>
+                        </div>
                 
+                
+                        {{--Data Fetched from the database this is for ui for now--}}
+                        @foreach ($documentsCompleted as $doc)
+                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->updated_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif  
             </div>
         </div>
 

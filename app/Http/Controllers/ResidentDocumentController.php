@@ -31,7 +31,11 @@ class ResidentDocumentController extends Controller
             'resident' => $resident,
             'documentTypes' => document_types::all(),
             'documentsPending' => document_requests::where('resident', $resident->id)
-                ->where('status', "Pending")->get(),
+                ->where('status', "Pending")->orderBy('created_at', 'DESC')->get(),
+            'documentsRejected' => document_requests::where('resident', $resident->id)
+                ->where('status', "Rejected")->orderBy('updated_at', 'DESC')->get(),
+            'documentsCompleted' => document_requests::where('resident', $resident->id)
+                ->where('status', "Completed")->orderBy('updated_at', 'DESC')->get(),
             'document_requirements' => document_type_requirements::with('document_types')->get()
         ]);
     }
@@ -94,7 +98,6 @@ class ResidentDocumentController extends Controller
             }
         }
 
-        $uploadedFiles = [];
         $targetDirectory = 'assets/media/requirements';
 
         foreach($files as $key => $file) {
