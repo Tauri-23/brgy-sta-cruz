@@ -3,7 +3,7 @@
 | Buttons
 |----------------------------------------
 */
-.primary-btn-blue1 {
+.primary-btn-blue1, .primary-btn-blue2, .primary-btn-yellow1 {
     padding: 8px 15px;
     text-decoration: none;
     border-radius: calc(var(--border-radius1) - 8px);
@@ -13,6 +13,12 @@
 }
 .primary-btn-blue1 {
     background: var(--blue1);
+}
+.primary-btn-blue2 {
+    background: var(--blue2);
+}
+.primary-btn-yellow1 {
+    background: var(--yellow1);
 }
 
 
@@ -51,6 +57,27 @@
 | Containers
 |----------------------------------------
 */
+.content1 {
+    width: 100%;
+    padding: 50px;
+}
+.long-cont {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius2);
+    padding: 20px;
+    overflow: auto;
+    overflow-y: hidden;
+    border: .3px solid var(--white3);
+}
+.long-cont-nopadding {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius2);
+    overflow: auto;
+    overflow-y: hidden;
+    border: .3px solid var(--white3);
+}
 .signin-box, .signup-box {
     width: 500px;
     padding: 50px;

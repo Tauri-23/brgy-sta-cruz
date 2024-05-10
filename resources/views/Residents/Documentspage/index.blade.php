@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/assets/css/nav.css">
         <link rel="stylesheet" href="/assets/css/footer.css">
         <link rel="stylesheet" href="/assets/css/forms.css">
+        <link rel="stylesheet" href="/assets/css/documents.css">
 
         {{-- Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -36,8 +37,58 @@
         <x-navbar navType="resident-page" activeLink="3" pfp="{{$resident->pfp}}"/>
 
         {{-- Content --}}
-        <div class="d-flex justify-content-center padding-top-1 padding-bottom-1">
-            
+        <div class="content1 d-flex flex-direction-y gap1">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="text-l1">Document Applications</div>
+            </div>
+            <div class="long-cont-nopadding d-flex gap1">
+                <div class="mini-nav-link active" id="req-a-doc-btn">Request a Document</div>
+                <div class="mini-nav-link" id="pending-btn">Pending</div>
+                <div class="mini-nav-link" id="rejected-btn">Rejected</div>
+                <div class="mini-nav-link" id="completed-btn">Completed</div>
+            </div>
+
+            {{-- Request a Document --}}
+            <div class="long-cont d-flex align-items-center" id="add-doc-cont">
+                <div class="req-a-doc-illustration">
+                    <img class="" src="/assets/media/illustrations/form-select.svg" alt="">
+                </div>
+                <div class="req-a-doc-form d-flex flex-direction-y gap2">
+
+                    <select class="edit-text-1 w-100" id="doctype-in">
+                        <option value="invalid">Select Document</option>
+                        @foreach ($documentTypes as $doc)
+                            <option value="{{$doc->id}}">{{$doc->document_name}}</option>
+                        @endforeach
+                    </select>
+
+                    <div class="d-flex">
+                        <div>
+                            <div class="text-l3">Requirements</div>
+                            <div id="requirements-cont">
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="primary-btn-blue1 text-center d-none" id="request-document-btn">Request Document Now</div>
+                </div>
+            </div>
+
+            {{-- Pending Documents --}}
+            <div class="long-cont d-flex align-items-center" id="pending-cont">
+                
+            </div>
+
+            {{-- Rejected Documents --}}
+            <div class="long-cont d-flex align-items-center" id="rejected-cont">
+                
+            </div>
+
+            {{-- Completed Documents --}}
+            <div class="long-cont d-flex align-items-center" id="completed-cont">
+                
+            </div>
         </div>
 
         
@@ -48,5 +99,10 @@
 
         
     </body>
+    <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const docTypesRequirements = {!! json_encode($document_requirements) !!}
+    </script>
+    <script src="/assets/js/documents-application.js"></script>
 </html>

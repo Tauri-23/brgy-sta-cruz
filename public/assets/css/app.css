@@ -11,6 +11,9 @@
     --grey1: #DDDDDD;
 
     --blue1: rgba(83, 74, 255, 1);
+    --blue2: rgba(61, 80, 149, 1);
+
+    --yellow1: rgba(236, 201, 79, 1);
     
 
     --text-xl1: 60px;
@@ -56,10 +59,10 @@ body, html {
     background: transparent; 
 }
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 35, 114, .7); 
+    background: rgba(83, 74, 255, .7); 
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 35, 114, 1); 
+    background: rgba(83, 74, 255, 1); 
 }
 
 
@@ -74,9 +77,18 @@ body, html {
 .bg-blue1 {
     background:var(--blue1);
 }
+.bg-blue2 {
+    background:var(--blue2);
+}
+.bg-yellow1 {
+    background:var(--yellow1);
+}
 
 .color-blue1 {
     color: var(--blue1);
+}
+.color-yellow1 {
+    color: var(--yellow1);
 }
 .color-white {
     color: var(--white);

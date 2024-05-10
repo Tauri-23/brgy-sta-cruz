@@ -32,11 +32,11 @@ signinBtn.click(function() {
         isEmptyOrSpaces(phoneIn.val()) || isEmptyOrSpaces(bdateIn.val()) || isEmptyOrSpaces(genderIn.val()) ||
         isEmptyOrSpaces(passIn.val()) || isEmptyOrSpaces(conPassIn.val()) || isEmptyOrSpaces(addressIn.val())) {
         
-            errorModal.find('.modal1-txt-title').html('Failed');
-            errorModal.find('.modal1-txt').html('Please fill up all the required fields.');
+        errorModal.find('.modal1-txt-title').html('Failed');
+        errorModal.find('.modal1-txt').html('Please fill up all the required fields.');
 
-            showModal(errorModal);
-            closeModal(errorModal, false);
+        showModal(errorModal);
+        closeModal(errorModal, false);
         return;
     }
 

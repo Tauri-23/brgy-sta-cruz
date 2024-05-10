@@ -1,0 +1,27 @@
+.mini-nav-link {
+    padding: 15px 20px;
+    font-size: var(--text-l3);
+    cursor: pointer;
+}
+.mini-nav-link.active {
+    border-bottom: 2px solid var(--blue1);
+    color: var(--blue1);
+}
+.req-a-doc-illustration {
+    width: 50%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.req-a-doc-illustration img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.req-a-doc-form {
+    width: 50%;
+    height: 500px;
+}
