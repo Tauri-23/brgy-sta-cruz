@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Contracts\IGenerateFilenameService;
 use App\Contracts\IGenerateIdService;
+use App\Models\document_request_brgy_id;
 use App\Models\document_requests;
 use App\Models\document_requirements;
+use App\Models\document_requirements_brgy_id;
 use App\Models\document_type_requirements;
 use App\Models\document_types;
 use App\Models\Residents;
@@ -61,9 +63,14 @@ class ResidentDocumentController extends Controller
 
 
     public function requestDocumentPost(Request $request) {
-        $docRequestTable = new document_requests;
-
-        $document_request_id = $this->generateId->generate(document_requests::class, 6);
+        if($request->documentType == 2) {
+            $docRequestTable = new document_request_brgy_id;
+            $document_request_id = $this->generateId->generate(document_request_brgy_id::class, 6);
+        }
+        else {
+            $docRequestTable = new document_requests;
+            $document_request_id = $this->generateId->generate(document_requests::class, 6);
+        }
 
 
         if (!$request->hasFile('requirements')) {
@@ -74,15 +81,31 @@ class ResidentDocumentController extends Controller
         }
 
         // add to document Request Db
-        $docRequestTable->id = $document_request_id;
-        $docRequestTable->resident = session('logged_resident');
-        $docRequestTable->document_type = $request->documentType;
-        $docRequestTable->name = $request->name;
-        $docRequestTable->address = $request->address;
-        $docRequestTable->phone = $request->phone;
-        $docRequestTable->bdate = $request->bdate;
-        $docRequestTable->gender = $request->gender;
-        $docRequestTable->status = "Pending";
+        if($request->documentType == 2) {
+            $docRequestTable->id = $document_request_id;
+            $docRequestTable->resident = session('logged_resident');
+            $docRequestTable->document_type = $request->documentType;
+            $docRequestTable->name = $request->name;
+            $docRequestTable->address = $request->address;
+            $docRequestTable->phone = $request->phone;
+            $docRequestTable->bdate = $request->bdate;
+            $docRequestTable->tin = $request->tin;
+            $docRequestTable->sss = $request->sss;
+            $docRequestTable->bdate_place = $request->bdatePlace;
+            $docRequestTable->blood_type = $request->bloodType;
+            $docRequestTable->status = "Pending";
+        }
+        else {
+            $docRequestTable->id = $document_request_id;
+            $docRequestTable->resident = session('logged_resident');
+            $docRequestTable->document_type = $request->documentType;
+            $docRequestTable->name = $request->name;
+            $docRequestTable->address = $request->address;
+            $docRequestTable->phone = $request->phone;
+            $docRequestTable->bdate = $request->bdate;
+            $docRequestTable->gender = $request->gender;
+            $docRequestTable->status = "Pending";
+        }
 
         $docRequestTable->save();
 
@@ -107,14 +130,27 @@ class ResidentDocumentController extends Controller
                 $file->move(public_path($targetDirectory), $newFilename);
 
                 // add to Db
-                $requirementsTable = new document_requirements;
+                if($request->documentType == 2) {
+                    $requirementsTable = new document_requirements_brgy_id;
 
-                $requirementsTable->id = $this->generateId->generate(document_requirements::class, 6);
-                $requirementsTable->document_request = $document_request_id;
-                $requirementsTable->document_requirement_for = $fileReqForValues[$key];
-                $requirementsTable->filename = $newFilename;
+                    $requirementsTable->id = $this->generateId->generate(document_requirements_brgy_id::class, 6);
+                    $requirementsTable->document_request = $document_request_id;
+                    $requirementsTable->document_requirement_for = $fileReqForValues[$key];
+                    $requirementsTable->filename = $newFilename;
+                    
+                    $requirementsTable->save();
+                }
+                else {
+                    $requirementsTable = new document_requirements;
+
+                    $requirementsTable->id = $this->generateId->generate(document_requirements::class, 6);
+                    $requirementsTable->document_request = $document_request_id;
+                    $requirementsTable->document_requirement_for = $fileReqForValues[$key];
+                    $requirementsTable->filename = $newFilename;
+                    
+                    $requirementsTable->save();
+                }
                 
-                $requirementsTable->save();
 
             } catch (\Exception $ex) {
                 return response()->json([
