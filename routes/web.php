@@ -3,6 +3,7 @@
 use App\Http\Controllers\ResidentDashController;
 use App\Http\Controllers\ResidentDocumentController;
 use App\Http\Controllers\SigninUpController;
+use App\Http\Controllers\ViewProfile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,3 +29,7 @@ Route::get('/ResidentDocuments', [ResidentDocumentController::class, 'index']);
 Route::get('/RequestDocument/{id}', [ResidentDocumentController::class, 'requestDocument']);
 Route::get('/ResidentRequestDocumentPreview/{id}/{type}', [ResidentDocumentController::class, 'reqDocPrev']);
 Route::post('/RequestDocumentPost', [ResidentDocumentController::class, 'requestDocumentPost']);
+
+// Resident Profile
+Route::get('/ResidentProfile/{id}', [ViewProfile::class, 'residentViewProfile']);
+Route::post('/editResidentProfile', [ViewProfile::class, 'residentEditProfilePost']);

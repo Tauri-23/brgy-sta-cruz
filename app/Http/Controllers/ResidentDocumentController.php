@@ -33,14 +33,20 @@ class ResidentDocumentController extends Controller
             'resident' => $resident,
             'documentTypes' => document_types::all(),
             'documentsPending' => document_requests::where('resident', $resident->id)
-                ->where('status', "Pending")->orderBy('created_at', 'DESC')->get(),
-
+                ->where('status', "Pending")->orderBy('created_at', 'ASC')->get(),
             'documentsBrgyIdPending' => document_request_brgy_id::where('resident', $resident->id)
-                ->where('status', "Pending")->orderBy('created_at', 'DESC')->get(),
+                ->where('status', "Pending")->orderBy('created_at', 'ASC')->get(),
+
             'documentsRejected' => document_requests::where('resident', $resident->id)
-                ->where('status', "Rejected")->orderBy('updated_at', 'DESC')->get(),
+                ->where('status', "Rejected")->orderBy('updated_at', 'ASC')->get(),
+            'documentsBrgyIdRejected' => document_request_brgy_id::where('resident', $resident->id)
+                ->where('status', "Rejected")->orderBy('created_at', 'ASC')->get(),
+
             'documentsCompleted' => document_requests::where('resident', $resident->id)
-                ->where('status', "Completed")->orderBy('updated_at', 'DESC')->get(),
+                ->where('status', "Completed")->orderBy('updated_at', 'ASC')->get(),
+            'documentsBrgyIdCompleted' => document_request_brgy_id::where('resident', $resident->id)
+                ->where('status', "Completed")->orderBy('created_at', 'ASC')->get(),
+
             'document_requirements' => document_type_requirements::with('document_types')->get()
         ]);
     }

@@ -36,6 +36,7 @@
 
         {{-- Navs --}}
         <x-navbar navType="resident-page" activeLink="3" pfp="{{$resident->pfp}}"/>
+        <x-nav_small_option/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
@@ -76,8 +77,10 @@
                 </div>
             </div>
 
+
+
             {{-- Pending Documents --}}
-            <div class="long-cont d-flex align-items-center" id="pending-cont">
+            <div class="long-cont d-flex align-items-center d-none" id="pending-cont">
                 @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
@@ -115,13 +118,9 @@
                 @endif                
             </div>
 
-
-
-
-
             {{-- Rejected Documents --}}
-            <div class="long-cont d-flex align-items-center" id="rejected-cont">
-                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
+            <div class="long-cont d-flex align-items-center d-none" id="rejected-cont">
+                @if ($documentsRejected->count() < 1 && $documentsBrgyIdRejected->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
                             <img src="/assets/media/illustrations/empty1.svg">  
@@ -146,7 +145,7 @@
                                 <small class="form-data-col">{{$doc->status}}</small>
                             </div>
                         @endforeach
-                        @foreach ($documentsBrgyIdPending as $doc)
+                        @foreach ($documentsBrgyIdRejected as $doc)
                             <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
                                 <small class="form-data-col">{{$doc->name}}</small>
                                 <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
@@ -159,8 +158,8 @@
             </div>
 
             {{-- Completed Documents --}}
-            <div class="long-cont d-flex align-items-center" id="completed-cont">
-                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
+            <div class="long-cont d-flex align-items-center d-none" id="completed-cont">
+                @if ($documentsCompleted->count() < 1 && $documentsBrgyIdCompleted->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
                             <img src="/assets/media/illustrations/empty1.svg">  
@@ -185,7 +184,7 @@
                                 <small class="form-data-col">{{$doc->status}}</small>
                             </div>
                         @endforeach
-                        @foreach ($documentsBrgyIdPending as $doc)
+                        @foreach ($documentsBrgyIdCompleted as $doc)
                             <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
                                 <small class="form-data-col">{{$doc->name}}</small>
                                 <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
@@ -196,6 +195,9 @@
                     </div>
                 @endif  
             </div>
+
+
+
         </div>
 
         

@@ -28,8 +28,8 @@
         <a class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
     </div>
 
-    <a href="/signout" class="nav1-pfp">
+    <div class="nav1-pfp">
         <img class="position-absolute h-100" src="/assets/media/pfp/{{$pfp}}" alt="">
-    </a>
+    </div>
 </div>
 @endif

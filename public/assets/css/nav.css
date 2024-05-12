@@ -44,3 +44,31 @@
     position: relative;
     overflow: hidden;
 }
+
+
+
+
+
+
+/* Nav small options */
+.nav-small-options {
+    top: 80px;
+    right: 20px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: var(--border-radius2);
+    filter: drop-shadow(0 0 1px var(--grey1));
+    z-index: 11;
+}
+.nav-small-options a {
+    display: flex;
+    padding: 5px 20px;
+    gap: 10px;
+    text-decoration: none;
+    border-radius: calc(var(--border-radius1) - 10px);
+    cursor: pointer;
+}

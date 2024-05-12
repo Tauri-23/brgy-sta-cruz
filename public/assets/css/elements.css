@@ -3,7 +3,7 @@
 | Buttons
 |----------------------------------------
 */
-.primary-btn-blue1, .primary-btn-blue2, .primary-btn-yellow1 {
+.primary-btn-blue1, .primary-btn-blue2, .primary-btn-yellow1, .primary-btn-red1 {
     padding: 8px 15px;
     text-decoration: none;
     border-radius: calc(var(--border-radius1) - 8px);
@@ -19,6 +19,9 @@
 }
 .primary-btn-yellow1 {
     background: var(--yellow1);
+}
+.primary-btn-red1 {
+    background: var(--red1);
 }
 
 

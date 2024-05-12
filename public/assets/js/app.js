@@ -142,3 +142,16 @@ $.ajaxSetup({
         "RequestVerificationToken": $('input:hidden[name="__RequestVerificationToken"]').val()
     }
 });
+
+
+
+
+
+
+
+
+
+// Functions for all
+$('.nav1-pfp').click(function() {
+    $('#nav-small-option').toggleClass('d-none')
+});

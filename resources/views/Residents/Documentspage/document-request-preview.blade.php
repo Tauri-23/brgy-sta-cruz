@@ -51,18 +51,19 @@
 
         {{-- Navs --}}
         <x-navbar navType="resident-page" activeLink="3" pfp="{{$resident->pfp}}"/>
+        <x-nav_small_option/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
-            <div class="d-flex align-items-center justify-content-between text-l1">
-                {{$document->document_types()->first()->document_name}}
+            <div class="d-flex align-items-center justify-content-start text-l3">
+                <a href="/ResidentDocuments" class="text-decoration-none color-black" href=""><i class="bi bi-arrow-left cursor pointer"></i> Back</a>
             </div>
 
 
             @if ($type == "brgyId")
-                <div class="long-cont">
+                <div class="long-cont d-flex flex-direction-y gap1">
                     {{-- Title --}}
-                    <div class="text-l1 mar-bottom-1">
+                    <div class="text-l1">
                         {{$document->document_types()->first()->document_name}} 
                         @if ($document->status == "Pending")
                             <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
@@ -81,38 +82,38 @@
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>
                                 <div class="text-m2">Name:</div>
-                                <div class="text-l2">{{$document->name}}</div>
+                                <div class="text-l3">{{$document->name}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Address:</div>
-                                <div class="text-l2">{{$document->address}}</div>
+                                <div class="text-l3">{{$document->address}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Phone:</div>
-                                <div class="text-l2">{{$document->phone}}</div>
+                                <div class="text-l3">{{$document->phone}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Brith Date</div>
-                                <div class="text-l2">{{$document->bdate}}</div>
+                                <div class="text-l3">{{$document->bdate}}</div>
                             </div>
                         </div>
                         <div class="d-flex w-50 flex-direction-y gap3">
                             
                             <div>
                                 <div class="text-m2">Birth Place:</div>
-                                <div class="text-l2">{{$document->bdate_place}}</div>
+                                <div class="text-l3">{{$document->bdate_place}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">TIN #:</div>
-                                <div class="text-l2">{{$document->tin ? $document->tin : "N/A"}}</div>
+                                <div class="text-l3">{{$document->tin ? $document->tin : "N/A"}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">SSS #:</div>
-                                <div class="text-l2">{{$document->sss ? $document->sss : "N/A"}}</div>
+                                <div class="text-l3">{{$document->sss ? $document->sss : "N/A"}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Blood Type:</div>
-                                <div class="text-l2">{{$document->blood_type ? $document->blood_type : "N/A"}}</div>
+                                <div class="text-l3">{{$document->blood_type ? $document->blood_type : "N/A"}}</div>
                             </div>
                         </div>
                     </div>
@@ -143,9 +144,9 @@
                     </div>
                 </div>
             @else
-                <div class="long-cont">
+                <div class="long-cont d-flex flex-direction-y gap1">
                     {{-- Title --}}
-                    <div class="text-l1 mar-bottom-1">
+                    <div class="text-l1">
                         {{$document->document_types()->first()->document_name}} 
                         @if ($document->status == "Pending")
                             <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
@@ -164,25 +165,25 @@
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>
                                 <div class="text-m2">Name:</div>
-                                <div class="text-l2">{{$document->name}}</div>
+                                <div class="text-l3">{{$document->name}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Address:</div>
-                                <div class="text-l2">{{$document->address}}</div>
+                                <div class="text-l3">{{$document->address}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Phone:</div>
-                                <div class="text-l2">{{$document->phone}}</div>
+                                <div class="text-l3">{{$document->phone}}</div>
                             </div>
                         </div>
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>
                                 <div class="text-m2">Brith Date</div>
-                                <div class="text-l2">{{$document->bdate}}</div>
+                                <div class="text-l3">{{$document->bdate}}</div>
                             </div>
                             <div>
                                 <div class="text-m2">Gender:</div>
-                                <div class="text-l2">{{$document->gender}}</div>
+                                <div class="text-l3">{{$document->gender}}</div>
                             </div>
                         </div>
                     </div>

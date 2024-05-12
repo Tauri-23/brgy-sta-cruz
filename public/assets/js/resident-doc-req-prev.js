@@ -16,7 +16,11 @@ reqirementCards.click(function() {
         closeModal(imgReqModal, false);
     }
     else {
+        pdfReqModal.find('#req-file').attr('src', `/assets/media/requirements/${file}`);
+        pdfReqModal.find('#req-name').html($(this).find('#req-for').html());
 
+        showModal(pdfReqModal);
+        closeModal(pdfReqModal, false);
     }
 
     
