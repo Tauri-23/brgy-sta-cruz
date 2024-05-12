@@ -26,4 +26,5 @@ Route::get('/ResidentDashboard', [ResidentDashController::class, 'index']);
 // Documents
 Route::get('/ResidentDocuments', [ResidentDocumentController::class, 'index']);
 Route::get('/RequestDocument/{id}', [ResidentDocumentController::class, 'requestDocument']);
+Route::get('/ResidentRequestDocumentPreview/{id}/{type}', [ResidentDocumentController::class, 'reqDocPrev']);
 Route::post('/RequestDocumentPost', [ResidentDocumentController::class, 'requestDocumentPost']);

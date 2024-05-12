@@ -78,7 +78,7 @@
 
             {{-- Pending Documents --}}
             <div class="long-cont d-flex align-items-center" id="pending-cont">
-                @if ($documentsPending->count() < 1)
+                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
                             <img src="/assets/media/illustrations/empty1.svg">  
@@ -95,14 +95,21 @@
                         </div>
                 
                 
-                        {{--Data Fetched from the database this is for ui for now--}}
                         @foreach ($documentsPending as $doc)
-                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                            <a href="/ResidentRequestDocumentPreview/{{$doc->id}}/others" class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
                                 <small class="form-data-col">{{$doc->name}}</small>
                                 <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
                                 <small class="form-data-col">{{$doc->created_at}}</small>
                                 <small class="form-data-col">{{$doc->status}}</small>
-                            </div>
+                            </a>
+                        @endforeach
+                        @foreach ($documentsBrgyIdPending as $doc)
+                            <a href="/ResidentRequestDocumentPreview/{{$doc->id}}/brgyId" class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->created_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </a>
                         @endforeach
                     </div>
                 @endif                
@@ -114,7 +121,7 @@
 
             {{-- Rejected Documents --}}
             <div class="long-cont d-flex align-items-center" id="rejected-cont">
-                @if ($documentsRejected->count() < 1)
+                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
                             <img src="/assets/media/illustrations/empty1.svg">  
@@ -131,12 +138,19 @@
                         </div>
                 
                 
-                        {{--Data Fetched from the database this is for ui for now--}}
                         @foreach ($documentsRejected as $doc)
                             <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
                                 <small class="form-data-col">{{$doc->name}}</small>
                                 <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
                                 <small class="form-data-col">{{$doc->updated_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </div>
+                        @endforeach
+                        @foreach ($documentsBrgyIdPending as $doc)
+                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->created_at}}</small>
                                 <small class="form-data-col">{{$doc->status}}</small>
                             </div>
                         @endforeach
@@ -146,7 +160,7 @@
 
             {{-- Completed Documents --}}
             <div class="long-cont d-flex align-items-center" id="completed-cont">
-                @if ($documentsCompleted->count() < 1)
+                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
                     <div class="placeholder-illustrations">
                         <div class="d-flex flex-direction-y gap2">
                             <img src="/assets/media/illustrations/empty1.svg">  
@@ -163,12 +177,19 @@
                         </div>
                 
                 
-                        {{--Data Fetched from the database this is for ui for now--}}
                         @foreach ($documentsCompleted as $doc)
                             <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
                                 <small class="form-data-col">{{$doc->name}}</small>
                                 <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
                                 <small class="form-data-col">{{$doc->updated_at}}</small>
+                                <small class="form-data-col">{{$doc->status}}</small>
+                            </div>
+                        @endforeach
+                        @foreach ($documentsBrgyIdPending as $doc)
+                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
+                                <small class="form-data-col">{{$doc->name}}</small>
+                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
+                                <small class="form-data-col">{{$doc->created_at}}</small>
                                 <small class="form-data-col">{{$doc->status}}</small>
                             </div>
                         @endforeach

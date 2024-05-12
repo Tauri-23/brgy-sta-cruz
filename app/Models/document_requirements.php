@@ -10,7 +10,7 @@ class document_requirements extends Model
     use HasFactory;
 
     public function document_requests() {
-        return $this->hasMany(document_requests::class(), 'id', 'document_request');
+        return $this->hasMany(document_requests::class, 'id', 'document_request');
     }
 
     public function document_type_requirements() {

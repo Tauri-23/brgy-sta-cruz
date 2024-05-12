@@ -34,11 +34,39 @@ class ResidentDocumentController extends Controller
             'documentTypes' => document_types::all(),
             'documentsPending' => document_requests::where('resident', $resident->id)
                 ->where('status', "Pending")->orderBy('created_at', 'DESC')->get(),
+
+            'documentsBrgyIdPending' => document_request_brgy_id::where('resident', $resident->id)
+                ->where('status', "Pending")->orderBy('created_at', 'DESC')->get(),
             'documentsRejected' => document_requests::where('resident', $resident->id)
                 ->where('status', "Rejected")->orderBy('updated_at', 'DESC')->get(),
             'documentsCompleted' => document_requests::where('resident', $resident->id)
                 ->where('status', "Completed")->orderBy('updated_at', 'DESC')->get(),
             'document_requirements' => document_type_requirements::with('document_types')->get()
+        ]);
+    }
+
+    
+    public function reqDocPrev($id, $type) {
+        $resident = Residents::find(session('logged_resident'));
+        if(!$resident) {
+            return redirect('/');
+        }
+
+        //brgyId or others
+        $document = $type == "brgyId" ? document_request_brgy_id::find($id) : document_requests::find($id);
+        if($type == "brgyId") {
+            $requirements = document_requirements_brgy_id::with('document_requests_brgy_ids', 'document_type_requirements')->where('document_request', $id)->get();
+        }
+        else {
+            $requirements = document_requirements::with('document_requests', 'document_type_requirements')->where('document_request', $id)->get();
+        }
+            
+
+        return view('Residents.Documentspage.document-request-preview', [
+            'resident' => $resident,
+            'document' => $document,
+            'requirements' => $requirements,
+            'type' => $type
         ]);
     }
 

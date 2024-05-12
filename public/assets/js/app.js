@@ -116,6 +116,22 @@ function formatPhoneNumIn(phoneNum) {
 }
 
 
+// Files
+function checkFileType(fileName) {
+    // Get the file extension
+    var fileExtension = fileName.split('.').pop().toLowerCase();
+
+    // Check if the file extension corresponds to an image or PDF
+    if (fileExtension === 'jpeg' || fileExtension === 'jpg' || fileExtension === 'png' || fileExtension === 'gif') {
+        return 'image'; // File is an image
+    } else if (fileExtension === 'pdf') {
+        return 'pdf'; // File is a PDF
+    } else {
+        return 'unknown'; // File type is unknown or unsupported
+    }
+}
+
+
 
 
 
