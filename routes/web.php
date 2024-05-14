@@ -52,3 +52,13 @@ Route::get('/AdminDashboard', [AdminDashController::class, 'index']);
 
 // Announcements
 Route::get('/AdminAnnouncements', [AdminAnnouncementsController::class, 'index']);
+Route::get('/addAnnouncement', [AdminAnnouncementsController::class, 'addAnnouncement']);
+Route::get('/viewAnnouncement/{id}', [AdminAnnouncementsController::class, 'viewAnnouncement']);
+Route::get('/editAnnouncement/{id}', [AdminAnnouncementsController::class, 'editAnnouncement']);
+Route::post('/addAnnouncementPost', [AdminAnnouncementsController::class, 'addAnnouncementPost']);
+Route::post('/editAnnouncementPost', [AdminAnnouncementsController::class, 'editAnnouncementPost']);
+
+
+
+//AdminAnnouncements
+//AdminDocuments
