@@ -17,4 +17,14 @@ class ResidentDashController extends Controller
             'resident' => $resident
         ]);
     }
+
+    public function about() {
+        $resident = Residents::find(session('logged_resident'));
+        if(!$resident) {
+            return redirect('/');
+        }
+        return view('Residents.About.index', [
+            'resident' => $resident
+        ]);
+    }
 }

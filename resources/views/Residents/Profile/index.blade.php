@@ -30,14 +30,16 @@
     </head>
     <body>
         {{-- modals --}}
+        <x-modals modalType="resident-edit-name"/>
+        <x-modals modalType="resident-edit-email"/>
+        <x-modals modalType="resident-edit-email-otp"/>
+        <x-modals modalType="resident-edit-password"/>
+        <x-modals modalType="resident-edit-phone"/>
+        <x-modals modalType="resident-edit-address"/>
+        <x-modals modalType="resident-edit-pfp"/>
+
         <x-modals modalType="success"/>
         <x-modals modalType="error"/>
-
-        <x-modals modalType="patient-edit-name"/>
-        <x-modals modalType="patient-edit-email"/>
-        <x-modals modalType="patient-edit-password"/>
-        <x-modals modalType="patient-edit-phone"/>
-        <x-modals modalType="patient-edit-address"/>
 
         {{-- Navs --}}
         <x-navbar navType="resident-page" activeLink="0" pfp="{{$resident->pfp}}"/>
@@ -53,7 +55,7 @@
                     </div>
 
                     <div>
-                        <div class="primary-btn-blue1 text-center">Change Picture</div>
+                        <div class="primary-btn-blue1 text-center" id="change-pfp-btn">Change Picture</div>
                     </div>
                 </div>
 
@@ -139,6 +141,8 @@
         const oldPhone = {!! json_encode($resident->phone) !!};
 
         const oldAddress = {!! json_encode($resident->address) !!};
+
+        const oldPfp = {!! json_encode($resident->pfp) !!}
     </script>
     <script src="/assets/js/resident-profile.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminAnnouncementsController;
+use App\Http\Controllers\AdminDashController;
 use App\Http\Controllers\ResidentDashController;
 use App\Http\Controllers\ResidentDocumentController;
 use App\Http\Controllers\SigninUpController;
@@ -33,3 +35,20 @@ Route::post('/RequestDocumentPost', [ResidentDocumentController::class, 'request
 // Resident Profile
 Route::get('/ResidentProfile/{id}', [ViewProfile::class, 'residentViewProfile']);
 Route::post('/editResidentProfile', [ViewProfile::class, 'residentEditProfilePost']);
+
+// About Page
+Route::get('/ResidentAbout', [ResidentDashController::class, 'about']);
+
+
+
+
+
+
+
+
+
+// Admins
+Route::get('/AdminDashboard', [AdminDashController::class, 'index']);
+
+// Announcements
+Route::get('/AdminAnnouncements', [AdminAnnouncementsController::class, 'index']);

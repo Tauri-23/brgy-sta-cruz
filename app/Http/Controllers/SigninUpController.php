@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\IGenerateIdService;
+use App\Contracts\IGenerateOTPService;
+use App\Contracts\ISendOTPEmailService;
 use App\Mail\SignupOTP;
 use App\Mail\WelcomeMail;
+use App\Models\Admin;
 use App\Models\email_verifications;
 use App\Models\Residents;
 use App\Models\Verifytoken;
@@ -15,9 +18,13 @@ use Illuminate\Support\Facades\Mail;
 class SigninUpController extends Controller
 {
     protected $generateId;
+    protected $generateOTP;
+    protected $sendOTPEmail;
 
-    public function __construct(IGenerateIdService $generateId) {
+    public function __construct(IGenerateIdService $generateId, ISendOTPEmailService $sendOTPEmail, IGenerateOTPService $generateOTP) {
         $this->generateId = $generateId;
+        $this->sendOTPEmail = $sendOTPEmail;
+        $this->generateOTP = $generateOTP;
     }
 
     public function signIn() {
@@ -59,12 +66,20 @@ class SigninUpController extends Controller
 
     public function signInPost(Request $request) {
         $resident = Residents::where('email', $request->email)->where('password', $request->password)->first();
+        $admin = Admin::where('email', $request->email)->where('password', $request->password)->first();
 
         if(!$resident) {
             //TODO:: also check for admins table then proceed if admin
+            if(!$admin) {
+                return response()->json([
+                    'status' => 401,
+                    'message' => 'credentials doesnt match'
+                ]);
+            }
+            $request->session()->put('logged_Admin', $admin->id);
             return response()->json([
-                'status' => 401,
-                'message' => 'credentials doesnt match'
+                'status' => 202,
+                'message' => 'success'
             ]);
         }
 
@@ -76,8 +91,8 @@ class SigninUpController extends Controller
             ]);
         }
 
-        $otp = $this->generateOTP();
-        $this->sendOTPEmail($request->email, $otp);
+        $otp = $this->generateOTP->generate(6);
+        $this->sendOTPEmail->send(new SignupOTP($otp), $request->email);
 
         $verification = new email_verifications;
         $verification->email = $request->email;
@@ -128,18 +143,6 @@ class SigninUpController extends Controller
         
         }
     }
-
-
-    private function generateOTP($length = 6)
-    {
-        return str_pad(mt_rand(0, pow(10, $length) - 1), $length, '0', STR_PAD_LEFT);
-    }
-
-    private function sendOTPEmail($email, $otp)
-    {
-        Mail::to($email)->send(new SignupOTP($otp));
-    }
-
 
 
     public function signout() {

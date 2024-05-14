@@ -78,9 +78,9 @@
 
 
 
-{{-- Patient Profile --}}
-@elseif($modalType == 'patient-edit-name')
-    <div class="modal1 d-none" id="patient-edit-name-modal">
+{{-- Resident Profile --}}
+@elseif($modalType == 'resident-edit-name')
+    <div class="modal1 d-none" id="resident-edit-name-modal">
         <div class="modal1-box-small">
             <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="d-flex gap2 flex-direction-y">
@@ -109,8 +109,8 @@
         </div>
     </div>
 
-@elseif($modalType == 'patient-edit-email')
-    <div class="modal1 d-none" id="patient-edit-email-modal">
+@elseif($modalType == 'resident-edit-email')
+    <div class="modal1 d-none" id="resident-edit-email-modal">
         <div class="modal1-box-small">
             <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="d-flex gap2 flex-direction-y">
@@ -129,8 +129,29 @@
         </div>
     </div>
 
-@elseif($modalType == 'patient-edit-password')
-    <div class="modal1 d-none" id="patient-edit-password-modal">
+@elseif($modalType == 'resident-edit-email-otp')
+    <div class="modal1 d-none" id="resident-edit-email-otp-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 flex-direction-y">
+                <div class="text-l2 text-center">Edit Email</div>
+                
+                <div>
+                    <label for="email-otp-in" class="text-l2">OTP</label>
+                    <div class="text-m1">We've send an OTP to your email <span id="old-email"></span></div>
+                    <input type="text" class="edit-text-1 w-100" id="email-otp-in" placeholder="6-digit OTP">
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center save-btn">Save</div>
+            </div>
+            
+        </div>
+    </div>
+
+@elseif($modalType == 'resident-edit-password')
+    <div class="modal1 d-none" id="resident-edit-password-modal">
         <div class="modal1-box-small">
             <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="d-flex gap2 flex-direction-y">
@@ -159,8 +180,8 @@
         </div>
     </div>
 
-@elseif($modalType == 'patient-edit-phone')
-    <div class="modal1 d-none" id="patient-edit-phone-modal">
+@elseif($modalType == 'resident-edit-phone')
+    <div class="modal1 d-none" id="resident-edit-phone-modal">
         <div class="modal1-box-small">
             <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="d-flex gap2 flex-direction-y">
@@ -179,8 +200,8 @@
         </div>
     </div>
 
-@elseif($modalType == 'patient-edit-address')
-    <div class="modal1 d-none" id="patient-edit-address-modal">
+@elseif($modalType == 'resident-edit-address')
+    <div class="modal1 d-none" id="resident-edit-address-modal">
         <div class="modal1-box-small">
             <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="d-flex gap2 flex-direction-y">
@@ -190,6 +211,27 @@
                     <label for="address-in">Address</label>
                     <input type="text" class="edit-text-1 w-100" id="address-in">
                 </div>
+
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center save-btn">Save</div>
+            </div>
+            
+        </div>
+    </div>
+
+@elseif($modalType == "resident-edit-pfp")
+    <div class="modal1 d-none" id="resident-edit-pfp-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap1 flex-direction-y">
+                <div class="text-l2 text-center">Edit Picture</div>
+                
+                <div class="profile-pfp m-auto">
+                    <img class="position-absolute h-100" src="" id="pfp-prev"/>
+                </div>
+
+                <input type="file" id="pfp-in">
 
             </div>
             <div class="d-flex justify-content-center gap1 mar-top-2">

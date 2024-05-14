@@ -42,8 +42,7 @@
             <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
             {{-- <img src="/assets/media/home-cover/2.jpg" class='banners'>
             <img src="/assets/media/home-cover/3.jpg" class='banners'> --}}
-        
-      </div>
+        </div>
 
 
       {{-- News --}}

@@ -33,6 +33,9 @@ signinBtn.click(() => {
             else if(response.status == 201) {
                 setUpOTPForm();
             }
+            else if(response.status == 202) {
+                window.location.href="/AdminDashboard"
+            }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
                 errorModal.find('.modal1-txt').html("Credentials doesn't match.");
