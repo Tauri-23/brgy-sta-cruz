@@ -69,7 +69,6 @@ class SigninUpController extends Controller
         $admin = Admin::where('email', $request->email)->where('password', $request->password)->first();
 
         if(!$resident) {
-            //TODO:: also check for admins table then proceed if admin
             if(!$admin) {
                 return response()->json([
                     'status' => 401,

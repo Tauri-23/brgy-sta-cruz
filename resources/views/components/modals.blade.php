@@ -241,4 +241,55 @@
         </div>
     </div>
     
+
+
+
+
+
+
+
+
+
+{{-- Admin Doc Prev --}}
+@elseif($modalType == "admin-reject-req")
+    <div class="modal1 d-none" id="admin-reject-req-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap1 flex-direction-y">
+                <div class="text-l2 text-center">Reject Document</div>
+                
+                <div>
+                    <label for="reason-in">Reason</label>
+                    <textarea class="edit-text-1 w-100" id="reason-in" style="width: 300px; height: 200px; resize:none;">
+                    </textarea>
+                </div>
+                
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center reject-btn">Reject</div>
+            </div>
+            
+        </div>
+    </div>
+@elseif($modalType == "admin-accept-req")
+    <div class="modal1 d-none" id="admin-accept-req-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap1 flex-direction-y">
+                <div class="text-l2 text-center">Approve Document</div>
+                
+                <div>
+                    <label for="pickup-in">Pick-up Date</label>
+                    <input type="datetime-local" class="edit-text-1 w-100" id="pickup-in">
+                </div>
+                
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center approve-btn">Approve</div>
+            </div>
+            
+        </div>
+    </div>
+
+
 @endif

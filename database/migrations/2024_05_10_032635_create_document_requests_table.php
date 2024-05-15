@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('phone');
             $table->date('bdate');
             $table->string('gender');
+            $table->string('reason')->nullable();
+            $table->dateTime('pickup_date')->nullable();
             $table->string('status');
             $table->timestamp('created_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

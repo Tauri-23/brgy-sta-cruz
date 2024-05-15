@@ -16,6 +16,7 @@ const announcementColumns = $('.announcement-column');
 // Modals
 const successModal = $('#success-modal');
 const errorModal = $('#error-modal');
+const infoYNModal = $('#info-yn-modal');
 
 
 addAnnouncementBtn.click(() => {
@@ -101,8 +102,45 @@ editAnnouncementBtn.click(() => {
 
     
 })
-
+let annIdDel = "";
 deleteAnnouncementBtn.click(function() {
-    let id = $(this).data('announcement-id')
-    alert(id);
+    annIdDel = $(this).data('announcement-id');
+
+    infoYNModal.find('.modal1-txt-title').html('Warning');
+    infoYNModal.find('.modal-text').html(`Do you want do remove this announcement (${annIdDel})?`);
+
+    showModal(infoYNModal);
+    closeModal(infoYNModal, false);
+    
 })
+
+infoYNModal.find('.yes-btn').click(() => {
+    let formData = new FormData();
+    formData.append('annId', annIdDel);
+
+    $.ajax({
+        type: "POST",
+        url: "/deleteAnnouncementPost",
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function(response) {
+            if(response.status == 200) {
+                successModal.find('.modal1-txt-title').html('Success');
+                successModal.find('.modal-text').html('Announcement Successfully Deleted.');
+                showModal(successModal);
+                closeModal(successModal, true);
+            }
+            else {
+                errorModal.find('.modal1-txt-title').html('Failed.');
+                errorModal.find('.modal-text').html('Something went wrong');
+                showModal(errorModal);
+                closeModal(errorModal, false);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+            alert('error');
+        }
+    });
+});

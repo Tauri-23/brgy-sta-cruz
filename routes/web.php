@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAnnouncementsController;
 use App\Http\Controllers\AdminDashController;
+use App\Http\Controllers\AdminDocumentsController;
 use App\Http\Controllers\ResidentDashController;
 use App\Http\Controllers\ResidentDocumentController;
 use App\Http\Controllers\SigninUpController;
@@ -57,6 +58,15 @@ Route::get('/viewAnnouncement/{id}', [AdminAnnouncementsController::class, 'view
 Route::get('/editAnnouncement/{id}', [AdminAnnouncementsController::class, 'editAnnouncement']);
 Route::post('/addAnnouncementPost', [AdminAnnouncementsController::class, 'addAnnouncementPost']);
 Route::post('/editAnnouncementPost', [AdminAnnouncementsController::class, 'editAnnouncementPost']);
+Route::post('/deleteAnnouncementPost', [AdminAnnouncementsController::class, 'deleteAnnouncementPost']);
+
+
+// Documents
+Route::get('/AdminDocuments', [AdminDocumentsController::class, 'index']);
+Route::get('/AdminRequestDocumentPreview/{id}/{type}', [AdminDocumentsController::class, 'documentPreview']);
+Route::post('/RejectDocumentApplication', [AdminDocumentsController::class, 'rejectDocumentPost']);
+Route::post('/ApproveDocumentApplication', [AdminDocumentsController::class, 'acceptDocumentPost']);
+Route::post('/CompleteDocumentApplication', [AdminDocumentsController::class, 'completeDocumentPost']);
 
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Contracts\IGenerateFilenameService;
 use App\Contracts\IGenerateIdService;
+use App\Models\document_rejected;
+use App\Models\document_rejected_brgy_id;
 use App\Models\document_request_brgy_id;
 use App\Models\document_requests;
 use App\Models\document_requirements;
@@ -23,8 +25,29 @@ class ResidentDocumentController extends Controller
         $this->generateId = $generateId;
     }
 
-    public function index() {
+    public function index() {        
         $resident = Residents::find(session('logged_resident'));
+
+        $docReqPending = document_requests::where('resident', $resident->id)
+            ->where('status', "Pending")->orderBy('created_at', 'ASC')->get();
+        $docReqBrgyIdsPending = document_request_brgy_id::where('resident', $resident->id)
+            ->where('status', "Pending")->orderBy('created_at', 'ASC')->get();
+
+        $docReqFP = document_requests::where('resident', $resident->id)
+            ->where('status', "For Pickup")->orderBy('updated_at', 'ASC')->get();
+        $docReqBrgyIdsFP = document_request_brgy_id::where('resident', $resident->id)
+            ->where('status', "For Pickup")->orderBy('created_at', 'ASC')->get();
+
+        $docReqRejected = document_requests::where('resident', $resident->id)
+            ->where('status', "Rejected")->orderBy('updated_at', 'ASC')->get();
+        $docReqBrgyIdsRejected = document_request_brgy_id::where('resident', $resident->id)
+            ->where('status', "Rejected")->orderBy('created_at', 'ASC')->get();
+
+        $docReqCompleted = document_requests::where('resident', $resident->id)
+            ->where('status', "Completed")->orderBy('updated_at', 'ASC')->get();
+        $docReqBrgyIdsCompleted = document_request_brgy_id::where('resident', $resident->id)
+            ->where('status', "Completed")->orderBy('created_at', 'ASC')->get();
+
         if(!$resident) {
             return redirect('/');
         }
@@ -32,20 +55,18 @@ class ResidentDocumentController extends Controller
         return view('Residents.Documentspage.index', [
             'resident' => $resident,
             'documentTypes' => document_types::all(),
-            'documentsPending' => document_requests::where('resident', $resident->id)
-                ->where('status', "Pending")->orderBy('created_at', 'ASC')->get(),
-            'documentsBrgyIdPending' => document_request_brgy_id::where('resident', $resident->id)
-                ->where('status', "Pending")->orderBy('created_at', 'ASC')->get(),
 
-            'documentsRejected' => document_requests::where('resident', $resident->id)
-                ->where('status', "Rejected")->orderBy('updated_at', 'ASC')->get(),
-            'documentsBrgyIdRejected' => document_request_brgy_id::where('resident', $resident->id)
-                ->where('status', "Rejected")->orderBy('created_at', 'ASC')->get(),
+            'docReqPending' => $docReqPending,
+            'docReqBrgyIdsPending' => $docReqBrgyIdsPending,
 
-            'documentsCompleted' => document_requests::where('resident', $resident->id)
-                ->where('status', "Completed")->orderBy('updated_at', 'ASC')->get(),
-            'documentsBrgyIdCompleted' => document_request_brgy_id::where('resident', $resident->id)
-                ->where('status', "Completed")->orderBy('created_at', 'ASC')->get(),
+            'docReqFP' => $docReqFP,
+            'docReqBrgyIdsFP' => $docReqBrgyIdsFP,
+
+            'docReqRejected' => $docReqRejected,
+            'docReqBrgyIdsRejected' => $docReqBrgyIdsRejected,
+
+            'docReqCompleted' => $docReqCompleted,
+            'docReqBrgyIdsCompleted' => $docReqBrgyIdsCompleted,
 
             'document_requirements' => document_type_requirements::with('document_types')->get()
         ]);
@@ -60,12 +81,9 @@ class ResidentDocumentController extends Controller
 
         //brgyId or others
         $document = $type == "brgyId" ? document_request_brgy_id::find($id) : document_requests::find($id);
-        if($type == "brgyId") {
-            $requirements = document_requirements_brgy_id::with('document_requests_brgy_ids', 'document_type_requirements')->where('document_request', $id)->get();
-        }
-        else {
-            $requirements = document_requirements::with('document_requests', 'document_type_requirements')->where('document_request', $id)->get();
-        }
+        $requirements = $type == "brgyId"
+            ? document_requirements_brgy_id::with('document_requests_brgy_ids', 'document_type_requirements')->where('document_request', $id)->get()
+            : document_requirements::with('document_requests', 'document_type_requirements')->where('document_request', $id)->get();
             
 
         return view('Residents.Documentspage.document-request-preview', [

@@ -6,6 +6,7 @@ const requirementsCont = $('#requirements-cont');
 
 const addDocCont = $('#add-doc-cont');
 const pendingCont = $('#pending-cont');
+const forPickupCont = $('#for-pickup-cont');
 const rejectedCont = $('#rejected-cont');
 const completedCont = $('#completed-cont');
 
@@ -14,6 +15,7 @@ const requestDocumentBtn = $('#request-document-btn');
 
 const navReqDocBtn = $('#req-a-doc-btn');
 const pendingBtn = $('#pending-btn');
+const forPickupBtn = $('#for-pickup-btn');
 const rejectedBtn = $('#rejected-btn');
 const completedBtn = $('#completed-btn');
 
@@ -43,6 +45,9 @@ navReqDocBtn.click(() => {
 pendingBtn.click(() => {
     changeContainerAndLinkActive(pendingCont, pendingBtn)
 });
+forPickupBtn.click(() => {
+    changeContainerAndLinkActive(forPickupCont, forPickupBtn);
+});
 rejectedBtn.click(() => {
     changeContainerAndLinkActive(rejectedCont, rejectedBtn)
 });
@@ -53,11 +58,13 @@ completedBtn.click(() => {
 function changeContainerAndLinkActive(activeCont, activeLink) {
     navReqDocBtn.removeClass('active');
     pendingBtn.removeClass('active');
+    forPickupBtn.removeClass('active');
     rejectedBtn.removeClass('active');
     completedBtn.removeClass('active');
 
     addDocCont.addClass('d-none');
     pendingCont.addClass('d-none');
+    forPickupCont.addClass('d-none')
     rejectedCont.addClass('d-none');
     completedCont.addClass('d-none');
 

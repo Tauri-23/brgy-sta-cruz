@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
-        <title>Brgy Sta. Cruz Makati | Documents</title>
+        <title>Brgy Sta. Cruz Makati | Admin</title>
 
         {{-- Icon --}}
         <link rel="icon" href="/assets/media/logos/brgy_logo.png" type="image/x-icon" />
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="/assets/css/elements.css">
         <link rel="stylesheet" href="/assets/css/nav.css">
         <link rel="stylesheet" href="/assets/css/footer.css">
+        <link rel="stylesheet" href="/assets/css/forms.css">
         <link rel="stylesheet" href="/assets/css/document-req-prev.css">
 
         {{-- Bootstrap --}}
@@ -29,6 +30,12 @@
     </head>
     <body>
         {{-- modals --}}
+        <x-modals modalType="admin-reject-req"/>
+        <x-modals modalType="admin-accept-req"/>
+        <x-modals modalType="info-yn"/>
+        <x-modals modalType="info-yn"/>
+        <x-modals modalType="info-yn"/>
+
         <x-modals modalType="success"/>
         <x-modals modalType="error"/>
 
@@ -38,6 +45,9 @@
                 <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
                 <div class="text-l2 mar-bottom-1" id="req-name">Requirement Name</div>
                 <img class="req-img" src="" alt="" id="req-img">
+                <div class="mar-top-1 d-flex justify-content-center">
+                    <a class="primary-btn-blue1" id="dwnld-image-btn">Donwload</a>
+                </div>
             </div>
         </div>
 
@@ -50,13 +60,12 @@
         </div>
 
         {{-- Navs --}}
-        <x-navbar navType="resident-page" activeLink="3" pfp="{{$resident->pfp}}"/>
-        <x-nav_small_option/>
+        <x-navbar navType="admin-page" activeLink="3" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="d-flex align-items-center justify-content-start text-l3">
-                <a href="/ResidentDocuments" class="text-decoration-none color-black" href=""><i class="bi bi-arrow-left cursor pointer"></i> Back</a>
+                <a href="/AdminDocuments" class="text-decoration-none color-black" href=""><i class="bi bi-arrow-left cursor pointer"></i> Back</a>
             </div>
 
 
@@ -174,14 +183,25 @@
                 </div>
 
 
-               
-                @if($document->status == 'Rejected')
+                @if ($document->status == 'Pending')
+                    <div class="mar-top-1 d-flex gap3 justify-content-end">
+                        <div class="primary-btn-red1" id="reject-btn">Reject</div>
+                        <div class="primary-btn-blue1" id="approve-btn">Approve</div>                        
+                    </div>
+                @elseif($document->status == 'Rejected')
                     <div class="mar-top-1 d-flex flex-direction-y gap3">
                         <div class="text-l2">Reason: </div>
                         <div class="text-l3">{{$document->reason}}</div>
                     </div>
+                @elseif($document->status == 'For Pickup')
+                    <div class="mar-top-1 d-flex gap3 justify-content-end">
+                        <div class="primary-btn-green1" id="mark-as-complete-btn">Mark as Completed</div>                
+                    </div>
                 @endif
             </div>
+
+            
+            
         </div>
 
         
@@ -196,6 +216,8 @@
 
     <script>
         const requirements = {!! json_encode($requirements) !!};
+        const reqId = {!! json_encode($document->id) !!};
+        const type = {!! json_encode($type) !!};
     </script>
 
     <script src="/assets/js/doc-req-prev.js"></script>

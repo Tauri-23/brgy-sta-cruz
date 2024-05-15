@@ -16,6 +16,8 @@
 
     --red1: rgb(199, 67, 67);
 
+    --green1: rgb(82, 216, 116);
+
     --yellow1: rgba(236, 201, 79, 1);
     
 
@@ -91,6 +93,9 @@ body, html {
 }
 .bg-red1 {
     background:var(--red1);
+}
+.bg-green1 {
+    background:var(--green1);
 }
 
 .color-blue1 {

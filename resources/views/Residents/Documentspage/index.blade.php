@@ -46,6 +46,7 @@
             <div class="long-cont-nopadding d-flex gap1">
                 <div class="mini-nav-link active" id="req-a-doc-btn">Request a Document</div>
                 <div class="mini-nav-link" id="pending-btn">Pending</div>
+                <div class="mini-nav-link" id="for-pickup-btn">For Pickup</div>
                 <div class="mini-nav-link" id="rejected-btn">Rejected</div>
                 <div class="mini-nav-link" id="completed-btn">Completed</div>
             </div>
@@ -81,119 +82,22 @@
 
             {{-- Pending Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="pending-cont">
-                @if ($documentsPending->count() < 1 && $documentsBrgyIdPending->count() < 1)
-                    <div class="placeholder-illustrations">
-                        <div class="d-flex flex-direction-y gap2">
-                            <img src="/assets/media/illustrations/empty1.svg">  
-                            <div class="text-l3 text-center">No Records</div>
-                        </div>
-                    </div>
-                @else
-                    <div class="table1">
-                        <div class="table1-header">
-                            <small class="text-m2 form-data-col">Resident Name</small>
-                            <small class="text-m2 form-data-col">Document</small>
-                            <small class="text-m2 form-data-col">Date Requested</small>
-                            <small class="text-m2 form-data-col">Status</small>
-                        </div>
-                
-                
-                        @foreach ($documentsPending as $doc)
-                            <a href="/ResidentRequestDocumentPreview/{{$doc->id}}/others" class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->created_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </a>
-                        @endforeach
-                        @foreach ($documentsBrgyIdPending as $doc)
-                            <a href="/ResidentRequestDocumentPreview/{{$doc->id}}/brgyId" class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->created_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </a>
-                        @endforeach
-                    </div>
-                @endif                
+                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="resident"/>             
+            </div>
+
+            {{-- For Pickup Documents --}}
+            <div class="long-cont d-flex align-items-center d-none" id="for-pickup-cont">
+                <x-render_doc_req :docReq="$docReqFP" :docReqBrgyId="$docReqBrgyIdsFP" mode="for-pickup" user="resident"/>
             </div>
 
             {{-- Rejected Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="rejected-cont">
-                @if ($documentsRejected->count() < 1 && $documentsBrgyIdRejected->count() < 1)
-                    <div class="placeholder-illustrations">
-                        <div class="d-flex flex-direction-y gap2">
-                            <img src="/assets/media/illustrations/empty1.svg">  
-                            <div class="text-l3 text-center">No Records</div>
-                        </div>
-                    </div>
-                @else
-                    <div class="table1">
-                        <div class="table1-header">
-                            <small class="text-m2 form-data-col">Resident Name</small>
-                            <small class="text-m2 form-data-col">Document</small>
-                            <small class="text-m2 form-data-col">Date Rejected</small>
-                            <small class="text-m2 form-data-col">Status</small>
-                        </div>
-                
-                
-                        @foreach ($documentsRejected as $doc)
-                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->updated_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </div>
-                        @endforeach
-                        @foreach ($documentsBrgyIdRejected as $doc)
-                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->created_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </div>
-                        @endforeach
-                    </div>
-                @endif                
+                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="resident"/>    
             </div>
 
             {{-- Completed Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="completed-cont">
-                @if ($documentsCompleted->count() < 1 && $documentsBrgyIdCompleted->count() < 1)
-                    <div class="placeholder-illustrations">
-                        <div class="d-flex flex-direction-y gap2">
-                            <img src="/assets/media/illustrations/empty1.svg">  
-                            <div class="text-l3 text-center">No Records</div>
-                        </div>
-                    </div>
-                @else
-                    <div class="table1">
-                        <div class="table1-header">
-                            <small class="text-m2 form-data-col">Resident Name</small>
-                            <small class="text-m2 form-data-col">Document</small>
-                            <small class="text-m2 form-data-col">Date Rejected</small>
-                            <small class="text-m2 form-data-col">Status</small>
-                        </div>
-                
-                
-                        @foreach ($documentsCompleted as $doc)
-                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->updated_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </div>
-                        @endforeach
-                        @foreach ($documentsBrgyIdCompleted as $doc)
-                            <div  class="table1-data {{ $loop->last ? 'last' : '' }}" id="{{$doc->id}}">
-                                <small class="form-data-col">{{$doc->name}}</small>
-                                <small class="form-data-col">{{$doc->document_types()->first()->document_name}}</small>
-                                <small class="form-data-col">{{$doc->created_at}}</small>
-                                <small class="form-data-col">{{$doc->status}}</small>
-                            </div>
-                        @endforeach
-                    </div>
-                @endif  
+                <x-render_doc_req :docReq="$docReqCompleted" :docReqBrgyId="$docReqBrgyIdsCompleted" mode="completed" user="resident"/>
             </div>
 
 

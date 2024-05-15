@@ -153,4 +153,21 @@ class AdminAnnouncementsController extends Controller
             ]);
         }
     }
+
+    public function deleteAnnouncementPost(Request $request) {
+        $announcement = announcements::find($request->annId);
+
+        if($announcement->delete()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'success'
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 400,
+                'message' => 'failed'
+            ]);
+        }
+    }
 }
