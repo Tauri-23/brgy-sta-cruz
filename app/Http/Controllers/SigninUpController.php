@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Contracts\IGenerateIdService;
 use App\Contracts\IGenerateOTPService;
 use App\Contracts\ISendOTPEmailService;
+use App\Mail\ForgotPassMail;
+use App\Mail\ForgotPassOTP;
 use App\Mail\SignupOTP;
 use App\Mail\WelcomeMail;
 use App\Models\Admin;
@@ -141,6 +143,76 @@ class SigninUpController extends Controller
             }
         
         }
+    }
+
+
+    public function forgotPass(Request $request) {
+
+        if($request->processType == "sendOTP") {
+            $otp = $this->generateOTP->generate(6);
+            $this->sendOTPEmail->send(new ForgotPassOTP($otp), $request->email);
+
+            $verification = new email_verifications;
+            $verification->email = $request->email;
+            $verification->otp = $otp;
+
+            $verification->save();
+
+            return response()->json([
+                'status' => 200,
+                'message' => 'OTP has been Sent to your email.'
+            ]);
+        }
+        elseif($request->processType == "verifyOTP") {
+            $verification = email_verifications::where('otp', $request->otp)->first();
+
+            if(!$verification) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'Wrong OTP'
+                ]);
+            }
+
+            else {
+                $currentTime = Carbon::now();
+                $time = $verification->created_at;
+    
+                // Calculate the time difference in seconds
+                $timeDifference = $currentTime->diffInSeconds($time);
+    
+                // Check if the time difference is less than 5 minutes (300 seconds)
+                if ($timeDifference <= 300) {
+                    return response()->json([
+                        'status' => 200,
+                        'message' => 'success'
+                    ]);
+                } else {
+                    return response()->json([
+                        'status' => 401,
+                        'message' => 'OTP Expired'
+                    ]);
+                }
+            
+            }
+        }
+        elseif($request->processType == "changePassword") {
+            $resident = Residents::where('email', $request->email)->first();
+            $x = $resident->count();
+            $resident->password = $request->password;
+            if($resident->save()) {
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'success'
+                ]); 
+            }
+            else {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'error'
+                ]);
+            }
+        }
+        
     }
 
 

@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/assets/css/nav.css">
         <link rel="stylesheet" href="/assets/css/footer.css">
         <link rel="stylesheet" href="/assets/css/announcements.css">
+        <link rel="stylesheet" href="/assets/css/tables.css">
 
         {{-- Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -36,19 +37,17 @@
 
 
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="2" pfp="null"/>
+        <x-navbar navType="admin-page" activeLink="4" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="text-l1">Announcements</div>
-                <a href="/addAnnouncement" class="primary-btn-yellow1">Add Announcement</a>
+                <div class="text-l1">Residents</div>
             </div>
 
-            {{-- Render Announcement --}}
+            {{-- Render Residents --}}
             <div class="d-flex flex-direction-y gap2">
-                <x-admin_render_announcements :announcements="$announcementsFt"/>
-                <x-admin_render_announcements :announcements="$announcements"/>
+                <x-admin_render_residents :residents="$residents"/>
             </div>
         </div>
 
@@ -58,6 +57,6 @@
         
     </body>
     <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/announcement.js"></script>
+    <script src="/assets/js/admin-residents.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

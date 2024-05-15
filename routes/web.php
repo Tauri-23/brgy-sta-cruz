@@ -3,6 +3,9 @@
 use App\Http\Controllers\AdminAnnouncementsController;
 use App\Http\Controllers\AdminDashController;
 use App\Http\Controllers\AdminDocumentsController;
+use App\Http\Controllers\AdminResidentsController;
+use App\Http\Controllers\PublicDashController;
+use App\Http\Controllers\ResidentAnnouncementController;
 use App\Http\Controllers\ResidentDashController;
 use App\Http\Controllers\ResidentDocumentController;
 use App\Http\Controllers\SigninUpController;
@@ -13,6 +16,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+// Public
 // signin singup
 Route::get('/signout', [SigninUpController::class, 'signout']);
 Route::get('/signin', [SigninUpController::class, 'signIn']);
@@ -22,10 +26,32 @@ Route::post('/signinPost', [SigninUpController::class, 'signInPost']);
 Route::post('/signupPost', [SigninUpController::class, 'signUpPost']);
 Route::post('/verifyEmail', [SigninUpController::class, 'validateOtp']);
 
+// Forgot Pass
+Route::post('/forgotPass', [SigninUpController::class, 'forgotPass']);
+
+// public links
+Route::get('/announcementsPublic', [PublicDashController::class, 'announcement']);
+Route::get('/publicViewAnnouncement/{id}', [PublicDashController::class, 'viewAnnouncement']);
+Route::get('/servicesPublic', [PublicDashController::class, 'services']);
+Route::get('/policiesPublic', [PublicDashController::class, 'policies']);
+Route::get('/aboutPublic', [PublicDashController::class, 'about']);
+Route::get('/contactPublic', [PublicDashController::class, 'contact']);
+
+
+
+
+
+
+
+
 
 
 // Residents
 Route::get('/ResidentDashboard', [ResidentDashController::class, 'index']);
+
+// Announcements
+Route::get('/ResidentAnnouncement', [ResidentAnnouncementController::class, 'index']);
+Route::get('/residentViewAnnouncement/{id}', [ResidentAnnouncementController::class, 'view']);
 
 // Documents
 Route::get('/ResidentDocuments', [ResidentDocumentController::class, 'index']);
@@ -36,6 +62,12 @@ Route::post('/RequestDocumentPost', [ResidentDocumentController::class, 'request
 // Resident Profile
 Route::get('/ResidentProfile/{id}', [ViewProfile::class, 'residentViewProfile']);
 Route::post('/editResidentProfile', [ViewProfile::class, 'residentEditProfilePost']);
+
+// Services
+Route::get('/ResidentServices', [ResidentDashController::class, 'services']);
+
+// Contacts
+Route::get('/ResidentContact', [ResidentDashController::class, 'contact']);
 
 // About Page
 Route::get('/ResidentAbout', [ResidentDashController::class, 'about']);
@@ -67,6 +99,11 @@ Route::get('/AdminRequestDocumentPreview/{id}/{type}', [AdminDocumentsController
 Route::post('/RejectDocumentApplication', [AdminDocumentsController::class, 'rejectDocumentPost']);
 Route::post('/ApproveDocumentApplication', [AdminDocumentsController::class, 'acceptDocumentPost']);
 Route::post('/CompleteDocumentApplication', [AdminDocumentsController::class, 'completeDocumentPost']);
+
+// Monitor Residents
+Route::get('/AdminResidents', [AdminResidentsController::class, 'index']);
+Route::get('/AdminViewResidentProfile/{id}', [AdminResidentsController::class, 'viewResidentProfile']);
+Route::post('/deleteResidentPost', [AdminResidentsController::class, 'deleteResidentPost']);
 
 
 

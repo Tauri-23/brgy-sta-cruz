@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
-        <title>Brgy Sta. Cruz Makati | Admin</title>
+        <title>Brgy Sta. Cruz Makati | Resident</title>
 
         {{-- Icon --}}
         <link rel="icon" href="/assets/media/logos/brgy_logo.png" type="image/x-icon" />
@@ -28,27 +28,25 @@
 
     </head>
     <body>
-        {{-- Modals --}}
-        <x-modals modalType="info-yn"/>
-
-        <x-modals modalType="success"/>
-        <x-modals modalType="error"/>
-
-
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="2" pfp="null"/>
+        <x-navbar navType="resident-page" activeLink="2" pfp="{{$resident->pfp}}"/>
+        <x-nav_small_option/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="text-l1">Announcements</div>
-                <a href="/addAnnouncement" class="primary-btn-yellow1">Add Announcement</a>
+            <div class="d-flex justify-content-start">
+                <a href="/AdminAnnouncements" class="d-flex gap3 text-l3 text-decoration-none color-black">
+                    <i class="bi bi-chevron-left"></i>
+                    Back
+                </a>
             </div>
 
-            {{-- Render Announcement --}}
-            <div class="d-flex flex-direction-y gap2">
-                <x-admin_render_announcements :announcements="$announcementsFt"/>
-                <x-admin_render_announcements :announcements="$announcements"/>
+            <div class="article-cont">
+                <div class="text-l1 mar-top-1">{{$announcement->title}}</div>
+                <div class="text-m3" style="font-style: italic;">{{\Carbon\Carbon::parse($announcement->created_at)->format('M d. Y')}}</div>
+
+                <div class="article-cover-cont"><img src="/assets/media/announcement/{{$announcement->pic}}" alt="article-pic" class="h-100 position-absolute"></div>
+                <div>{!!$announcement->content!!}</div>
             </div>
         </div>
 
@@ -57,7 +55,6 @@
 
         
     </body>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/announcement.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

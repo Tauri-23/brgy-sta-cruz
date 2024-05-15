@@ -7,7 +7,7 @@
     </div>
 @else
     @foreach ($announcements as $ann)
-        <div class="announcement-cont d-flex gap1 announcement-column">
+        <a href="/residentViewAnnouncement/{{$ann->id}}" class="announcement-cont d-flex gap1 announcement-column text-decoration-none color-black">
             <div class="pic-square1 d-flex justify-content-center">
                 <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
             </div>
@@ -21,15 +21,6 @@
                 </div>
                 <div class="announcement-prev-content text-m2">{!! $ann->content !!}</div>
             </div>
-
-            
-            <div class="d-flex flex-direction-y justify-content-center gap3">
-                <a href="/viewAnnouncement/{{$ann->id}}" class="primary-btn-yellow1 w-100 d-flex"><i class="bi bi-eye mar-end-3"></i> Preview</a>
-                <a href="editAnnouncement/{{$ann->id}}" class="primary-btn-blue1 w-100 d-flex"><i class="bi bi-pen mar-end-3"></i> Edit</a>
-                <a class="primary-btn-red1 w-100 delete-announcement-btn d-flex" data-announcement-id="{{$ann->id}}"><i class="bi bi-trash mar-end-3"></i> Delete</a>
-
-                <input id="announcement-id" type="hidden" value="{{$ann->id}}"/>
-            </div>
-        </div>
+        </a>
     @endforeach
 @endif

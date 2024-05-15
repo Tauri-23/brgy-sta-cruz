@@ -19,9 +19,11 @@ class AdminAnnouncementsController extends Controller
     }
 
     public function index() {
-        $announcements = announcements::all();
+        $announcements = announcements::where('featured', 0)->get();
+        $announcementsFt = announcements::where('featured', 1)->get();
         return view('BrgyStaff.Announcement.index', [
-            'announcements' => $announcements
+            'announcements' => $announcements,
+            'announcementsFt' => $announcementsFt
         ]);
     }
 

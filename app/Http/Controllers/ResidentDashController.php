@@ -27,4 +27,24 @@ class ResidentDashController extends Controller
             'resident' => $resident
         ]);
     }
+
+    public function services() {
+        $resident = Residents::find(session('logged_resident'));
+        if(!$resident) {
+            return redirect('/');
+        }
+        return view('Residents.Services.index', [
+            'resident' => $resident
+        ]);
+    }
+
+    public function contact() {
+        $resident = Residents::find(session('logged_resident'));
+        if(!$resident) {
+            return redirect('/');
+        }
+        return view('Residents.Contacts.index', [
+            'resident' => $resident
+        ]);
+    }
 }

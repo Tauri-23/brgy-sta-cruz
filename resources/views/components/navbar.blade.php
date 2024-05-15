@@ -5,11 +5,11 @@
         </div>
         <div class="nav1-links">
             <a href="/" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
-            <a class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
-            <a class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Services</a>
-            <a class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Policies and Ordinances</a>
-            <a class="nav1-link {{$activeLink == 5 ? "active" : ""}}">About</a>
-            <a class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
+            <a href="/announcementsPublic" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
+            <a href="/servicesPublic" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Services</a>
+            <a href="/policiesPublic" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Policies and Ordinances</a>
+            <a href="/aboutPublic" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">About</a>
+            <a href="/contactPublic" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
         </div>
 
         <a href="/signin" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Signin</a>
@@ -22,11 +22,11 @@
         </div>
         <div class="nav1-links">
             <a href="/ResidentDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
-            <a class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
+            <a href="/ResidentAnnouncement" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
             <a href="/ResidentDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
-            <a class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Services</a>
+            <a href="/ResidentServices" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Services</a>
             <a href="/ResidentAbout" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">About</a>
-            <a class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
+            <a href="/ResidentContact" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
         </div>
 
         <div class="nav1-pfp">
@@ -43,7 +43,7 @@
             <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
             <a href="/AdminAnnouncements" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
             <a href="/AdminDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
-            <a class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Residents</a>
+            <a href="/AdminResidents" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Residents</a>
         </div>
 
         <a class="primary-btn-red1" href="/signout">Sign out</a>

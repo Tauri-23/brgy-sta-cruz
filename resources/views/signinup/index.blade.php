@@ -50,7 +50,7 @@
                             <label for="password-in" class="text-m1">Password</label>
                             <input type="password" class="edit-text-1 w-100" id="password-in">
                         </div>
-                        <a href="" class="text-decoration-none color-black-2">Forgot Password?</a>
+                        <div id="forgot-pass-btn" class="text-decoration-none color-black-2">Forgot Password?</div>
                     </div>
     
                     <div class="d-flex flex-direction-y gap3">
@@ -78,7 +78,64 @@
                     </div>
                 </div>
             </form>
-            
+
+
+
+            {{-- Forgot Password --}}
+            <form method="post">
+                @csrf
+                <div class="signin-box mar-bottom-1 d-none" id="forgot-password-cont-1">
+                    <div class="text-l1 fw-bold">Forgot Password</div>
+                    <div class="d-flex flex-direction-y gap3">
+                        <div>
+                            <label for="forgot-pass-email-in" class="text-m1">Email</label>
+                            <input type="text" class="edit-text-1 w-100" id="forgot-pass-email-in">
+                        </div>
+                    </div>
+        
+                    <div class="d-flex flex-direction-y gap3">
+                        <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
+                    </div>
+                </div>
+            </form>
+
+            <form method="post">
+                @csrf
+                <div class="signin-box mar-bottom-1 d-none" id="forgot-password-cont-2">
+                    <div class="text-l1 fw-bold">Forgot Password</div>
+                    <div class="d-flex flex-direction-y gap3">
+                        <div>
+                            <label for="forgot-pass-otp-in" class="text-m1">Please check your email for the 6-digit code</label>
+                            <input type="text" class="edit-text-1 w-100" id="forgot-pass-otp-in">
+                        </div>
+                    </div>
+        
+                    <div class="d-flex flex-direction-y gap3">
+                        <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
+                    </div>
+                </div>
+            </form>
+
+            <form method="post">
+                @csrf
+                <div class="signin-box mar-bottom-1 d-none" id="forgot-password-cont-3">
+                    <div class="text-l1 fw-bold">Forgot Password</div>
+                    <div class="d-flex flex-direction-y gap3">
+                        <div>
+                            <label for="new-pass-in" class="text-m1">New Password</label>
+                            <input type="password" class="edit-text-1 w-100" id="new-pass-in">
+                        </div>
+                        <div>
+                            <label for="con-pass-in" class="text-m1">Confirm Password</label>
+                            <input type="password" class="edit-text-1 w-100" id="con-pass-in">
+                        </div>
+                    </div>
+        
+                    <div class="d-flex flex-direction-y gap3">
+                        <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
+                    </div>
+                </div>
+            </form>
         </div>
 
         
@@ -92,5 +149,7 @@
 
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/login.js"></script>
+    <script src="/assets/js/forgot-password.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
