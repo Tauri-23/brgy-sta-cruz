@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\announcements;
 use App\Models\Residents;
 use Illuminate\Http\Request;
 
@@ -10,11 +11,15 @@ class ResidentDashController extends Controller
     
     public function index() {
         $resident = Residents::find(session('logged_resident'));
+        $announcements = announcements::orderBy('created_at', 'DESC')->where('featured', 0)->get();
+        $announcementsFt = announcements::orderBy('created_at', 'DESC')->where('featured', 1)->get();
         if(!$resident) {
             return redirect('/');
         }
         return view('Residents.index', [
-            'resident' => $resident
+            'resident' => $resident,
+            'announcements' => $announcements,
+            'announcementsFt' => $announcementsFt
         ]);
     }
 

@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class PublicDashController extends Controller
 {
+    public function index() {
+        $announcements = announcements::orderBy('created_at', 'DESC')->where('featured', 0)->get();
+        $announcementsFt = announcements::orderBy('created_at', 'DESC')->where('featured', 1)->get();
+        return view('index', [
+            'announcements' => $announcements,
+            'announcementsFt' => $announcementsFt
+        ]);
+    }
+
     public function announcement() {
         $announcements = announcements::where('featured', 0)->get();
         $announcementsFt = announcements::where('featured', 1)->get();

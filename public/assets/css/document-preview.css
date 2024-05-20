@@ -99,3 +99,33 @@
     text-align: center;
     overflow: hidden;
 }
+
+.brgy-clearance-for-work, .brgy-clearance-for-school, .brgy-clearance-for-others {
+    position: absolute;
+    margin-top: -60%;
+    margin-left: 18%;
+    height: 20px;
+    width: 150px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+.brgy-clearance-for-school {
+    margin-top: -55.5%;
+    margin-left: 18%;
+}
+.brgy-clearance-for-others {
+    margin-top: -51.5%;
+    margin-left: 18%;
+}
+.brgy-clearance-for-others-specify {
+    position: absolute;
+    margin-top: -49.75%;
+    margin-left: 47%;
+    height: 20px;
+    width: 150px;
+    font-size: 8px;
+    font-weight: bold;
+    overflow: hidden;
+}

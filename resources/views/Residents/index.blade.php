@@ -59,37 +59,11 @@
 
           {{-- Render Announcements here --}}
           <div class="news-cont1">
-              <div class="news-box">
-                  <div class="news-box-pfp">
-                  
-                  </div>
-                  <div class="news-box-txt">
-                      <div class="text-l2">News Title</div>
-                      <div class="text-m1">News Description</div>
-                  </div>
-              </div>
-              <div class="news-box">
-                  <div class="news-box-pfp">
-                  
-                  </div>
-                  <div class="news-box-txt">
-                      <div class="text-l2">News Title</div>
-                      <div class="text-m1">News Description</div>
-                  </div>
-              </div>
-              <div class="news-box">
-                  <div class="news-box-pfp">
-                  
-                  </div>
-                  <div class="news-box-txt">
-                      <div class="text-l2">News Title</div>
-                      <div class="text-m1">News Description</div>
-                  </div>
-              </div>
-              
+            <x-render_announcement_2 :announcements="$announcementsFt" userType="Resident"/>
+            <x-render_announcement_2 :announcements="$announcements" userType="Resident"/>              
           </div>
 
-          <a href="" class="primary-btn-blue1 text-l3 m-auto">See More</a>
+          <a href="/ResidentAnnouncement" class="primary-btn-blue1 text-l3 m-auto">See More</a>
           
       </div>
 
@@ -138,7 +112,7 @@
               </div>
           </div>
 
-          <a href="" class="primary-btn-blue1 text-l3 m-auto">See More</a>
+          <a href="/ResidentServices" class="primary-btn-blue1 text-l3 m-auto">See More</a>
       </div>
 
         

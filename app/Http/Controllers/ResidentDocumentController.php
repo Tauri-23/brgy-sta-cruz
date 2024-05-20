@@ -147,6 +147,18 @@ class ResidentDocumentController extends Controller
             $docRequestTable->blood_type = $request->bloodType;
             $docRequestTable->status = "Pending";
         }
+        elseif($request->documentType == 1) {
+            $docRequestTable->id = $document_request_id;
+            $docRequestTable->resident = session('logged_resident');
+            $docRequestTable->document_type = $request->documentType;
+            $docRequestTable->name = $request->name;
+            $docRequestTable->address = $request->address;
+            $docRequestTable->phone = $request->phone;
+            $docRequestTable->bdate = $request->bdate;
+            $docRequestTable->brgy_clearance_purpose = $request->purpose;
+            $docRequestTable->gender = $request->gender;
+            $docRequestTable->status = "Pending";
+        }
         else {
             $docRequestTable->id = $document_request_id;
             $docRequestTable->resident = session('logged_resident');

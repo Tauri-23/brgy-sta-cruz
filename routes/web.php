@@ -12,9 +12,7 @@ use App\Http\Controllers\SigninUpController;
 use App\Http\Controllers\ViewProfile;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PublicDashController::class, 'index']);
 
 // Public
 // signin singup

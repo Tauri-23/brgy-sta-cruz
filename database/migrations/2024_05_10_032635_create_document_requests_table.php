@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('phone');
             $table->date('bdate');
             $table->string('gender');
+            $table->string('brgy_clearance_purpose')->nullable();
             $table->string('reason')->nullable();
             $table->dateTime('pickup_date')->nullable();
             $table->string('status');
