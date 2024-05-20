@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('id', 6)->primary();
             $table->string('email');
             $table->string('password');
+            $table->string('admin_type');
             $table->timestamp('created_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

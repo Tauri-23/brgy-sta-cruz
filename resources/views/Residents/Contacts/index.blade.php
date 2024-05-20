@@ -33,7 +33,7 @@
         <x-modals modalType="error"/>
 
         {{-- Navs --}}
-        <x-navbar navType="resident-page" activeLink="6" pfp="{{$resident->pfp}}"/>
+        <x-navbar navType="resident-page" activeLink="7" pfp="{{$resident->pfp}}"/>
             <x-nav_small_option/>
 
         {{-- Content --}}
@@ -71,6 +71,14 @@
 
                 <img src="/assets/media/map.png" alt="" style="width: 500px; height: 500px;">
             </div>
+
+            <div class="d-flex flex-direction-y gap2 mar-top-1">
+                <div class="text-l1">Feedback</div>
+                <textarea class="w-100 edit-text-1" id="feedback-in" rows="8" style="resize: none;"></textarea>
+                <div class="d-flex justify-content-end w-100">
+                    <div class="primary-btn-blue1" id="send-feedback-btn">Send Feedback</div>
+                </div>
+            </div>
         </div>
 
 
@@ -84,5 +92,6 @@
         
     </body>
     <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/add-feedback.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

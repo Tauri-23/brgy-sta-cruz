@@ -35,7 +35,7 @@
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="d-flex justify-content-start">
-                <a href="/AdminAnnouncements" class="d-flex gap3 text-l3 text-decoration-none color-black">
+                <a href="/ResidentAnnouncement" class="d-flex gap3 text-l3 text-decoration-none color-black">
                     <i class="bi bi-chevron-left"></i>
                     Back
                 </a>

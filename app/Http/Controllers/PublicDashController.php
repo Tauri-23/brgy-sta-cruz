@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\announcements;
+use App\Models\feedbacks;
 use Illuminate\Http\Request;
 
 class PublicDashController extends Controller
@@ -21,6 +22,24 @@ class PublicDashController extends Controller
         return view('publicViewAnnouncement', [
             'announcement' => $announcement
         ]);
+    }
+
+    public function sendFeedback(Request $request) {
+        $feedback = new feedbacks;
+        $feedback->content = $request->content;
+
+        if($feedback->save()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'success'
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 200,
+                'message' => 'error'
+            ]);
+        }
     }
 
     public function services() {

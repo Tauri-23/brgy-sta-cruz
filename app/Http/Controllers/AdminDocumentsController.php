@@ -34,6 +34,16 @@ class AdminDocumentsController extends Controller
         $docReqCompleted = document_requests::where('status', "Completed")->get();
         $docReqBrgyIdsCompleted = document_request_brgy_id::where('status', "Completed")->get();
 
+        $admin = Admin::find(session('logged_Admin'));
+
+        if(!$admin) {
+            redirect('/');
+        }
+        
+        if(session('logged_Admin_Type') == "Announcement Manager") {
+            return redirect('/AdminDashboard');
+        }
+
         return view('BrgyStaff.Documents.index', [
             'docReqPending' => $docReqPending,
             'docReqBrgyIdsPending' => $docReqBrgyIdsPending,
@@ -48,8 +58,13 @@ class AdminDocumentsController extends Controller
 
     public function documentPreview($id, $type) {
         $admin = Admin::find(session('logged_Admin'));
+
         if(!$admin) {
-            return redirect('/');
+            redirect('/');
+        }
+        
+        if(session('logged_Admin_Type') == "Announcement Manager") {
+            return redirect('/AdminDashboard');
         }
 
         //brgyId or others

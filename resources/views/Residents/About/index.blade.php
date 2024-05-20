@@ -33,7 +33,7 @@
         <x-modals modalType="error"/>
 
         {{-- Navs --}}
-        <x-navbar navType="resident-page" activeLink="5" pfp="{{$resident->pfp}}"/>
+        <x-navbar navType="resident-page" activeLink="6" pfp="{{$resident->pfp}}"/>
         <x-nav_small_option/>
 
         {{-- Content --}}

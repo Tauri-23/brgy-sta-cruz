@@ -28,6 +28,16 @@ class ResidentDashController extends Controller
         ]);
     }
 
+    public function policies() {
+        $resident = Residents::find(session('logged_resident'));
+        if(!$resident) {
+            return redirect('/');
+        }
+        return view('Residents.Policies.index', [
+            'resident' => $resident
+        ]);
+    }
+
     public function services() {
         $resident = Residents::find(session('logged_resident'));
         if(!$resident) {
@@ -47,4 +57,5 @@ class ResidentDashController extends Controller
             'resident' => $resident
         ]);
     }
+    
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contracts\IGenerateFilenameService;
 use App\Contracts\IGenerateIdService;
+use App\Models\Admin;
 use App\Models\announcements;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,16 @@ class AdminAnnouncementsController extends Controller
     public function index() {
         $announcements = announcements::where('featured', 0)->get();
         $announcementsFt = announcements::where('featured', 1)->get();
+        $admin = Admin::find(session('logged_Admin'));
+
+        if(!$admin) {
+            return redirect('/');
+        }
+
+        if(session('logged_Admin_Type') == "Document Manager") {
+            return redirect('/AdminDashboard');
+        }
+
         return view('BrgyStaff.Announcement.index', [
             'announcements' => $announcements,
             'announcementsFt' => $announcementsFt
@@ -28,6 +39,15 @@ class AdminAnnouncementsController extends Controller
     }
 
     public function addAnnouncement() {
+        $admin = Admin::find(session('logged_Admin'));
+
+        if(!$admin) {
+            return redirect('/');
+        }
+
+        if(session('logged_Admin_Type') == "Document Manager") {
+            return redirect('/AdminDashboard');
+        }
         return view('BrgyStaff.Announcement.addAnnouncements');
     }
 
@@ -87,6 +107,15 @@ class AdminAnnouncementsController extends Controller
 
     public function viewAnnouncement($id) {
         $announcement = announcements::find($id);
+        $admin = Admin::find(session('logged_Admin'));
+
+        if(!$admin) {
+            return redirect('/');
+        }
+
+        if(session('logged_Admin_Type') == "Document Manager") {
+            return redirect('/AdminDashboard');
+        }
 
         return view('BrgyStaff.Announcement.viewAnnouncement', [
             'announcement' => $announcement
@@ -95,6 +124,15 @@ class AdminAnnouncementsController extends Controller
 
     public function editAnnouncement($id) {
         $announcement = announcements::find($id);
+        $admin = Admin::find(session('logged_Admin'));
+
+        if(!$admin) {
+            return redirect('/');
+        }
+
+        if(session('logged_Admin_Type') == "Document Manager") {
+            return redirect('/AdminDashboard');
+        }
 
         return view('BrgyStaff.Announcement.editAnnouncement', [
             'announcement' => $announcement

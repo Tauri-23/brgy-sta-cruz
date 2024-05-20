@@ -9,6 +9,18 @@
     width: 100%;
     height: 100%;
 }
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+@keyframes fade {
+      0% { opacity: 0; }
+      20% { opacity: .5; } /* Fade in for the first 20% of the animation duration */
+      80% { opacity: .5; } /* Hold full opacity for 60% of the animation duration */
+      100% { opacity: 0; } /* Fade out for the last 20% of the animation duration */
+}
 
 
 /* News */

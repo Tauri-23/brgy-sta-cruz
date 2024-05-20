@@ -10,6 +10,7 @@ class navbar extends Component
 {
     public $navType;
     public $activeLink;
+    public $adminType;
 
     public $pfp;
     public function __construct($navType, $activeLink, $pfp)
@@ -17,6 +18,7 @@ class navbar extends Component
         $this->navType = $navType;
         $this->activeLink = $activeLink;
         $this->pfp = $pfp;
+        $this->adminType = session('logged_Admin_Type') == null ? "null" : session('logged_Admin_Type');
     }
 
     /**

@@ -25,8 +25,9 @@
             <a href="/ResidentAnnouncement" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
             <a href="/ResidentDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
             <a href="/ResidentServices" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Services</a>
-            <a href="/ResidentAbout" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">About</a>
-            <a href="/ResidentContact" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
+            <a href="/policiesResident" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Policies and Ordinances</a>
+            <a href="/ResidentAbout" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">About</a>
+            <a href="/ResidentContact" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Contact</a>
         </div>
 
         <div class="nav1-pfp">
@@ -34,7 +35,7 @@
         </div>
     </div>
 
-@elseif($navType == "admin-page")
+@elseif($navType == "admin-page" && $adminType == "Super Admin")
     <div class="nav1">
         <div class="nav1-logo">
             <img src="/assets/media/logos/brgy_logo.png" class="position-absolute w-100 h-100" alt="logo">
@@ -44,6 +45,35 @@
             <a href="/AdminAnnouncements" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
             <a href="/AdminDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
             <a href="/AdminResidents" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Residents</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
+        </div>
+
+        <a class="primary-btn-red1" href="/signout">Sign out</a>
+    </div>
+
+@elseif($navType == "admin-page" && $adminType == "Announcement Manager")
+    <div class="nav1">
+        <div class="nav1-logo">
+            <img src="/assets/media/logos/brgy_logo.png" class="position-absolute w-100 h-100" alt="logo">
+        </div>
+        <div class="nav1-links">
+            <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
+            <a href="/AdminAnnouncements" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
+        </div>
+
+        <a class="primary-btn-red1" href="/signout">Sign out</a>
+    </div>
+
+@elseif($navType == "admin-page" && $adminType == "Document Manager")
+    <div class="nav1">
+        <div class="nav1-logo">
+            <img src="/assets/media/logos/brgy_logo.png" class="position-absolute w-100 h-100" alt="logo">
+        </div>
+        <div class="nav1-links">
+            <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
+            <a href="/AdminDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
         </div>
 
         <a class="primary-btn-red1" href="/signout">Sign out</a>

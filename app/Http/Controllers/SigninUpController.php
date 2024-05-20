@@ -78,6 +78,7 @@ class SigninUpController extends Controller
                 ]);
             }
             $request->session()->put('logged_Admin', $admin->id);
+            $request->session()->put('logged_Admin_Type', $admin->admin_type);
             return response()->json([
                 'status' => 202,
                 'message' => 'success'
@@ -197,7 +198,6 @@ class SigninUpController extends Controller
         }
         elseif($request->processType == "changePassword") {
             $resident = Residents::where('email', $request->email)->first();
-            $x = $resident->count();
             $resident->password = $request->password;
             if($resident->save()) {
                 return response()->json([

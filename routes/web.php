@@ -36,6 +36,7 @@ Route::get('/servicesPublic', [PublicDashController::class, 'services']);
 Route::get('/policiesPublic', [PublicDashController::class, 'policies']);
 Route::get('/aboutPublic', [PublicDashController::class, 'about']);
 Route::get('/contactPublic', [PublicDashController::class, 'contact']);
+Route::post('/sendFeedback', [PublicDashController::class, 'sendFeedback']);
 
 
 
@@ -48,6 +49,7 @@ Route::get('/contactPublic', [PublicDashController::class, 'contact']);
 
 // Residents
 Route::get('/ResidentDashboard', [ResidentDashController::class, 'index']);
+Route::get('/policiesResident', [ResidentDashController::class, 'policies']);
 
 // Announcements
 Route::get('/ResidentAnnouncement', [ResidentAnnouncementController::class, 'index']);
@@ -104,6 +106,10 @@ Route::post('/CompleteDocumentApplication', [AdminDocumentsController::class, 'c
 Route::get('/AdminResidents', [AdminResidentsController::class, 'index']);
 Route::get('/AdminViewResidentProfile/{id}', [AdminResidentsController::class, 'viewResidentProfile']);
 Route::post('/deleteResidentPost', [AdminResidentsController::class, 'deleteResidentPost']);
+
+// Feedbacks
+Route::get('/AdminFeedbacks', [AdminDashController::class, 'feedbacks']);
+Route::post('/clearFeedbacks', [AdminDashController::class, 'clearFeedbacks']);
 
 
 
