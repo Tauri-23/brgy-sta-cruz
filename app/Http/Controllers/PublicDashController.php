@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\announcements;
 use App\Models\feedbacks;
+use App\Models\livestream_status;
 use Illuminate\Http\Request;
 
 class PublicDashController extends Controller
@@ -11,9 +12,11 @@ class PublicDashController extends Controller
     public function index() {
         $announcements = announcements::orderBy('created_at', 'DESC')->where('featured', 0)->get();
         $announcementsFt = announcements::orderBy('created_at', 'DESC')->where('featured', 1)->get();
+        $livestream = livestream_status::find(1);
         return view('index', [
             'announcements' => $announcements,
-            'announcementsFt' => $announcementsFt
+            'announcementsFt' => $announcementsFt,
+            'livestream' => $livestream
         ]);
     }
 

@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/assets/css/nav.css">
         <link rel="stylesheet" href="/assets/css/footer.css">
         <link rel="stylesheet" href="/assets/css/landing-page.css">
+        <link rel="stylesheet" href="/assets/css/forms.css">
 
         {{-- Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -28,6 +29,14 @@
 
     </head>
     <body>
+        {{-- Modals --}}
+        <x-modals modalType="livesteam-start"/>
+        <x-modals modalType="info-yn"/>
+
+        <x-modals modalType="success"/>
+        <x-modals modalType="error"/>
+        
+
         {{-- Navs --}}
         <x-navbar navType="admin-page" activeLink="1" pfp="null"/>
 
@@ -35,17 +44,28 @@
         <div class="banner-cont">
 
             {{-- Embed Live --}}
+            @if ($livestream->is_live)
+                <div class="live-cont-main">
+                    <iframe
+                    class="live-cont"
+                    src="https://www.facebook.com/plugins/video.php?href={{$livestream->link}}&controls=1"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true"
+                    height="1000px"
+                    width="100%">
+                    </iframe>
+                    
+                    <div class="d-flex gap3">
+                        <div class="primary-btn-red1" id="stop-streaming-btn"><i class="bi bi-stop-circle"></i> Stop Streaming</div>
+                    </div>
+                </div>
+            @else
             <div class="live-cont-main">
-                <iframe
-                class="live-cont"
-                src="https://www.facebook.com/plugins/video.php?href=https://fb.watch/sckw8WmQ-R/"
-                frameborder="1"
-                scrolling="no"
-                allowfullscreen="true"
-                height="1000px"
-                width="100%">
-                </iframe>
+                <div class="primary-btn-blue1 d-flex gap3 align-items-center" id="start-streaming-btn"><i class="bi bi-cast"></i>Start Streaming</div>
             </div>
+                
+            @endif
             
 
             <div class="mySlides fade">
@@ -128,5 +148,6 @@
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/landing-page.js"></script>
+    <script src="/assets/js/livestream.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

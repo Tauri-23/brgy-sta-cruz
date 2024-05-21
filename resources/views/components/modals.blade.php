@@ -368,4 +368,32 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+{{-- Live stream --}}
+@elseif($modalType == 'livesteam-start')
+    <div class="modal1 d-none" id="livesteam-start-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 flex-direction-y">
+                <div class="text-l2 text-center">Start a livestream</div>
+
+                <div>
+                    <label for="input-link-in" class="text-l3">Livestream Link</label>
+                    <input type="text" class="edit-text-1 w-100" id="input-link-in">
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center start-live-btn">Start a live stream</div>
+            </div>
+            
+        </div>
+    </div>
+
 @endif

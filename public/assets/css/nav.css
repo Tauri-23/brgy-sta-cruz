@@ -62,7 +62,7 @@
     background: var(--white);
     border-radius: var(--border-radius2);
     filter: drop-shadow(0 0 1px var(--grey1));
-    z-index: 11;
+    z-index: 21;
 }
 .nav-small-options a {
     display: flex;

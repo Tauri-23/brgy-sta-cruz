@@ -83,6 +83,8 @@ Route::get('/ResidentAbout', [ResidentDashController::class, 'about']);
 
 // Admins
 Route::get('/AdminDashboard', [AdminDashController::class, 'index']);
+Route::post('/startLivestream', [AdminDashController::class, 'startLive']);
+Route::post('/stopLivestream', [AdminDashController::class, 'stopLive']);
 
 // Announcements
 Route::get('/AdminAnnouncements', [AdminAnnouncementsController::class, 'index']);
@@ -110,6 +112,7 @@ Route::post('/deleteResidentPost', [AdminResidentsController::class, 'deleteResi
 Route::get('/Admins', [AdminMonitorAdminsController::class, 'index']);
 Route::post('/addAdmin', [AdminMonitorAdminsController::class, 'addAdmin']);
 Route::post('/changeRoleAdmin', [AdminMonitorAdminsController::class, 'changeRoleAdmin']);
+Route::post('/delAdmin', [AdminMonitorAdminsController::class, 'delAdmin']);
 
 // Feedbacks
 Route::get('/AdminFeedbacks', [AdminDashController::class, 'feedbacks']);

@@ -39,6 +39,21 @@
         {{-- Content --}}
         <div class="banner-cont">
 
+            {{-- Embed Live --}}
+            @if ($livestream->is_live)
+                <div class="live-cont-main">
+                    <iframe
+                    class="live-cont"
+                    src="https://www.facebook.com/plugins/video.php?href={{$livestream->link}}&controls=1"
+                    frameborder="0"
+                    scrolling="no"
+                    allowfullscreen="true"
+                    height="1000px"
+                    width="100%">
+                    </iframe>
+                </div>                
+            @endif
+
             <div class="mySlides fade">
                 <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
             </div>

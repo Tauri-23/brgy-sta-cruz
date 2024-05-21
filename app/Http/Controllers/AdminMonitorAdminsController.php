@@ -84,4 +84,22 @@ class AdminMonitorAdminsController extends Controller
             ]);
         }
     }
+
+
+    public function delAdmin(Request $request) {
+        $admin = Admin::find($request->id);
+
+        if($admin->delete()) {
+            return response()->json([
+                'status' => 200,
+                'message' => 'Admin successfully changed role.'
+            ]);
+        }
+        else {
+            return response()->json([
+                'status' => 400,
+                'message' => 'Something went wrong please try again later.'
+            ]);
+        }
+    }
 }

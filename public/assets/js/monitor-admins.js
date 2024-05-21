@@ -1,6 +1,7 @@
 // Btns
 const addAdminBtn = $('#add-admin-btn');
 const changeRoleBtns = $('.change-role-btn');
+const delAdminBtns = $('.del-adm-btn');
 
 // modals
 const addAdminModal = $('#add-admin-modal');
@@ -50,31 +51,7 @@ addAdminModal.find('.add-btn').click(() => {
     formData.append('pass', passIn.val());
     formData.append('adminType', adminTypeIn.val());
 
-    $.ajax({
-        type: "POST",
-        url: "/addAdmin",
-        processData: false,
-        contentType: false,
-        data: formData,
-        success: function(response) {
-            if(response.status == 200) {
-                successModal.find('.modal1-txt-title').html('Success');
-                successModal.find('.modal-text').html(response.message);
-                showModal(successModal);
-                closeModal(successModal, true);
-            }
-            else {
-                errorModal.find('.modal1-txt-title').html('Failed.');
-                errorModal.find('.modal-text').html(response.message);
-                showModal(errorModal);
-                closeModal(errorModal, false);
-            }
-        },
-        error: function (xhr, status, error) {
-            console.error(xhr.responseText);
-            alert('error');
-        }
-    });
+    updateAdminDb(formData, "/addAdmin");
 });
 
 
@@ -103,9 +80,34 @@ changeRoleAdminModal.find('.change-admin-role-btn').click(() => {
     formData.append('id', filteredAdmins[0].id);
     formData.append('newRole', changeRoleAdminIn.val());
 
+    updateAdminDb(formData, "/changeRoleAdmin");
+});
+
+
+// Del Admin
+let adminToDelId = '';
+delAdminBtns.click(function() {
+    adminToDelId = $(this).attr('id');
+
+    infoYNModal.find('.modal1-txt-title').html('Delete Admin');
+    infoYNModal.find('.modal1-txt').html(`Do you delete admin ${adminToDelId}?`);
+    showModal(infoYNModal);
+    closeModal(infoYNModal, false);
+});
+infoYNModal.find('.yes-btn').click(() => {
+    let formData = new FormData();
+    formData.append('id', adminToDelId);
+
+    updateAdminDb(formData, "/delAdmin");
+});
+
+
+
+
+function updateAdminDb(formData, link) {
     $.ajax({
         type: "POST",
-        url: "/changeRoleAdmin",
+        url: link,
         processData: false,
         contentType: false,
         data: formData,
@@ -128,5 +130,4 @@ changeRoleAdminModal.find('.change-admin-role-btn').click(() => {
             alert('error');
         }
     });
-});
-
+}
