@@ -37,7 +37,7 @@ class AdminDocumentsController extends Controller
         $admin = Admin::find(session('logged_Admin'));
 
         if(!$admin) {
-            redirect('/');
+            return redirect('/');
         }
         
         if(session('logged_Admin_Type') == "Announcement Manager") {
@@ -60,7 +60,7 @@ class AdminDocumentsController extends Controller
         $admin = Admin::find(session('logged_Admin'));
 
         if(!$admin) {
-            redirect('/');
+            return redirect('/');
         }
         
         if(session('logged_Admin_Type') == "Announcement Manager") {

@@ -34,9 +34,15 @@
         {{-- Content --}}
         <div class="banner-cont">
 
-              <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
-              {{-- <img src="/assets/media/home-cover/2.jpg" class='banners'>
-              <img src="/assets/media/home-cover/3.jpg" class='banners'> --}}
+            <div class="mySlides fade">
+                <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/media/home-cover/2.jpg" class='banners'>
+            </div>
+            <div class="mySlides fade">
+                <img src="/assets/media/home-cover/3.jpg" class='banners'>
+            </div>  
           
         </div>
 
@@ -47,34 +53,8 @@
 
             {{-- Render Announcements here --}}
             <div class="news-cont1">
-                <div class="news-box">
-                    <div class="news-box-pfp">
-                    
-                    </div>
-                    <div class="news-box-txt">
-                        <div class="text-l2">News Title</div>
-                        <div class="text-m1">News Description</div>
-                    </div>
-                </div>
-                <div class="news-box">
-                    <div class="news-box-pfp">
-                    
-                    </div>
-                    <div class="news-box-txt">
-                        <div class="text-l2">News Title</div>
-                        <div class="text-m1">News Description</div>
-                    </div>
-                </div>
-                <div class="news-box">
-                    <div class="news-box-pfp">
-                    
-                    </div>
-                    <div class="news-box-txt">
-                        <div class="text-l2">News Title</div>
-                        <div class="text-m1">News Description</div>
-                    </div>
-                </div>
-                
+                <x-render_announcement_2 :announcements="$announcementsFt" userType="Admin"/>
+                <x-render_announcement_2 :announcements="$announcements" userType="Admin"/>              
             </div>
 
             <a href="" class="primary-btn-blue1 text-l3 m-auto">See More</a>
@@ -125,8 +105,6 @@
                     </div>
                 </div>
             </div>
-
-            <a href="" class="primary-btn-blue1 text-l3 m-auto">See More</a>
         </div>
 
         {{-- footer --}}
@@ -134,6 +112,7 @@
 
         
     </body>
-
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/landing-page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

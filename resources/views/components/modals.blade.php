@@ -292,4 +292,52 @@
     </div>
 
 
+
+
+
+{{-- Monitor Admins navs --}}
+@elseif($modalType == 'add-admin')
+    <div class="modal1 d-none" id="add-admin-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 flex-direction-y">
+                <div class="text-l2 text-center">Add Admin</div>
+
+                <div>
+                    <label for="name-in">Name</label>
+                    <input type="text" class="edit-text-1 w-100" id="name-in" placeholder="Lastname, Firstname">
+                </div>
+                
+                <div>
+                    <label for="email-in">Email</label>
+                    <input type="text" class="edit-text-1 w-100" id="email-in">
+                </div>
+
+                <div>
+                    <label for="pass-in">Password</label>
+                    <input type="password" class="edit-text-1 w-100" id="pass-in">
+                </div>
+
+                <div>
+                    <label for="con-pass-in">Confirm Password</label>
+                    <input type="password" class="edit-text-1 w-100" id="con-pass-in">
+                </div>
+
+                <div>
+                    <label for="admin-type-in">Admin Type</label>
+                    <select class="edit-text-1 w-100" id="admin-type-in">
+                        <option value="Super Admin">Super Admin</option>
+                        <option value="Document Manager">Document Manager</option>
+                        <option value="Announcement Manager">Announcement Manager</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center add-btn">Add</div>
+            </div>
+            
+        </div>
+    </div>
+
 @endif

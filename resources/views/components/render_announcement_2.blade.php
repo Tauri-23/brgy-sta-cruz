@@ -17,8 +17,18 @@
                     <div class="text-m1">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
                 </div>
             </a>
-        @else
+        @elseif($userType == "Resident")
             <a href="/residentViewAnnouncement/{{$ann->id}}" class="news-box text-decoration-none color-black-2">
+                <div class="news-box-pfp">
+                    <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                </div>
+                <div class="news-box-txt">
+                    <div class="text-l2">{{$ann->title}}</div>
+                    <div class="text-m1">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                </div>
+            </a>
+        @else
+            <a href="/viewAnnouncement/{{$ann->id}}" class="news-box text-decoration-none color-black-2">
                 <div class="news-box-pfp">
                     <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
                 </div>

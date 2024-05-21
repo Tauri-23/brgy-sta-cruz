@@ -2,7 +2,7 @@
     <div class="placeholder-illustrations">
         <div class="d-flex flex-direction-y gap2">
             <img src="/assets/media/illustrations/no-data.svg" alt="" srcset="">  
-            <div class="text-l3 text-center">No Employees</div>
+            <div class="text-l3 text-center">No Residents</div>
         </div>
     </div>
 @else

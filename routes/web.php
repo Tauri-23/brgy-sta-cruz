@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminAnnouncementsController;
 use App\Http\Controllers\AdminDashController;
 use App\Http\Controllers\AdminDocumentsController;
+use App\Http\Controllers\AdminMonitorAdminsController;
 use App\Http\Controllers\AdminResidentsController;
 use App\Http\Controllers\PublicDashController;
 use App\Http\Controllers\ResidentAnnouncementController;
@@ -104,6 +105,10 @@ Route::post('/CompleteDocumentApplication', [AdminDocumentsController::class, 'c
 Route::get('/AdminResidents', [AdminResidentsController::class, 'index']);
 Route::get('/AdminViewResidentProfile/{id}', [AdminResidentsController::class, 'viewResidentProfile']);
 Route::post('/deleteResidentPost', [AdminResidentsController::class, 'deleteResidentPost']);
+
+// Monitor ADmins
+Route::get('/Admins', [AdminMonitorAdminsController::class, 'index']);
+Route::post('/addAdmin', [AdminMonitorAdminsController::class, 'addAdmin']);
 
 // Feedbacks
 Route::get('/AdminFeedbacks', [AdminDashController::class, 'feedbacks']);
