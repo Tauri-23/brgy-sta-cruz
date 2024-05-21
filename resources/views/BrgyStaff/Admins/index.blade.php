@@ -31,6 +31,7 @@
     <body>
         {{-- Modals --}}
         <x-modals modalType="add-admin"/>
+        <x-modals modalType="change-role-admin"/>
         <x-modals modalType="info-yn"/>
 
         <x-modals modalType="success"/>
@@ -59,6 +60,9 @@
         
     </body>
     <script src="/assets/js/app.js"></script>
+    <script>
+        const admins = {!! json_encode($admins) !!};
+    </script>
     <script src="/assets/js/monitor-admins.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

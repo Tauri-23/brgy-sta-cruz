@@ -109,6 +109,7 @@ Route::post('/deleteResidentPost', [AdminResidentsController::class, 'deleteResi
 // Monitor ADmins
 Route::get('/Admins', [AdminMonitorAdminsController::class, 'index']);
 Route::post('/addAdmin', [AdminMonitorAdminsController::class, 'addAdmin']);
+Route::post('/changeRoleAdmin', [AdminMonitorAdminsController::class, 'changeRoleAdmin']);
 
 // Feedbacks
 Route::get('/AdminFeedbacks', [AdminDashController::class, 'feedbacks']);

@@ -34,6 +34,20 @@
         {{-- Content --}}
         <div class="banner-cont">
 
+            {{-- Embed Live --}}
+            <div class="live-cont-main">
+                <iframe
+                class="live-cont"
+                src="https://www.facebook.com/plugins/video.php?href=https://fb.watch/sckw8WmQ-R/"
+                frameborder="1"
+                scrolling="no"
+                allowfullscreen="true"
+                height="1000px"
+                width="100%">
+                </iframe>
+            </div>
+            
+
             <div class="mySlides fade">
                 <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
             </div>

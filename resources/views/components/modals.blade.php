@@ -326,7 +326,6 @@
                 <div>
                     <label for="admin-type-in">Admin Type</label>
                     <select class="edit-text-1 w-100" id="admin-type-in">
-                        <option value="Super Admin">Super Admin</option>
                         <option value="Document Manager">Document Manager</option>
                         <option value="Announcement Manager">Announcement Manager</option>
                     </select>
@@ -335,6 +334,35 @@
             </div>
             <div class="d-flex justify-content-center gap1 mar-top-2">
                 <div class="primary-btn-blue1 w-100 text-center add-btn">Add</div>
+            </div>
+            
+        </div>
+    </div>
+
+@elseif($modalType == 'change-role-admin')
+    <div class="modal1 d-none" id="change-role-admin-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap2 flex-direction-y">
+                <div class="text-l2 text-center">Change Role Admin</div>
+
+                <div class="d-flex gap3 text-l3">
+                    <div id="admin-name-txt">Admin Name</div>
+                    <div id="admin-id-txt">Admin Id</div>
+                </div>
+                
+
+                <div>
+                    <label for="change-admin-type-in">Admin Type</label>
+                    <select class="edit-text-1 w-100" id="change-admin-type-in">
+                        <option value="Document Manager">Document Manager</option>
+                        <option value="Announcement Manager">Announcement Manager</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center change-admin-role-btn">Change Role</div>
             </div>
             
         </div>

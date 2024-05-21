@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Contracts\ICheckEmailExistenceService;
 use App\Contracts\IGenerateFilenameService;
 use App\Contracts\IGenerateIdService;
 use App\Contracts\IGenerateOTPService;
 use App\Contracts\ISendOTPEmailService;
+use App\Services\CheckEmailExistenceService;
 use App\Services\GenerateFilenameService;
 use App\Services\GenerateIdService;
 use App\Services\GenerateOTPService;
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IGenerateFilenameService::class, GenerateFilenameService::class);
         $this->app->bind(ISendOTPEmailService::class, SendOTPEmailService::class);
         $this->app->bind(IGenerateOTPService::class, GenerateOTPService::class);
+        $this->app->bind(ICheckEmailExistenceService::class, CheckEmailExistenceService::class);
     }
 
     /**
