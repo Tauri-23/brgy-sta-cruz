@@ -30,7 +30,7 @@
     <body>
         {{-- Navs --}}
         <x-navbar navType="resident-page" activeLink="5" pfp="{{$resident->pfp}}"/>
-            <x-nav_small_option/>
+        <x-nav_small_option/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
