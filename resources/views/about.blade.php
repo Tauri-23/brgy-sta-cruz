@@ -40,9 +40,32 @@
         <div class="d-flex flex-direction-y gap1">
             <div class="banner-cont">
 
-                <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
-                {{-- <img src="/assets/media/home-cover/2.jpg" class='banners'>
-                <img src="/assets/media/home-cover/3.jpg" class='banners'> --}}
+                <div class="about-us-banner-text-cont">
+                    <div class="d-flex justify-content-center position-relative">
+                        <img src="/assets/media/logos/brgy_logo.png" style="width: 100px; height: 100px; border-radius: 100%;" alt="">
+                    </div>
+                    <div class="text-xl2 color-white text-center">Welcome to Barangay Santa Cruz!</div>
+                    <div class="text-l3 color-white text-center">
+                        Barangay Sta. Cruz is predominantly classified as a residential area until the year 2000 when small and medium-sized businesses 
+                        began to be located in the barangay. Barangay Sta. Cruz is within the jurisdiction of the First District of Makati and inclusive 
+                        in the Cluster 3 or the Northwest Cluster. The Barangay is a 10-minute drive from the Makati Central Business District. Prominent 
+                        landmarks such as Makati Medical Center, Makati Central Fire Station and the Makati Central Police Station which are accessible by foot. 
+                        Strategically located businesses, more particularly at the corner of Pasong Tamo and Vito Cruz Street, are supermarket, food chains and alike. 
+                        Found in the community are various religious and educational institutions, notable the soon to rise the home of Mapua Institute of Technology, 
+                        one of the leading universities in the country. Barangay Sta. Cruz has no wet market, however its proximity to Tejeros and Olympia that has wet markets, 
+                        are also accessible by foot and public conveniences such as jeepneys or tricycles.
+                    </div>
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="/assets/media/home-cover/brgy_hall.png" class='banners'>
+                </div>
+                <div class="mySlides fade">
+                    <img src="/assets/media/home-cover/2.jpg" class='banners'>
+                </div>
+                <div class="mySlides fade">
+                    <img src="/assets/media/home-cover/3.jpg" class='banners'>
+                </div>
             </div>
 
             <div class="content1 d-flex gap1">
@@ -97,5 +120,6 @@
         
     </body>
     <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/landing-page.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
