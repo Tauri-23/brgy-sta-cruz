@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        {{-- Brgy Clearance Cont --}}
+        {{-- Brgy Clearance Preview --}}
         <div class="document-preview-cont d-none" id="brgy-clearance-cont">
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
@@ -78,6 +78,25 @@
                     <div class="brgy-clearance-for-school">x</div>
                     <div class="brgy-clearance-for-others">x</div>
                     <div class="brgy-clearance-for-others-specify">Other requirement</div>
+                </div>
+                
+                <div class="d-flex gap3 mar-top-1">
+                    <div class="primary-btn-yellow1 w-50 text-center cancel-btn">Cancel</div>
+                    <div class="primary-btn-blue1 w-50 text-center approve-btn">Approve</div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Brgy Renovation Construction Permit Preview --}}
+        <div class="document-preview-cont d-none" id="brgy-con-ren-cont">
+            <div class="brgy-id">
+                <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
+
+                <div>
+                    <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
+                    <div class="brgy-con-ren-name">Resident Name</div>
+                    <div class="brgy-for-build">x</div>
+                    <div class="brgy-for-renovation">x</div>
                 </div>
                 
                 <div class="d-flex gap3 mar-top-1">

@@ -8,6 +8,7 @@ const infoYNs = $('.info-yn-modal');
 
 const brgyIdPrev = $('#brgy-id-cont');
 const brgyClearancePrev = $('#brgy-clearance-cont');
+const brgyConRenPrev = $('#brgy-con-ren-cont');
 
 
 const requirementsIn = $('.req-in');
@@ -301,33 +302,38 @@ else { // IF RENOVATION OR BUILDING HOUSE CLEARANCE
             return;
         }
 
-        if(documentType == 1) {
-            const brgyclearancename= $('.brgy-clearance-name');
-            const brgyclearanceaddress= $('.brgy-clearance-address');
+        const brgyConREnName= $('.brgy-con-ren-name');
+        const brgyConRenBuild = $('.brgy-for-build');
+        const brgyConRenRenovate = $('.brgy-for-renovation');
 
             
-            brgyclearancename.html(nameIn.val());
-            brgyclearanceaddress.html(addressIn.val());
+        brgyConREnName.html(nameIn.val());
 
 
-            let cancelBtn = brgyClearancePrev.find('.cancel-btn');
-            let approveBtn = brgyClearancePrev.find('.approve-btn');
-            showModal(brgyClearancePrev);
-
-            cancelBtn.click(() => {
-                closeModalNoEvent(brgyClearancePrev);
-            });
-
-            approveBtn.click(() => {
-                closeModalNoEvent(brgyClearancePrev);
-                showModal(infoYNs.eq(0));
-                closeModal(infoYNs.eq(0), false);
-            });
+        if(documentType == 3) { // Building Permit
+            brgyConRenBuild.removeClass('d-none');
+            brgyConRenRenovate.addClass('d-none');
         }
-        else {
+        else if(documentType == 4) { // Renovation Permit
+            brgyConRenBuild.addClass('d-none');
+            brgyConRenRenovate.removeClass('d-none');
+        }
+
+
+
+        let cancelBtn = brgyConRenPrev.find('.cancel-btn');
+        let approveBtn = brgyConRenPrev.find('.approve-btn');
+        showModal(brgyConRenPrev);
+
+        cancelBtn.click(() => {
+            closeModalNoEvent(brgyConRenPrev);
+        });
+
+        approveBtn.click(() => {
+            closeModalNoEvent(brgyConRenPrev);
             showModal(infoYNs.eq(0));
             closeModal(infoYNs.eq(0), false);
-        }
+        });
         
     });
 

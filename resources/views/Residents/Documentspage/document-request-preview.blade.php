@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/assets/css/nav.css">
         <link rel="stylesheet" href="/assets/css/footer.css">
         <link rel="stylesheet" href="/assets/css/document-req-prev.css">
+        <link rel="stylesheet" href="/assets/css/document-preview.css">
 
         {{-- Bootstrap --}}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -46,6 +47,61 @@
                 <i class="bi bi-x-lg text-l1 modal-close" id="modal-close-btn"></i>
                 <div class="text-l2 mar-bottom-1" id="req-name">Requirement Name</div>
                 <iframe class="pdf-frame1" id="req-file" src="/assets/media/requirements/125990224.pdf" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        {{-- Finished Product Preview --}}
+        {{-- Brgy Id Preview --}}
+        <div class="document-preview-cont d-none" id="brgy-id-cont">
+            <div class="brgy-id">
+                <div class="text-l2 text-center mar-bottom-1">Barangay I.D. Preview</div>
+
+                <div>
+                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-FRONT.png" alt="">
+                    <div class="text-m1 brgy-id-name">Resident Name</div>
+                    <img class="brgy-id-pfp" src="/assets/media/pfp/defaultPFP.png" alt="">
+                </div>
+                <div>
+                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-BACK.png" alt="">
+                    <div class="text-m3 brgy-id-address"></div>
+                    <div class="text-m3 brgy-id-phone"></div>
+                    <div class="text-m3 brgy-id-TIN">000-000-000-000</div>
+                    <div class="text-m3 brgy-id-SSS">33-7913734-2</div>
+                    <div class="text-m3 brgy-id-bdate">04 23, 2003</div>
+                    <div class="text-m3 brgy-id-place-bdate">Bicol</div>
+                    <div class="text-m3 brgy-id-blood-type">O+</div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Brgy Clearance Preview --}}
+        <div class="document-preview-cont d-none" id="brgy-clearance-cont">
+            <div class="brgy-id">
+                <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
+
+                <div>
+                    <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-FRONT-CLEAN.png" alt="">
+                    <div class="brgy-clearance-name">Resident Name</div>
+                    <div class="brgy-clearance-address">Address</div>
+                    <div class="brgy-clearance-for-work">x</div>
+                    <div class="brgy-clearance-for-school">x</div>
+                    <div class="brgy-clearance-for-others">x</div>
+                    <div class="brgy-clearance-for-others-specify">Other requirement</div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Brgy Renovation Construction Permit Preview --}}
+        <div class="document-preview-cont d-none" id="brgy-con-ren-cont">
+            <div class="brgy-id">
+                <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
+
+                <div>
+                    <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
+                    <div class="brgy-con-ren-name">Resident Name</div>
+                    <div class="brgy-for-build">x</div>
+                    <div class="brgy-for-renovation">x</div>
+                </div>
             </div>
         </div>
 
@@ -181,6 +237,10 @@
                         <div class="text-l3">{{$document->reason}}</div>
                     </div>
                 @endif
+
+                <div class="d-flex justify-content-end">
+                    <div class="primary-btn-blue1 d-flex align-items-center gap3" id="preview-document-btn"><i class="bi bi-eye"></i> See Preview</div>
+                </div>
             </div>
         </div>
 
@@ -196,9 +256,12 @@
 
     <script>
         const requirements = {!! json_encode($requirements) !!};
+        const documentType = {!! json_encode($document->document_type) !!};
+        const documentInfo = {!! json_encode($document) !!};
     </script>
 
     <script src="/assets/js/doc-req-prev.js"></script>
+    <script src="/assets/js/document-request-preview.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
