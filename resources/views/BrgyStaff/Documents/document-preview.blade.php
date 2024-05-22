@@ -222,6 +222,13 @@
                                 <div class="text-m2">Gender:</div>
                                 <div class="text-l3">{{$document->gender}}</div>
                             </div>
+
+                            @if ($document->document_type == 1)
+                                <div>
+                                    <div class="text-m2">Purpose:</div>
+                                    <div class="text-l3">{{$document->brgy_clearance_purpose}}</div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 @endif
