@@ -308,7 +308,8 @@ else { // IF RENOVATION OR BUILDING HOUSE CLEARANCE
 
             
         brgyConREnName.html(nameIn.val());
-
+        $('.brgy-clearance-name-2').html(nameIn.val());
+        $('.brgy-clearance-address-2').html(addressIn.val());
 
         if(documentType == 3) { // Building Permit
             brgyConRenBuild.removeClass('d-none');

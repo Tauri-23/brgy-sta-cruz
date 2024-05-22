@@ -96,11 +96,26 @@
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
 
-                <div>
-                    <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
-                    <div class="brgy-con-ren-name">Resident Name</div>
-                    <div class="brgy-for-build">x</div>
-                    <div class="brgy-for-renovation">x</div>
+                <div class="d-flex gap3">
+                    <div>
+                        <div class="text-l3">Front Page</div>
+                        <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-FRONT-CLEAN.png" alt="">
+                        <div class="brgy-clearance-name-2">Resident Name</div>
+                        <div class="brgy-clearance-address-2">Address</div>
+                    </div>
+    
+                    <div>
+                        <div class="text-l3">Back Page</div>
+                        <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
+                        <div class="brgy-con-ren-name">Resident Name</div>
+                        <div class="brgy-for-build">x</div>
+                        <div class="brgy-for-renovation">x</div>
+                    </div>
+                </div>
+                
+                <div class="d-flex gap3 mar-top-1">
+                    <div class="primary-btn-yellow1 w-50 text-center cancel-btn">Cancel</div>
+                    <div class="primary-btn-blue1 w-50 text-center approve-btn">Approve</div>
                 </div>
             </div>
         </div>

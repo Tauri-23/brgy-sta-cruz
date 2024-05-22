@@ -76,6 +76,8 @@ prevDocBtn.click(() => {
         const brgyConRenRenovate = $('.brgy-for-renovation');
 
         brgyConREnName.html(documentInfo.name);
+        $('.brgy-clearance-name-2').html(documentInfo.name);
+        $('.brgy-clearance-address-2').html(documentInfo.address);
 
 
         if(documentType == 3) { // Building Permit

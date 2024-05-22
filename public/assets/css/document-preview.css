@@ -136,16 +136,16 @@
 /* Contstruction and renovation */
 .brgy-con-ren-name {
     position: absolute;
-    margin-top: -75%;
-    margin-left: 42.5%;
+    margin-top: -41%;
+    margin-left: 23%;
     font-size: 10px;
     text-align: center;
     font-weight: bold; 
 }
 .brgy-for-build, .brgy-for-renovation {
     position: absolute;
-    margin-top: -59.5%;
-    margin-left: 14%;
+    margin-top: -32.7%;
+    margin-left: 7.7%;
     height: 20px;
     width: 150px;
     font-size: 12px;
@@ -154,6 +154,25 @@
     overflow: hidden;
 }
 .brgy-for-renovation {
-    margin-top: -56.5%;
-    margin-left: 14%;
+    margin-top: -31%;
+    margin-left: 7.7%;
+}
+.brgy-clearance-name-2 {
+    position: absolute;
+    margin-top: -43%;
+    margin-left: 23%;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.brgy-clearance-address-2 {
+    position: absolute;
+    margin-top: -41.5%;
+    margin-left: 18%;
+    height: 20px;
+    width: 150px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
 }
