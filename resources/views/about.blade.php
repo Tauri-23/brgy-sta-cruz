@@ -87,6 +87,97 @@
                 </div>
             </div>
 
+            <div class="content1">
+                <div class="d-flex flex-direction-y">
+                    <div class="text-xl3 bg-blue3 color-white-2 mar-bottom-1 text-center">Brgy officials</div>
+
+                    <div class="d-flex gap3">
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Kit H. Taguiang</div>
+                                <div class="text-m3 text-center">Punong Barangay - Peace & Order</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Enrico S. Evangelista</div>
+                                <div class="text-m3 text-center">Kagawad - Finance, Social Service, Infrastracture</div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">John Yland M. De Ocampo</div>
+                                <div class="text-m3 text-center">Kagawad - Livelihood</div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Maria Katrina P. Alicando</div>
+                                <div class="text-m3 text-center">Kagawad - Health and Sanitation</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap3">
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Noel Elijah Salega</div>
+                                <div class="text-m3 text-center">Kagawad - Education and Culture</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Flordeliza R. Ambrosio</div>
+                                <div class="text-m3 text-center">Kagawad - BDRRM</div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Liza Flor G. Castor</div>
+                                <div class="text-m3 text-center">Kagawad - Clean and Green</div>
+                            </div>
+                        </div>
+                        <div class="d-flex w-100 gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Nilo Jann Basada</div>
+                                <div class="text-m3 text-center">Kagawad - BADAC, Waste and Means and Co-Chairman Livelihood</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap3 justify-content-center">
+                        <div class="d-flex gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Ma. Victoria S. Abergos</div>
+                                <div class="text-m3 text-center">Treasurer</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap3">
+                            <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
+                                <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
+                                <div class="text-l3 text-center">Bayani G. Olegario</div>
+                                <div class="text-m3 text-center">Secretary</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
 
             <div class="content1">
                 <div class="long-cont d-flex flex-direction-y gap1">
