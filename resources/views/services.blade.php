@@ -31,48 +31,48 @@
         {{-- Navs --}}
         <x-navbar navType="landing-page" activeLink="3" pfp="null"/>
 
-        {{-- Content --}}
-        
+        {{-- Content --}}      
+        <div class="content1">
+            {{-- Services --}}
+            <div class="services-cont">
+                <div class="text-l1">Services</div>
 
-        {{-- Services --}}
-        <div class="services-cont">
-            <div class="text-l1">Services</div>
+                {{-- Render Services Here --}}
+                <div class="services-cont1">
+                    <div class="service-box">
+                        <div class="service-pfp">
+                            <img class="position-absolute h-100" src="/assets/media/services-img/VAW.jpg" alt="service-picture">
+                        </div>
+                        <div class="service-txt">
+                            Violence Against Women and Children
+                        </div>
+                    </div>
 
-            {{-- Render Services Here --}}
-            <div class="services-cont1">
-                <div class="service-box">
-                    <div class="service-pfp">
-                        <img class="position-absolute h-100" src="/assets/media/services-img/VAW.jpg" alt="service-picture">
+                    <div class="service-box">
+                        <div class="service-pfp">
+                            <img class="position-absolute h-100" src="/assets/media/services-img/stonino.jpg" alt="service-picture">
+                        </div>
+                        <div class="service-txt">
+                            Santo Nino
+                        </div>
                     </div>
-                    <div class="service-txt">
-                        Violence Against Women and Children
-                    </div>
-                </div>
 
-                <div class="service-box">
-                    <div class="service-pfp">
-                        <img class="position-absolute h-100" src="/assets/media/services-img/stonino.jpg" alt="service-picture">
+                    <div class="service-box">
+                        <div class="service-pfp">
+                            <img class="position-absolute h-100" src="/assets/media/services-img/4ps.png" alt="service-picture">
+                        </div>
+                        <div class="service-txt">
+                            4 P's
+                        </div>
                     </div>
-                    <div class="service-txt">
-                        Santo Nino
-                    </div>
-                </div>
 
-                <div class="service-box">
-                    <div class="service-pfp">
-                        <img class="position-absolute h-100" src="/assets/media/services-img/4ps.png" alt="service-picture">
-                    </div>
-                    <div class="service-txt">
-                        4 P's
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-pfp">
-                        <img class="position-absolute h-100" src="/assets/media/services-img/katarungan.jpg" alt="service-picture">
-                    </div>
-                    <div class="service-txt">
-                        Katarungan
+                    <div class="service-box">
+                        <div class="service-pfp">
+                            <img class="position-absolute h-100" src="/assets/media/services-img/katarungan.jpg" alt="service-picture">
+                        </div>
+                        <div class="service-txt">
+                            Katarungan
+                        </div>
                     </div>
                 </div>
             </div>

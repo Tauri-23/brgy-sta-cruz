@@ -12,6 +12,10 @@ clearFeedbackBtn.click(() => {
     closeModal(infoYNModal, false);
 });
 
+infoYNModal.find('.modal-close-btn').click(() => {
+    closeModalNoEvent(infoYNModal);
+});
+
 infoYNModal.find('.yes-btn').click(() => {
     $.ajax({
         type: "POST",

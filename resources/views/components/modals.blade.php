@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center gap1 mar-top-2">
-                <a class="primary-btn-blue2" id="modal-close-btn">No</a>
+                <a class="primary-btn-blue2 modal-close-btn" id="modal-close-btn">No</a>
                 <a class="yes-btn primary-btn-yellow1">Yes</a>
             </div>
             

@@ -68,6 +68,11 @@
 .content1 {
     width: 100%;
     padding: 50px;
+    min-height: 70vh;
+}
+.content2 {
+    width: 100%;
+    padding: 50px;
 }
 .long-cont {
     width: 100%;

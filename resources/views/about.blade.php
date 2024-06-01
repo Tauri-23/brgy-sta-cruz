@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="content1 d-flex gap1">
+            <div class="content2 d-flex gap1">
                 <div class="long-cont w-50 d-flex flex-direction-y gap1">
                     <div class="text-xl3 bg-blue3 color-white-2 text-center">Vision</div>
                     <div class="text-l3 text-center">
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="content1">
+            <div class="content2">
                 <div class="d-flex flex-direction-y">
                     <div class="text-xl3 bg-blue3 color-white-2 mar-bottom-1 text-center">Brgy officials</div>
 
@@ -179,7 +179,7 @@
             </div>
 
 
-            <div class="content1">
+            <div class="content2">
                 <div class="long-cont d-flex flex-direction-y gap1">
                     <div class="text-xl3 bg-yellow1 color-white-2 text-center">History</div>
                     <div class="text-l3 text-justify">                        

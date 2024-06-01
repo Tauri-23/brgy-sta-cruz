@@ -45,8 +45,25 @@
             </div>
 
             {{-- Render Announcement --}}
+            {{-- Featured --}}
             <div class="d-flex flex-direction-y gap2">
-                <x-resident_render_announcements :announcements="$announcementsFt"/>
+                @foreach ($announcementsFt as $ann)
+                    <a href="/residentViewAnnouncement/{{$ann->id}}" class="announcement-cont d-flex gap1 announcement-column text-decoration-none color-black">
+                        <div class="pic-square1 d-flex justify-content-center">
+                            <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                        </div>
+
+
+                        <div class="announcement-prev-text">
+                            <div class="">
+                                <small class="text-l3 fw-bold">{{$ann->title}}</small>
+                                {!!$ann->featured ? '<span class="badge mar-start-4 bg-yellow1">Featured</span>' : ''!!}
+                                <div class="text-m3">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                            </div>
+                            <div class="announcement-prev-content text-m2">{!! $ann->content !!}</div>
+                        </div>
+                    </a>
+                @endforeach
             </div>
 
             <div class="d-flex gap1">

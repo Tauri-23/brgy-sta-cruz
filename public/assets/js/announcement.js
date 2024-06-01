@@ -114,6 +114,10 @@ deleteAnnouncementBtn.click(function() {
     
 })
 
+infoYNModal.find('.modal-close-btn').click(() => {
+    closeModalNoEvent(infoYNModal);
+});
+
 infoYNModal.find('.yes-btn').click(() => {
     let formData = new FormData();
     formData.append('annId', annIdDel);
