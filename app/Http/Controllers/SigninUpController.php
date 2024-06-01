@@ -150,6 +150,15 @@ class SigninUpController extends Controller
     public function forgotPass(Request $request) {
 
         if($request->processType == "sendOTP") {
+            $isEmailExist = Residents::where('email', $request->email)->first();
+
+            if(!$isEmailExist) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => "Account with email inputted doesn't exist."
+                ]);
+            }
+
             $otp = $this->generateOTP->generate(6);
             $this->sendOTPEmail->send(new ForgotPassOTP($otp), $request->email);
 

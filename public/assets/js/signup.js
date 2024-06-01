@@ -40,6 +40,24 @@ signinBtn.click(function() {
         return;
     }
 
+    if(!isEmail(emailIn.val())) {
+        errorModal.find('.modal1-txt-title').html('Failed');
+        errorModal.find('.modal1-txt').html('Invalid Email.');
+
+        showModal(errorModal);
+        closeModal(errorModal, false);
+        return;
+    }
+
+    if(calculateAge(bdateIn.val()) < 16) {
+        errorModal.find('.modal1-txt-title').html('Failed');
+        errorModal.find('.modal1-txt').html('Minimum age requirement is 16.');
+
+        showModal(errorModal);
+        closeModal(errorModal, false);
+        return;
+    }
+
     if(passIn.val() != conPassIn.val()) {
         errorModal.find('.modal1-txt-title').html('Failed');
         errorModal.find('.modal1-txt').html("Password and Confirm password doesn't match.");

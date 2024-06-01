@@ -48,7 +48,11 @@
                         </div>
                         <div>
                             <label for="password-in" class="text-m1">Password</label>
-                            <input type="password" class="edit-text-1 w-100" id="password-in">
+                            
+                            <div class="position-relative w-100 d-flex align-items-center">
+                                <input type="password" class="edit-text-1 w-100 password-input" id="password-in">
+                                <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
+                            </div>
                         </div>
                         <div id="forgot-pass-btn" class="text-decoration-none color-black-2">Forgot Password?</div>
                     </div>
@@ -123,11 +127,19 @@
                     <div class="d-flex flex-direction-y gap3">
                         <div>
                             <label for="new-pass-in" class="text-m1">New Password</label>
-                            <input type="password" class="edit-text-1 w-100" id="new-pass-in">
+                            
+                            <div class="position-relative w-100 d-flex align-items-center">
+                                <input type="password" class="edit-text-1 w-100 password-input" id="new-pass-in">
+                                <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
+                            </div>
                         </div>
                         <div>
                             <label for="con-pass-in" class="text-m1">Confirm Password</label>
-                            <input type="password" class="edit-text-1 w-100" id="con-pass-in">
+                            
+                            <div class="position-relative w-100 d-flex align-items-center">
+                                <input type="password" class="edit-text-1 w-100 password-input" id="con-pass-in">
+                                <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
+                            </div>
                         </div>
                     </div>
         

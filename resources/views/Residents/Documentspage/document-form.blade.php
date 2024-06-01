@@ -70,14 +70,26 @@
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
 
-                <div>
-                    <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-FRONT-CLEAN.png" alt="">
-                    <div class="brgy-clearance-name">Resident Name</div>
-                    <div class="brgy-clearance-address">Address</div>
-                    <div class="brgy-clearance-for-work">x</div>
-                    <div class="brgy-clearance-for-school">x</div>
-                    <div class="brgy-clearance-for-others">x</div>
-                    <div class="brgy-clearance-for-others-specify">Other requirement</div>
+                <div class="d-flex gap3">
+                    <div>
+                        <div class="text-l3">Front Page</div>
+                        <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-FRONT-CLEAN.png" alt="">
+                        <div class="brgy-clearance-name">Resident Name</div>
+                        <div class="brgy-clearance-address">Address</div>
+                        <div class="brgy-clearance-for-work">x</div>
+                        <div class="brgy-clearance-for-school">x</div>
+                        <div class="brgy-clearance-for-others">x</div>
+                        <div class="brgy-clearance-for-others-specify">Other requirement</div>
+                    </div>
+    
+                    <div>
+                        <div class="text-l3">Back Page</div>
+                        <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-BACK-CLEAN.png" alt="">
+                        <div class="brgy-clearance-for-work2">x</div>
+                        <div class="brgy-clearance-for-school2">x</div>
+                        <div class="brgy-clearance-for-others2">x</div>
+                        <div class="brgy-clearance-for-others-specify2">Other requirement</div>
+                    </div>
                 </div>
                 
                 <div class="d-flex gap3 mar-top-1">

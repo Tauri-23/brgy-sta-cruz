@@ -155,3 +155,34 @@ $.ajaxSetup({
 $('.nav1-pfp').click(function() {
     $('#nav-small-option').toggleClass('d-none')
 });
+
+
+
+// See Password
+$('.see-pass').click(function() {
+    let input = $(this).siblings('.password-input');
+    let type = input.attr('type') === 'password' ? 'text' : 'password';
+    if (type === 'password') {
+        $(this).removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+    } else {
+        $(this).removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+    }
+    input.attr('type', type);
+})
+
+// Is Valid Email
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function calculateAge(birthDate) {
+    const today = new Date();
+    const birthDateObj = new Date(birthDate);
+    let age = today.getFullYear() - birthDateObj.getFullYear();
+    const monthDifference = today.getMonth() - birthDateObj.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDateObj.getDate())) {
+        age--;
+    }
+    return age;
+}

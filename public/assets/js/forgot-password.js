@@ -23,6 +23,15 @@ forgotPass1.find('#next-btn').click(() => {
         return;
     }
 
+    if(!isEmail(forgotPassEmailIn.val())) {
+        errorModal.find('.modal1-txt-title').html('Failed');
+        errorModal.find('.modal1-txt').html('Invalid email.');
+
+        showModal(errorModal);
+        closeModal(errorModal, false);
+        return;
+    }
+
     let formData = new FormData();
     formData.append('email', forgotPassEmailIn.val());
     formData.append('processType', 'sendOTP');
@@ -40,7 +49,7 @@ forgotPass1.find('#next-btn').click(() => {
             }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
-                errorModal.find('.modal1-txt').html("Something went wrong.");
+                errorModal.find('.modal1-txt').html(response.message);
 
                 showModal(errorModal);
                 closeModal(errorModal, false);

@@ -86,11 +86,19 @@
                     <div class="d-flex gap3 w-100">
                         <div class="flex-grow-1">
                             <label for="pass-in" class="text-m1">Password</label>
-                            <input type="password" class="edit-text-1 w-100" id="pass-in">
+                            
+                            <div class="position-relative w-100 d-flex align-items-center">
+                                <input type="password" class="edit-text-1 w-100 password-input" id="pass-in">
+                                <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
+                            </div>
                         </div>
                         <div class="flex-grow-1">
                             <label for="con-pass-in" class="text-m1">Confirm Password</label>
-                            <input type="password" class="edit-text-1 w-100" id="con-pass-in">
+                            
+                            <div class="position-relative w-100 d-flex align-items-center">
+                                <input type="password" class="edit-text-1 w-100 password-input" id="con-pass-in">
+                                <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
+                            </div>
                         </div>
                     </div>
 
