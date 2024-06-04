@@ -32,11 +32,11 @@ selectDocumentIn.change(function() {
     requestDocumentBtn.removeClass('d-none');
     const filteredRequirements = docTypesRequirements.filter(req => req.document_type == value);
     
-
-
-    filteredRequirements.forEach(req => {
-        requirementsCont.append(`<div>${req.requirement}</div>`)
-    });
+    const requirementsList = $('<ul></ul>');
+        filteredRequirements.forEach(req => {
+            requirementsList.append(`<li>${req.requirement}</li>`);
+        });
+        requirementsCont.append(requirementsList);
 });
 
 navReqDocBtn.click(() => {

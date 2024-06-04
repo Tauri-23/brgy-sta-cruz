@@ -65,9 +65,9 @@
                         @endforeach
                     </select>
 
-                    <div class="d-flex">
+                    <div class="reqssec d-flex">
                         <div>
-                            <div class="text-l3">Requirements</div>
+                            <div class="text-l2" style="font-weight:600; margin-bottom:1rem;">Requirements</div>
                             <div id="requirements-cont">
                                 
                             </div>
