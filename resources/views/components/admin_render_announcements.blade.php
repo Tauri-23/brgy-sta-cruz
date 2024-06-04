@@ -23,10 +23,10 @@
             </div>
 
             
-            <div class="d-flex flex-direction-y justify-content-center gap3">
-                <a href="/viewAnnouncement/{{$ann->id}}" class="primary-btn-yellow1 w-100 d-flex"><i class="bi bi-eye mar-end-3"></i> Preview</a>
-                <a href="editAnnouncement/{{$ann->id}}" class="primary-btn-blue1 w-100 d-flex"><i class="bi bi-pen mar-end-3"></i> Edit</a>
-                <a class="primary-btn-red1 w-100 delete-announcement-btn d-flex" data-announcement-id="{{$ann->id}}"><i class="bi bi-trash mar-end-3"></i> Delete</a>
+            <div class="buttons d-flex flex-direction-y justify-content-center gap2">
+                <a href="/viewAnnouncement/{{$ann->id}}" class="centered-btns primary-btn-yellow1 w-100 d-flex"><i class="bi bi-eye mar-end-3"></i> Preview</a>
+                <a href="editAnnouncement/{{$ann->id}}" class="centered-btns primary-btn-blue1 w-100 d-flex"><i class="bi bi-pen mar-end-3"></i> Edit</a>
+                <a class="centered-btns primary-btn-red1 w-100 delete-announcement-btn d-flex" data-announcement-id="{{$ann->id}}"><i class="bi bi-trash mar-end-3"></i> Delete</a>
 
                 <input id="announcement-id" type="hidden" value="{{$ann->id}}"/>
             </div>

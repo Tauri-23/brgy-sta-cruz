@@ -46,8 +46,8 @@
             </div>
 
             <div class="long-cont-nopadding d-flex gap1">
-                <div class="mini-nav-link active" id="pending-btn">Pending  {{$docReqPending->count() + $docReqBrgyIdsPending->count()}}</div>
-                <div class="mini-nav-link" id="FP-btn">For Pickup {{$docReqFP->count() + $docReqBrgyIdsFP->count()}}</div>
+                <div class="mini-nav-link active" id="pending-btn">Pending  ({{$docReqPending->count() + $docReqBrgyIdsPending->count()}})</div>
+                <div class="mini-nav-link" id="FP-btn">For Pickup ({{$docReqFP->count() + $docReqBrgyIdsFP->count()}})</div>
                 <div class="mini-nav-link" id="rejected-btn">Rejected</div>
                 <div class="mini-nav-link" id="completed-btn">Completed</div>
             </div>

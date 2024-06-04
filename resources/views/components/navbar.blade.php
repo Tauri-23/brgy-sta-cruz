@@ -12,7 +12,7 @@
             <a href="/contactPublic" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Contact</a>
         </div>
 
-        <a href="/signin" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Signin</a>
+        <a href="/signin" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Sign In</a>
     </div>
 
 @elseif($navType == "resident-page")
@@ -49,7 +49,7 @@
             <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Feedbacks</a>
         </div>
 
-        <a class="primary-btn-red1" href="/signout">Sign out</a>
+        <a class="primary-btn-red1" href="/signout">Sign Out</a>
     </div>
 
 @elseif($navType == "admin-page" && $adminType == "Announcement Manager")
@@ -63,7 +63,7 @@
             <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
         </div>
 
-        <a class="primary-btn-red1" href="/signout">Sign out</a>
+        <a class="primary-btn-red1" href="/signout">Sign Out</a>
     </div>
 
 @elseif($navType == "admin-page" && $adminType == "Document Manager")
@@ -77,6 +77,6 @@
             <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
         </div>
 
-        <a class="primary-btn-red1" href="/signout">Sign out</a>
+        <a class="primary-btn-red1" href="/signout">Sign Out</a>
     </div>
 @endif

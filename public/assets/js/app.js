@@ -53,7 +53,7 @@ function showModal(modal) {
 function closeModal(modal, reload) {
     let closeBtn = modal.find('#modal-close-btn');
     $(document).on('click', function (event) {
-        if (event.target === modal[0] || event.target === closeBtn[0] || event.target === closeBtn[1]) {
+        if (event.target === closeBtn[0] || event.target === closeBtn[1]) {
             modal.addClass('d-none');
             $('body').css('overflow', 'auto');
             if (reload) {

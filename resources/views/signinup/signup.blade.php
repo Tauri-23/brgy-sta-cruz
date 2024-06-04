@@ -40,7 +40,7 @@
 
             {{-- Signup --}}
             <div class="signup-box mar-bottom-1" id="signup-box">
-                <div class="text-l1 fw-bold">Signup</div>
+                <div class="text-l1 fw-bold">Sign Up</div>
                 <div class="d-flex flex-direction-y gap3">
 
                     <div class="d-flex gap3 w-100">
@@ -111,8 +111,8 @@
                 </div>
 
                 <div class="d-flex flex-direction-y gap3">
-                    <div class="primary-btn-blue1 text-m1 text-center" id="signup-btn1">Signup</div>
-                    <div class="text-center">Already have an account? <a class="text-decoration-none fw-bold color-black-2" href="/signin">Signin</a></div>
+                    <div class="primary-btn-blue1 text-m1 text-center" id="signup-btn1">Sign Up</div>
+                    <div class="text-center">Already have an account? <a class="text-decoration-none fw-bold color-black-2" href="/signin">Sign In</a></div>
                 </div>
             </div>
 

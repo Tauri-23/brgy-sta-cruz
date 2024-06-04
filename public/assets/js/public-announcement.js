@@ -7,7 +7,7 @@ const announcementCont = $('#announcement-cont');
 const resultAnnouncementCont = $('#result-announcement-cont');
 
 searchIn.on('input',function() {
-    let value = $(this).val();
+    let value = $(this).val().toLowerCase();
 
     if(isEmptyOrSpaces(value)) {
         announcementCont.removeClass('d-none');
@@ -43,7 +43,7 @@ function processSearch(value) {
     
     resultAnnouncementCont.html('');
 
-    if(filteredAnnouncement !== null) {
+    if(filteredAnnouncement.length > 0) {
         filteredAnnouncement.forEach(function(element) {
             let featuredBadge = element.featured ? '<span class="badge mar-start-4 bg-yellow1">Featured</span>' : '';
             let createdAtFormatted = moment(element.created_at).format('MMM D, YYYY h:mm a');

@@ -53,6 +53,7 @@
         {{-- Finished Product Preview --}}
         {{-- Brgy Id Preview --}}
         <div class="document-preview-cont d-none" id="brgy-id-cont">
+                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Barangay I.D. Preview</div>
 
@@ -76,6 +77,7 @@
 
         {{-- Brgy Clearance Preview --}}
         <div class="document-preview-cont d-none" id="brgy-clearance-cont">
+                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
                 <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
@@ -106,8 +108,10 @@
 
         {{-- Brgy Renovation Construction Permit Preview --}}
         <div class="document-preview-cont d-none" id="brgy-con-ren-cont">
+                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
             <div class="brgy-id">
                 <div class="text-l2 text-center mar-bottom-1">Document Preview</div>
+                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
 
                 <div class="d-flex gap3">
                     <div>
@@ -127,8 +131,6 @@
                 </div>
                 
                 <div class="d-flex gap3 mar-top-1">
-                    <div class="primary-btn-yellow1 w-50 text-center cancel-btn">Cancel</div>
-                    <div class="primary-btn-blue1 w-50 text-center approve-btn">Approve</div>
                 </div>
             </div>
         </div>

@@ -40,7 +40,7 @@
             <form method="post" autocomplete="off">
                 @csrf
                 <div class="signin-box mar-bottom-1" id="signin-cont">
-                    <div class="text-l1 fw-bold">Signin</div>
+                    <div class="text-l1 fw-bold">Sign In</div>
                     <div class="d-flex flex-direction-y gap3">
                         <div>
                             <label for="email-in" class="text-m1">Email</label>
@@ -58,8 +58,8 @@
                     </div>
     
                     <div class="d-flex flex-direction-y gap3">
-                        <div class="primary-btn-blue1 text-m1 text-center" id="signin-btn">Signin</div>
-                        <a href="/signup" class="secondary-btn-blue1 text-m1 text-center color-blue1">Signup</a>
+                        <div class="primary-btn-blue1 text-m1 text-center" id="signin-btn">Sign In</div>
+                        <a href="/signup" class="secondary-btn-blue1 text-m1 text-center color-blue1">Sign Up</a>
                     </div>
                 </div>
             </form>
