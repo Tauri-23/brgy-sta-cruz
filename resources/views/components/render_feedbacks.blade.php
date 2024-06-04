@@ -1,7 +1,7 @@
 @if ($feedbacks->count() < 1) 
     <div class="placeholder-illustrations">
         <div class="d-flex flex-direction-y gap2">
-            <img src="/assets/media/illustrations/no-data.svg" alt="" srcset="">  
+            <img src="/assets/media/illustrations/empty1.svg" alt="" srcset="">  
             <div class="text-l3 text-center">No Feedbacks</div>
         </div>
     </div>

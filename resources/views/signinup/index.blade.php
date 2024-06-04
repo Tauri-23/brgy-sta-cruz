@@ -36,8 +36,8 @@
         <x-navbar navType="landing-page" activeLink="7" pfp="null"/>
 
         {{-- Content --}}
-        <div class="d-flex justify-content-center padding-top-1 padding-bottom-1">
-            <form method="post">
+        <div class="content1 d-flex justify-content-center padding-top-1 padding-bottom-1">
+            <form method="post" autocomplete="off">
                 @csrf
                 <div class="signin-box mar-bottom-1" id="signin-cont">
                     <div class="text-l1 fw-bold">Signin</div>

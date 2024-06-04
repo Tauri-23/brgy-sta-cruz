@@ -27,7 +27,7 @@ class EditEmailOTP extends Mailable
      */
     public function build()
     {
-        return $this->from('pembopayapp@gmail.com', 'Barangay Sta Cruz')
+        return $this->from('brgystacruz.test@gmail.com', 'Barangay Sta Cruz')
         ->subject('Changing your email address.')
         ->view('OTP.change-email-OTP')
         ->with([
