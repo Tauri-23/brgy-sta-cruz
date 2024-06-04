@@ -70,7 +70,7 @@
 
             <div class="content2 d-flex gap1">
                 <div class="long-cont w-50 d-flex flex-direction-y gap1">
-                    <div class="text-xl3 bg-blue3 color-white-2 text-center">Vision</div>
+                    <div class="text-xl3 bg-blue3 color-white-2 text-center">VISION</div>
                     <div class="text-l3 text-center">
                         We envision Barangay Santa Cruz to be a disaster resilient, healthy, peace loving community with aspirations centered in the trust in God, 
                         whose officials and citizens have great value for education and cultural heritage and working together for the economic uplifment of a 
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="long-cont w-50 d-flex flex-direction-y gap1">
-                    <div class="text-xl3 bg-blue3 color-white-2 text-center">Mission</div>
+                    <div class="text-xl3 bg-blue3 color-white-2 text-center">MISSION</div>
                     <div class="text-l3 text-center">
                         Guided by its Vision, Barangay Santa Cruz will continue to endeavor towards disaster preparedness, 
                         generate opportunities for economic improvement, continue to instill appreciation for education and culture 
@@ -89,10 +89,10 @@
 
             <div class="content2">
                 <div class="d-flex flex-direction-y">
-                    <div class="text-xl3 bg-blue3 color-white-2 mar-bottom-1 text-center">Brgy officials</div>
+                    <div class="text-xl3 bg-blue3 color-white-2 mar-bottom-1 text-center">BARANGAY OFFICIALS</div>
 
                     <div class="d-flex gap3">
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Kit H. Taguiang</div>
@@ -100,21 +100,21 @@
                             </div>
                         </div>
 
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Enrico S. Evangelista</div>
                                 <div class="text-m3 text-center">Kagawad - Finance, Social Service, Infrastracture</div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">John Yland M. De Ocampo</div>
                                 <div class="text-m3 text-center">Kagawad - Livelihood</div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Maria Katrina P. Alicando</div>
@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="d-flex gap3">
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Noel Elijah Salega</div>
@@ -132,21 +132,21 @@
                             </div>
                         </div>
 
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Flordeliza R. Ambrosio</div>
                                 <div class="text-m3 text-center">Kagawad - BDRRM</div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Liza Flor G. Castor</div>
                                 <div class="text-m3 text-center">Kagawad - Clean and Green</div>
                             </div>
                         </div>
-                        <div class="d-flex w-100 gap3">
+                        <div class="d-flex w-100 centered-ofc gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
                                 <div class="text-l3 text-center">Nilo Jann Basada</div>
@@ -155,7 +155,7 @@
                         </div>
                     </div>
 
-                    <div class="d-flex gap3 justify-content-center">
+                    <div class="d-flex gap-ofc justify-content-center">
                         <div class="d-flex gap3">
                             <div class="d-flex flex-direction-y align-items-center" style="padding: 50px">
                                 <img src="/assets/media/icons/official_icon.png" style="width: 100px; height: 100px;">
@@ -181,7 +181,7 @@
 
             <div class="content2">
                 <div class="long-cont d-flex flex-direction-y gap1">
-                    <div class="text-xl3 bg-yellow1 color-white-2 text-center">History</div>
+                    <div class="text-xl3 bg-yellow1 color-white-2 text-center">HISTORY</div>
                     <div class="text-l3 text-justify">                        
                         Barangay Sta. Cruz was formerly a part of Brgy. Olympia and was known as Sitio Paltok (a higher place). 
                         This place was once a vast rice field that most of its early inhabitants were farmers. 

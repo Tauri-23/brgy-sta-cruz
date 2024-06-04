@@ -10,31 +10,35 @@
         @if ($userType == "Public")
             <a href="/publicViewAnnouncement/{{$ann->id}}" class="news-box text-decoration-none color-black-2">
                 <div class="news-box-pfp">
-                    <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                    <img class="position-absolute w-100 h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
                 </div>
                 <div class="news-box-txt">
                     <div class="text-l2">{{$ann->title}}</div>
-                    <div class="text-m1">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                    <div class="text-m3">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}
+                    <div class="announcement-prev-content text-m2">{!! $ann->content !!}</div>
+                </div>
                 </div>
             </a>
         @elseif($userType == "Resident")
             <a href="/residentViewAnnouncement/{{$ann->id}}" class="news-box text-decoration-none color-black-2">
                 <div class="news-box-pfp">
-                    <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                    <img class="position-absolute w-100 h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
                 </div>
                 <div class="news-box-txt">
                     <div class="text-l2">{{$ann->title}}</div>
-                    <div class="text-m1">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                    <div class="text-m3">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                    <div class="announcement-prev-content text-m2">{!! $ann->content !!}</div>
                 </div>
             </a>
         @else
             <a href="/viewAnnouncement/{{$ann->id}}" class="news-box text-decoration-none color-black-2">
                 <div class="news-box-pfp">
-                    <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                    <img class="position-absolute w-100 h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
                 </div>
                 <div class="news-box-txt">
                     <div class="text-l2">{{$ann->title}}</div>
-                    <div class="text-m1">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                    <div class="text-m3">{{\Carbon\Carbon::parse($ann->created_at)->format('M d, Y g:i a')}}</div>
+                    <div class="news-content announcement-prev-content text-m2">{!! $ann->content !!}</div>
                 </div>
             </a>
         @endif

@@ -271,7 +271,9 @@ body, html {
     right: 0;
 }
 
-
+.gap-ofc{
+    gap: 135px;
+}
 .gap1 {
     gap: 30px;
 }

@@ -48,9 +48,9 @@
             {{-- Featured --}}
             <div class="d-flex flex-direction-y gap2">
                 @foreach ($announcementsFt as $ann)
-                    <a href="/residentViewAnnouncement/{{$ann->id}}" class="announcement-cont d-flex gap1 announcement-column text-decoration-none color-black">
+                    <a href="/residentViewAnnouncement/{{$ann->id}}" class="featured announcement-cont d-flex gap1 announcement-column text-decoration-none color-black">
                         <div class="pic-square1 d-flex justify-content-center">
-                            <img class="position-absolute h-100" src="/assets/media/announcement/{{$ann->pic}}"/>
+                            <img class="position-absolute h-100 w-100" src="/assets/media/announcement/{{$ann->pic}}"/>
                         </div>
 
 
