@@ -94,14 +94,14 @@ function createResident(formData) {
         success: function(response) {
             if(response.status == 200) {
                 successModal.find('.modal1-txt-title').html('Success');
-                successModal.find('.modal1-txt').html('Account successfuly created');
+                successModal.find('.modal1-txt').html(response.message);
 
                 showModal(successModal);
                 closeModalRedirect(successModal, '/signin');
             }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
-                errorModal.find('.modal1-txt').html('Something went wrong.');
+                errorModal.find('.modal1-txt').html(response.message);
 
                 showModal(errorModal);
                 closeModal(errorModal, false);

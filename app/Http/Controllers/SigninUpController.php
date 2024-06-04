@@ -38,6 +38,15 @@ class SigninUpController extends Controller
     }
 
     public function signUpPost(Request $request) {
+        $isEmailExist = Residents::where('email', $request->email)->first();
+
+        if($isEmailExist) {
+            return response()->json([
+                'status' => 400,
+                'message' => 'Email already exist.'
+            ]);
+        }
+
         $resident = new Residents;
         $resident->id = $this->generateId->generate(Residents::class, 6);
         $resident->firstname = $request->fname;
@@ -54,7 +63,7 @@ class SigninUpController extends Controller
         if($resident->save()) {
             return response()->json([
                 'status' => 200,
-                'message' => 'Success'
+                'message' => 'Account created successfully.'
             ]);
         }
         else {

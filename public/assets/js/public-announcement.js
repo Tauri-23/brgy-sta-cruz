@@ -39,6 +39,8 @@ sortIn.change(function() {
 function processSearch(value) {
     const filteredAnnouncement = announcements.filter(ann => ann.title.toLowerCase().includes(value));
 
+    console.log(filteredAnnouncement);
+    
     resultAnnouncementCont.html('');
 
     if(filteredAnnouncement !== null) {
