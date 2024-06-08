@@ -136,7 +136,7 @@
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="text-l1">Request Form {{$documentType->document_name}}</div>
 
-            <div class="long-cont d-flex flex-direction-y gap2">
+            <div class="long-cont d-flex flex-direction-y gap2 d-none" id="form-cont">
                 <div class="d-flex d-flex gap2">
                     {{-- Info --}}
                     @if ($documentType->id == 2)
@@ -218,6 +218,48 @@
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="primary-btn-blue1" id="submit-form">Submit</div>
+                </div>
+            </div>
+
+            {{-- Brgy Id Preview --}}
+            <div class="long-cont" id="brgy-id-prev-cont">
+                <div class="brgy-id m-auto d-flex flex-direction-y justify-content-between">
+                    {{-- Header --}}
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <img class="brgy-id-logo" src="/assets/media/logos/brgy_logo.png" alt="">
+                        </div>
+                        <div class="text-center">
+                            <div class="text-l2 fw-bold">City of <span class="makati-brgy-id">Makati</span></div>
+                            <div class="brgy-id-head-txt-2">METROPOLITAN MANILA, PHILIPPINES</div>
+                            <div class="text-m3 fw-bold">BARANGAY STA. CRUZ</div>
+                        </div>
+                        <div>
+                            <img class="brgy-id-logo" src="/assets/media/logos/makati.png" alt="">
+                        </div>
+                    </div>
+
+                    {{-- Body --}}
+                    <div class="d-flex gap2">
+                        <div class="brgy-id-pic-box">
+                            <img class="brgy-id-pfp" src="/assets/media/pfp/defaultPFP.png" alt="">
+                        </div>
+
+                        <div class="d-flex flex-direction-y justify-content-between flex-grow-1">
+                            <div class="txt-m3 text-center fw-bold">This is to certify that</div>
+                            <div class="brgy-id-name-box text-center">
+                                Airich Jay Diawan
+                            </div>
+                            <div class="text-m3 text-center fw-bold" style="margin: -25px 0 0 0;">
+                                (name)
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {{-- Footer --}}
+                    <div class="d-flex"></div>
+
                 </div>
             </div>
 
