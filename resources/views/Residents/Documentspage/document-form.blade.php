@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-BACK.png" alt="">
-                    <div class="text-m3 brgy-id-address"></div>
+                    {{-- <div class="text-m3 brgy-id-address"></div> --}}
                     <div class="text-m3 brgy-id-phone"></div>
                     <div class="text-m3 brgy-id-TIN">000-000-000-000</div>
                     <div class="text-m3 brgy-id-SSS">33-7913734-2</div>
@@ -223,44 +223,16 @@
 
             {{-- Brgy Id Preview --}}
             <div class="long-cont" id="brgy-id-prev-cont">
-                <div class="brgy-id m-auto d-flex flex-direction-y justify-content-between">
-                    {{-- Header --}}
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <img class="brgy-id-logo" src="/assets/media/logos/brgy_logo.png" alt="">
-                        </div>
-                        <div class="text-center">
-                            <div class="text-l2 fw-bold">City of <span class="makati-brgy-id">Makati</span></div>
-                            <div class="brgy-id-head-txt-2">METROPOLITAN MANILA, PHILIPPINES</div>
-                            <div class="text-m3 fw-bold">BARANGAY STA. CRUZ</div>
-                        </div>
-                        <div>
-                            <img class="brgy-id-logo" src="/assets/media/logos/makati.png" alt="">
-                        </div>
-                    </div>
+                {{-- Front --}}
+                <div class="text-l3 text-center mar-bottom-3 fw-bold"> Front Page</div>
+                <x-barangay_id_prev position="front" brgyCapt="Kit H. Taguiang"/>
+                
 
-                    {{-- Body --}}
-                    <div class="d-flex gap2">
-                        <div class="brgy-id-pic-box">
-                            <img class="brgy-id-pfp" src="/assets/media/pfp/defaultPFP.png" alt="">
-                        </div>
-
-                        <div class="d-flex flex-direction-y justify-content-between flex-grow-1">
-                            <div class="txt-m3 text-center fw-bold">This is to certify that</div>
-                            <div class="brgy-id-name-box text-center">
-                                Airich Jay Diawan
-                            </div>
-                            <div class="text-m3 text-center fw-bold" style="margin: -25px 0 0 0;">
-                                (name)
-                            </div>
-                        </div>
-
-                    </div>
-
-                    {{-- Footer --}}
-                    <div class="d-flex"></div>
-
-                </div>
+                
+                {{-- Back --}}
+                <div class="text-l3 mar-top-1 text-center mar-bottom-3 fw-bold"> Back Page</div>
+                <x-barangay_id_prev position="Back" brgyCapt="Kit H. Taguiang"/>
+                
             </div>
 
             

@@ -205,12 +205,15 @@
 
 
 /* Brgy ID */
-.brgy-id {
+.brgy-id, .brgy-id-back {
     width: calc(86mm * 1.5);
     height:  calc(54mm * 1.5);
-    background: #99d1dc;
+    background-image: linear-gradient(to right, #99d1dc , #4c8cc7);
     border-radius: 0;
     padding: 10px calc(86mm * .2);
+}
+.brgy-id-back {
+    padding: 20px;
 }
 .makati-brgy-id {
     color: #eec621;
@@ -223,19 +226,25 @@
     font-size: 8px;
     font-weight: bold;
 }
-.brgy-id-pic-box {
-    width: 85px;
+.brgy-id-pic-box, .brgy-id-thumb-box {
+    width: 90px;
     height: 90px;
     background-color: var(--white);
     border: 1px solid black;
     overflow: hidden;
 }
+.brgy-id-thumb-box {
+    border: none;
+}
 .brgy-id-pfp {
-    width: 85px;
+    width: 90px;
     height: 90px;
 }
-.brgy-id-name-box {
+.brgy-id-input-box {
     width: 100%;
     border-bottom: 1.5px solid black;
     height: 25px;
+}
+.brgy-outline-yellow {
+    filter: drop-shadow(0 0 1px #eec621);
 }
