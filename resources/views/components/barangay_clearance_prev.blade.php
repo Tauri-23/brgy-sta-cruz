@@ -11,7 +11,7 @@ FRONT:
 
 --}}
 
-<div class="brgy-clearance">
+<div class="brgy-clearance" id="brgy-clearance-canvas">
     {{-- Header --}}
     <div class="d-flex justify-content-between">
         <div>

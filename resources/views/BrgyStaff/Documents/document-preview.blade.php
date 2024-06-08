@@ -61,29 +61,6 @@
         </div>
 
         {{-- Finished Product Preview --}}
-        {{-- Brgy Id Preview --}}
-        <div class="modal1 document-preview-cont d-none" id="brgy-id-cont">
-            <div class="brgy-id">
-                <div class="text-l2 text-center mar-bottom-1">Barangay I.D. Preview</div>
-                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
-
-                <div>
-                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-FRONT.png" alt="">
-                    <div class="text-m1 brgy-id-name">Resident Name</div>
-                    <img class="brgy-id-pfp" src="/assets/media/pfp/defaultPFP.png" alt="">
-                </div>
-                <div>
-                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-BACK.png" alt="">
-                    <div class="text-m3 brgy-id-address"></div>
-                    <div class="text-m3 brgy-id-phone"></div>
-                    <div class="text-m3 brgy-id-TIN">000-000-000-000</div>
-                    <div class="text-m3 brgy-id-SSS">33-7913734-2</div>
-                    <div class="text-m3 brgy-id-bdate">04 23, 2003</div>
-                    <div class="text-m3 brgy-id-place-bdate">Bicol</div>
-                    <div class="text-m3 brgy-id-blood-type">O+</div>
-                </div>
-            </div>
-        </div>
 
         {{-- Brgy Clearance Preview --}}
         <div class="modal1 document-preview-cont d-none" id="brgy-clearance-cont">
@@ -149,7 +126,7 @@
             </div>
 
 
-            <div class="long-cont d-flex flex-direction-y gap1">
+            <div class="long-cont d-flex flex-direction-y gap1" id="request-cont">
                 {{-- Title --}}
                 <div class="text-l1">
                     {{$document->document_types()->first()->document_name}} 
@@ -272,9 +249,8 @@
                 <div class="mar-top-1 d-flex gap3 justify-content-end">
                     <div class="primary-btn-blue1 d-flex align-items-center gap3" id="preview-document-btn"><i class="bi bi-eye"></i> See Preview</div>
                     @if ($document->status == 'Pending')
-                            <div class="primary-btn-red1" id="reject-btn">Reject</div>
-                            <div class="primary-btn-blue1" id="approve-btn">Approve</div>                        
-                        </div>
+                        <div class="primary-btn-red1" id="reject-btn">Reject</div>
+                        <div class="primary-btn-blue1" id="approve-btn">Approve</div>
                     @elseif($document->status == 'Rejected')
                         <div class="text-l2">Reason: </div>
                         <div class="text-l3">{{$document->reason}}</div>
@@ -286,7 +262,36 @@
             </div>
 
             
-            
+            {{-- Brgy Id Preview --}}
+            <div class="long-cont d-none" id="brgy-id-prev-cont">
+                {{-- Front --}}
+                <div class="text-l3 text-center mar-bottom-3 fw-bold"> Front Page</div>
+                <x-barangay_id_prev position="front" brgyCapt="Kit H. Taguiang"/>
+
+                {{-- Back --}}
+                <div class="text-l3 mar-top-1 text-center mar-bottom-3 fw-bold"> Back Page</div>
+                <x-barangay_id_prev position="Back" brgyCapt="Kit H. Taguiang"/>
+
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center close-btn">Close</div>
+                    <div class="primary-btn-blue1 text-center" id="print-brgy-id-btn">Print</div>
+                </div>      
+            </div>
+
+            {{-- Brgy Clearance Prev --}}
+            <div class="long-cont d-none" id="brgy-clearance-prev-cont">
+                
+                <div class="d-flex justify-content-center">
+                    {{-- Front --}}
+                    <div>
+                        <x-barangay_clearance_prev/>
+                    </div>
+                </div>
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center close-btn">Close</div>
+                    <div class="primary-btn-blue1 text-center" id="print-brgy-cert-btn">Print</div>
+                </div>      
+            </div>
         </div>
 
         
@@ -309,6 +314,8 @@
 
     <script src="/assets/js/doc-req-prev.js"></script>
     <script src="/assets/js/document-request-preview.js"></script>
+    <script src="/assets/js/printThis.js"></script>
+    <script src="/assets/js/print-document-prev.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
