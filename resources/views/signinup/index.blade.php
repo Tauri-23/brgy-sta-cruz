@@ -44,13 +44,13 @@
                     <div class="d-flex flex-direction-y gap3">
                         <div>
                             <label for="email-in" class="text-m1">Email</label>
-                            <input type="text" class="edit-text-1 w-100" id="email-in">
+                            <input data-lpignore="true" autocomplete="off" type="text" class="edit-text-1 w-100" id="email-in">
                         </div>
                         <div>
                             <label for="password-in" class="text-m1">Password</label>
                             
                             <div class="position-relative w-100 d-flex align-items-center">
-                                <input type="password" class="edit-text-1 w-100 password-input" id="password-in">
+                                <input data-lpignore="true" autocomplete="off" type="password" class="edit-text-1 w-100 password-input" id="password-in">
                                 <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
                             </div>
                         </div>
