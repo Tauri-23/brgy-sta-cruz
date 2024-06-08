@@ -6,13 +6,16 @@ const successModal = $('#success-modal');
 const errorModal = $('#error-modal');
 const infoYNs = $('.info-yn-modal');
 
-const brgyIdPrev = $('#brgy-id-cont');
+const brgyIdPrev = $('#brgy-id-prev-cont');
 const brgyClearancePrev = $('#brgy-clearance-cont');
 const brgyConRenPrev = $('#brgy-con-ren-cont');
 
 
 const requirementsIn = $('.req-in');
 const requirementsFor = $('.requirements-for');
+
+
+const formCont = $('#form-cont');
 
 
 
@@ -28,15 +31,15 @@ if(documentType == 2) { // If Brgy Id
 
 
     // Preview
-    const brgyidname = $('.brgy-id-name');
-    const brgyidpfp = $('.brgy-id-pfp');
-    const brgyidaddress = $('.brgy-id-address');
-    const brgyidphone = $('.brgy-id-phone');
-    const brgyidTIN = $('.brgy-id-TIN');
-    const brgyidSSS = $('.brgy-id-SSS');
-    const brgyidbdate = $('.brgy-id-bdate');
-    const brgyidplacebdate = $('.brgy-id-place-bdate');
-    const brgyidbloodtype = $('.brgy-id-blood-type');
+    const brgyidname = $('#brgy-id-name');
+    const brgyidpfp = $('#brgy-id-pic');
+    const brgyidaddress = $('#brgy-id-address');
+    const brgyidphone = $('#brgy-id-contact');
+    const brgyidTIN = $('#brgy-id-tin');
+    const brgyidSSS = $('#brgy-id-sss');
+    const brgyidbdate = $('#brgy-id-bdate');
+    const brgyidplacebdate = $('#brgy-id-bdate-place');
+    const brgyidbloodtype = $('#brgy-id-blood');
 
     formatPhoneNumIn(phoneIn);
 
@@ -85,14 +88,17 @@ if(documentType == 2) { // If Brgy Id
 
         let cancelBtn = brgyIdPrev.find('.cancel-btn');
         let approveBtn = brgyIdPrev.find('.approve-btn');
-        showModal(brgyIdPrev);
+
+        formCont.addClass('d-none');
+        brgyIdPrev.removeClass('d-none');
+
 
         cancelBtn.click(() => {
-            closeModalNoEvent(brgyIdPrev);
+            formCont.removeClass('d-none');
+            brgyIdPrev.addClass('d-none');
         });
 
         approveBtn.click(() => {
-            closeModalNoEvent(brgyIdPrev);
             showModal(infoYNs.eq(0));
             closeModal(infoYNs.eq(0), false);
         });
