@@ -97,7 +97,7 @@
                     @if ($document->status == "Pending")
                         <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
                     @elseif($document->status == "For Pickup")
-                        <span class="badge bg-yellow1 mar-start-1">{{$document->status}}</span>
+                        <span class="badge bg-yellow1 mar-start-1">On Process</span>
                     @elseif($document->status == "Completed")
                         <span class="badge bg-green1 mar-start-1">{{$document->status}}</span>
                     @else

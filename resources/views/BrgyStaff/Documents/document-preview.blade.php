@@ -133,7 +133,7 @@
                     @if ($document->status == "Pending")
                         <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
                     @elseif($document->status == "For Pickup")
-                        <span class="badge bg-yellow1 mar-start-1">{{$document->status}}</span>
+                        <span class="badge bg-yellow1 mar-start-1">On Process</span>
                     @elseif($document->status == "Completed")
                         <span class="badge bg-green1 mar-start-1">{{$document->status}}</span>
                     @else
@@ -264,13 +264,17 @@
             
             {{-- Brgy Id Preview --}}
             <div class="long-cont d-none" id="brgy-id-prev-cont">
-                {{-- Front --}}
-                <div class="text-l3 text-center mar-bottom-3 fw-bold"> Front Page</div>
-                <x-barangay_id_prev position="front" brgyCapt="Kit H. Taguiang"/>
 
-                {{-- Back --}}
-                <div class="text-l3 mar-top-1 text-center mar-bottom-3 fw-bold"> Back Page</div>
-                <x-barangay_id_prev position="Back" brgyCapt="Kit H. Taguiang"/>
+                <div id="brgy-id-canvas">
+                    {{-- Front --}}
+                    <div class="text-l3 text-center mar-bottom-3 fw-bold"> Front Page</div>
+                    <x-barangay_id_prev position="front" brgyCapt="Kit H. Taguiang"/>
+
+                    {{-- Back --}}
+                    <div class="text-l3 mar-top-1 text-center mar-bottom-3 fw-bold"> Back Page</div>
+                    <x-barangay_id_prev position="Back" brgyCapt="Kit H. Taguiang"/>
+                </div>
+                
 
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center close-btn">Close</div>
