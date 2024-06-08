@@ -18,54 +18,44 @@ prevDocBtn.click(() => {
         const brgyClearanceForOthers = $('#brgy-clearance-for-others');
         const brgyClearanceForOthersSpecify = $('#brgy-clearance-others-in');
 
-        const brgyClearanceForWork2 = $('.brgy-clearance-for-work2');
-        const brgyClearanceForSchool2 = $('.brgy-clearance-for-school2');
-        const brgyClearanceForOthers2 = $('.brgy-clearance-for-others2');
-        const brgyClearanceForOthersSpecify2 = $('.brgy-clearance-for-others-specify2');
+        // const brgyClearanceForWork2 = $('.brgy-clearance-for-work2');
+        // const brgyClearanceForSchool2 = $('.brgy-clearance-for-school2');
+        // const brgyClearanceForOthers2 = $('.brgy-clearance-for-others2');
+        // const brgyClearanceForOthersSpecify2 = $('.brgy-clearance-for-others-specify2');
 
         brgyclearancename.html(documentInfo.name);
         brgyclearanceaddress.html(documentInfo.address);
 
         if(documentInfo.brgy_clearance_purpose == "Employement") {
-            brgyClearanceForWork.removeClass('d-none');
-            brgyClearanceForSchool.addClass('d-none');
-            brgyClearanceForOthers.addClass('d-none');
-            brgyClearanceForOthersSpecify.addClass('d-none');
+            brgyClearanceForWork.html('X');
+            brgyClearanceForSchool.html('');
+            brgyClearanceForOthers.html('');
+            brgyClearanceForOthersSpecify.html('');
 
-            brgyClearanceForWork2.removeClass('d-none');
-            brgyClearanceForSchool2.addClass('d-none');
-            brgyClearanceForOthers2.addClass('d-none');
-            brgyClearanceForOthersSpecify2.addClass('d-none');
+            // brgyClearanceForWork2.removeClass('d-none');
+            // brgyClearanceForSchool2.addClass('d-none');
+            // brgyClearanceForOthers2.addClass('d-none');
+            // brgyClearanceForOthersSpecify2.addClass('d-none');
         }
         else if(documentInfo.brgy_clearance_purpose == "School Requirement") {
-            brgyClearanceForWork.addClass('d-none');
-            brgyClearanceForSchool.removeClass('d-none');
-            brgyClearanceForOthers.addClass('d-none');
-            brgyClearanceForOthersSpecify.addClass('d-none');
-
-            brgyClearanceForWork2.addClass('d-none');
-            brgyClearanceForSchool2.removeClass('d-none');
-            brgyClearanceForOthers2.addClass('d-none');
-            brgyClearanceForOthersSpecify2.addClass('d-none');
+            brgyClearanceForWork.html('');
+            brgyClearanceForSchool.html('X');
+            brgyClearanceForOthers.html('');
+            brgyClearanceForOthersSpecify.html('');
         }
         else {
+            brgyClearanceForWork.html('');
+            brgyClearanceForSchool.html('');
+            brgyClearanceForOthers.html('X');
             brgyClearanceForOthersSpecify.html(documentInfo.brgy_clearance_purpose);
-
-            brgyClearanceForWork.addClass('d-none');
-            brgyClearanceForSchool.addClass('d-none');
-            brgyClearanceForOthers.removeClass('d-none');
-            brgyClearanceForOthersSpecify.removeClass('d-none');
-
-            brgyClearanceForOthersSpecify2.html(documentInfo.brgy_clearance_purpose);
-
-            brgyClearanceForWork2.addClass('d-none');
-            brgyClearanceForSchool2.addClass('d-none');
-            brgyClearanceForOthers2.removeClass('d-none');
-            brgyClearanceForOthersSpecify2.removeClass('d-none');
         }
+        requestPrevCont.addClass('d-none');
+        brgyClearancePrev.removeClass('d-none');
 
-        showModal(brgyClearancePrev);
-        closeModal(brgyClearancePrev, false);
+        brgyClearancePrev.find('.close-btn').click(() => {
+            requestPrevCont.removeClass('d-none');
+            brgyClearancePrev.addClass('d-none');
+        });
     }
     else if(documentType == 2) { // BRGY ID
         console.log(documentInfo);
