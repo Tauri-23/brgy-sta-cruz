@@ -1,7 +1,8 @@
 // Modals
-const brgyIdPreview = $('#brgy-id-cont');
-const brgyClearancePrev = $('#brgy-clearance-cont');
+const brgyIdPreview = $('#brgy-id-prev-cont');
+const brgyClearancePrev = $('#brgy-clearance-prev-cont');
 const brgyConRenoPrev = $('#brgy-con-ren-cont');
+const requestPrevCont = $('#request-cont');
 
 // Btns
 const prevDocBtn = $('#preview-document-btn');
@@ -10,12 +11,12 @@ const prevDocBtn = $('#preview-document-btn');
 prevDocBtn.click(() => {
     if(documentType == 1) { // Brgy CLEARANCE
         console.log(documentInfo);
-        const brgyclearancename = $('.brgy-clearance-name');
-        const brgyclearanceaddress = $('.brgy-clearance-address');
-        const brgyClearanceForWork = $('.brgy-clearance-for-work');
-        const brgyClearanceForSchool = $('.brgy-clearance-for-school');
-        const brgyClearanceForOthers = $('.brgy-clearance-for-others');
-        const brgyClearanceForOthersSpecify = $('.brgy-clearance-for-others-specify');
+        const brgyclearancename = $('#brgy-clearance-name');
+        const brgyclearanceaddress = $('#brgy-clearance-address');
+        const brgyClearanceForWork = $('#brgy-clearance-for-emp');
+        const brgyClearanceForSchool = $('#brgy-clearance-for-school-req');
+        const brgyClearanceForOthers = $('#brgy-clearance-for-others');
+        const brgyClearanceForOthersSpecify = $('#brgy-clearance-others-in');
 
         const brgyClearanceForWork2 = $('.brgy-clearance-for-work2');
         const brgyClearanceForSchool2 = $('.brgy-clearance-for-school2');
@@ -69,15 +70,16 @@ prevDocBtn.click(() => {
     else if(documentType == 2) { // BRGY ID
         console.log(documentInfo);
         console.log(requirements);
-        const brgyidname = $('.brgy-id-name');
-        const brgyidpfp = $('.brgy-id-pfp');
-        const brgyidaddress = $('.brgy-id-address');
-        const brgyidphone = $('.brgy-id-phone');
-        const brgyidTIN = $('.brgy-id-TIN');
-        const brgyidSSS = $('.brgy-id-SSS');
-        const brgyidbdate = $('.brgy-id-bdate');
-        const brgyidplacebdate = $('.brgy-id-place-bdate');
-        const brgyidbloodtype = $('.brgy-id-blood-type');
+
+        const brgyidname = $('#brgy-id-name');
+        const brgyidpfp = $('#brgy-id-pic');
+        const brgyidaddress = $('#brgy-id-address');
+        const brgyidphone = $('#brgy-id-contact');
+        const brgyidTIN = $('#brgy-id-tin');
+        const brgyidSSS = $('#brgy-id-sss');
+        const brgyidbdate = $('#brgy-id-bdate');
+        const brgyidplacebdate = $('#brgy-id-bdate-place');
+        const brgyidbloodtype = $('#brgy-id-blood');
 
         brgyidname.html(documentInfo.name);
         brgyidpfp.attr('src', `/assets/media/requirements/${requirements[0].filename}`);
@@ -89,8 +91,13 @@ prevDocBtn.click(() => {
         brgyidplacebdate.html(documentInfo.bdate_place);
         brgyidbloodtype.html(documentInfo.blood_type);
 
-        showModal(brgyIdPreview);
-        closeModal(brgyIdPreview, false);
+        requestPrevCont.addClass('d-none');
+        brgyIdPreview.removeClass('d-none');
+
+        brgyIdPreview.find('.close-btn').click(() => {
+            requestPrevCont.removeClass('d-none');
+            brgyIdPreview.addClass('d-none');
+        });
     }
     else { // Brgy Build and Renovation
         const brgyConREnName= $('.brgy-con-ren-name');

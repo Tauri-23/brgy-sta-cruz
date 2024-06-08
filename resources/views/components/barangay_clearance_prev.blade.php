@@ -2,8 +2,12 @@
 INPUTS:
 
 FRONT:
-#brgy-id-pic
-#brgy-id-name
+#brgy-clearance-name
+#brgy-clearance-address
+#brgy-clearance-for-emp
+#brgy-clearance-for-school-req
+#brgy-clearance-for-others
+#brgy-clearance-others-in
 
 --}}
 
@@ -79,8 +83,8 @@ FRONT:
         </div>
         <div class="flex-grow-1 d-flex flex-direction-y justify-content-between">
             <div class="text-l1 fw-bold text-center">CLEARANCE</div>
-            <div class="text-center text-m1 fw-bold mar-top-1" id="brgy-clearance-name">Airich Jay Diawan</div>
-            <div class="text-center text-m1 fw-bold" id="brgy-clearance-address">Makati City</div>
+            <div class="text-center text-m1 fw-bold mar-top-1" id="brgy-clearance-name"></div>
+            <div class="text-center text-m1 fw-bold" id="brgy-clearance-address"></div>
 
             <div class="d-flex flex-direction-y gap3 m-auto">
                 <div class="d-flex gap3">
@@ -96,13 +100,13 @@ FRONT:
                     <div class="text-m3">Employement Purpose (Local Employement)</div>
                 </div>
                 <div class="d-flex gap3">
-                    <div class="brgy-clearance-check-bx" id="brgy-clearance-for-school-req">X</div>
+                    <div class="brgy-clearance-check-bx" id="brgy-clearance-for-school-req"></div>
                     <div class="text-m3">School Requirement</div>
                 </div>
                 <div class="d-flex gap3">
                     <div class="brgy-clearance-check-bx" id="brgy-clearance-for-others"></div>
                     <div class="text-m3">Others (specify)</div>
-                    <div class="brgy-id-input-box flex-shrink-1 w-50 fw-bold" id="brgy-clearance-others-in"></div>
+                    <div class="brgy-id-input-box flex-shrink-1 w-50 fw-bold text-center" id="brgy-clearance-others-in"></div>
                 </div>
                 <div class="text-m3 fw-bold">ISSUED THIS</div>
             </div>

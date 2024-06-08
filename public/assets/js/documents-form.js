@@ -7,7 +7,7 @@ const errorModal = $('#error-modal');
 const infoYNs = $('.info-yn-modal');
 
 const brgyIdPrev = $('#brgy-id-prev-cont');
-const brgyClearancePrev = $('#brgy-clearance-cont');
+const brgyClearancePrev = $('#brgy-clearance-prev-cont');
 const brgyConRenPrev = $('#brgy-con-ren-cont');
 
 
@@ -137,13 +137,15 @@ if(documentType == 2) { // If Brgy Id
 
 }
 else if(documentType == 1) { // IF BRGY CLEARANCE
-    const nameIn = $('#name-in');
-    const addressIn = $('#address-in');
-    const phoneIn = $('#phone-in');
-    const bdateIn = $('#bdate-in');
-    const genderIn = $('#gender-in');
-    const purposeIn = $('#purpose-in');
-    const otherPurposeIn = $('#other-purpose-in');
+    const nameIn = $('#name-in'); 
+    const addressIn = $('#address-in'); 
+    const phoneIn = $('#phone-in'); 
+    const bdateIn = $('#bdate-in'); 
+    const genderIn = $('#gender-in'); 
+    const purposeIn = $('#purpose-in'); 
+    const otherPurposeIn = $('#other-purpose-in'); 
+
+    
 
     let purpose = 'Employement';
 
@@ -195,13 +197,13 @@ else if(documentType == 1) { // IF BRGY CLEARANCE
             return;
         }
 
-        const brgyclearancename = $('.brgy-clearance-name');
-        const brgyclearanceaddress = $('.brgy-clearance-address');
-        const brgyClearanceForWork = $('.brgy-clearance-for-work');
-        const brgyClearanceForSchool = $('.brgy-clearance-for-school');
-        const brgyClearanceForOthers = $('.brgy-clearance-for-others');
-        const brgyClearanceForOthersSpecify = $('.brgy-clearance-for-others-specify');
-
+        const brgyclearancename = $('#brgy-clearance-name');
+        const brgyclearanceaddress = $('#brgy-clearance-address');
+        const brgyClearanceForWork = $('#brgy-clearance-for-emp');
+        const brgyClearanceForSchool = $('#brgy-clearance-for-school-req');
+        const brgyClearanceForOthers = $('#brgy-clearance-for-others');
+        const brgyClearanceForOthersSpecify = $('#brgy-clearance-others-in');  
+        
         const brgyClearanceForWork2 = $('.brgy-clearance-for-work2');
         const brgyClearanceForSchool2 = $('.brgy-clearance-for-school2');
         const brgyClearanceForOthers2 = $('.brgy-clearance-for-others2');
@@ -211,54 +213,38 @@ else if(documentType == 1) { // IF BRGY CLEARANCE
         brgyclearancename.html(nameIn.val());
         brgyclearanceaddress.html(addressIn.val());
         if(purpose == "Employement") { //Check what will check depending on purpose
-            brgyClearanceForWork.removeClass('d-none');
-            brgyClearanceForSchool.addClass('d-none');
-            brgyClearanceForOthers.addClass('d-none');
-            brgyClearanceForOthersSpecify.addClass('d-none');
 
-            brgyClearanceForWork2.removeClass('d-none');
-            brgyClearanceForSchool2.addClass('d-none');
-            brgyClearanceForOthers2.addClass('d-none');
-            brgyClearanceForOthersSpecify2.addClass('d-none');
+            brgyClearanceForWork.html('X');
+            brgyClearanceForSchool.html();
+            brgyClearanceForOthers.html();
+            brgyClearanceForOthersSpecify.html();
+
         }
         else if(purpose == "School Requirement") {
-            brgyClearanceForWork.addClass('d-none');
-            brgyClearanceForSchool.removeClass('d-none');
-            brgyClearanceForOthers.addClass('d-none');
-            brgyClearanceForOthersSpecify.addClass('d-none');
-
-            brgyClearanceForWork2.addClass('d-none');
-            brgyClearanceForSchool2.removeClass('d-none');
-            brgyClearanceForOthers2.addClass('d-none');
-            brgyClearanceForOthersSpecify2.addClass('d-none');
+            brgyClearanceForWork.html();
+            brgyClearanceForSchool.html('X');
+            brgyClearanceForOthers.html();
+            brgyClearanceForOthersSpecify.html();
         }
         else {
+            brgyClearanceForWork.html();
+            brgyClearanceForSchool.html();
+            brgyClearanceForOthers.html('X');
             brgyClearanceForOthersSpecify.html(otherPurposeIn.val());
-
-            brgyClearanceForWork.addClass('d-none');
-            brgyClearanceForSchool.addClass('d-none');
-            brgyClearanceForOthers.removeClass('d-none');
-            brgyClearanceForOthersSpecify.removeClass('d-none');
-
-            brgyClearanceForOthersSpecify2.html(otherPurposeIn.val());
-
-            brgyClearanceForWork2.addClass('d-none');
-            brgyClearanceForSchool2.addClass('d-none');
-            brgyClearanceForOthers2.removeClass('d-none');
-            brgyClearanceForOthersSpecify2.removeClass('d-none');
         }
 
 
         let cancelBtn = brgyClearancePrev.find('.cancel-btn');
         let approveBtn = brgyClearancePrev.find('.approve-btn');
-        showModal(brgyClearancePrev);
+        formCont.addClass('d-none');
+        brgyClearancePrev.removeClass('d-none');
 
         cancelBtn.click(() => {
-            closeModalNoEvent(brgyClearancePrev);
+            formCont.removeClass('d-none');
+            brgyClearancePrev.addClass('d-none');
         });
 
         approveBtn.click(() => {
-            closeModalNoEvent(brgyClearancePrev);
             showModal(infoYNs.eq(0));
             closeModal(infoYNs.eq(0), false);
         });        

@@ -50,62 +50,6 @@
             </div>
         </div>
 
-        {{-- Finished Product Preview --}}
-        {{-- Brgy Id Preview --}}
-        <div class="document-preview-cont d-none" id="brgy-id-cont">
-                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
-            <div class="brgy-id">
-                <div class="text-l2 text-center mar-bottom-1">Barangay I.D. Preview</div>
-
-                <div>
-                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-FRONT.png" alt="">
-                    <div class="text-m1 brgy-id-name">Resident Name</div>
-                    <img class="brgy-id-pfp" src="/assets/media/pfp/defaultPFP.png" alt="">
-                </div>
-                <div>
-                    <img class="brgy-id-front" src="/assets/media/documents/BRGY-ID-BACK.png" alt="">
-                    <div class="text-m3 brgy-id-address"></div>
-                    <div class="text-m3 brgy-id-phone"></div>
-                    <div class="text-m3 brgy-id-TIN">000-000-000-000</div>
-                    <div class="text-m3 brgy-id-SSS">33-7913734-2</div>
-                    <div class="text-m3 brgy-id-bdate">04 23, 2003</div>
-                    <div class="text-m3 brgy-id-place-bdate">Bicol</div>
-                    <div class="text-m3 brgy-id-blood-type">O+</div>
-                </div>
-            </div>
-        </div>
-
-        {{-- Brgy Clearance Preview --}}
-        <div class="document-preview-cont d-none" id="brgy-clearance-cont">
-                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
-            <div class="brgy-id">
-                <div class="text-l2 text-center mar-bottom-1">Barangay Clearance Preview</div>
-                <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
-
-                <div class="d-flex gap3">
-                    <div>
-                        <div class="text-l3">Front Page</div>
-                        <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-FRONT-CLEAN.png" alt="">
-                        <div class="brgy-clearance-name">Resident Name</div>
-                        <div class="brgy-clearance-address">Address</div>
-                        <div class="brgy-clearance-for-work">x</div>
-                        <div class="brgy-clearance-for-school">x</div>
-                        <div class="brgy-clearance-for-others">x</div>
-                        <div class="brgy-clearance-for-others-specify">Other requirement</div>
-                    </div>
-    
-                    <div>
-                        <div class="text-l3">Back Page</div>
-                        <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-BACK-CLEAN.png" alt="">
-                        <div class="brgy-clearance-for-work2">x</div>
-                        <div class="brgy-clearance-for-school2">x</div>
-                        <div class="brgy-clearance-for-others2">x</div>
-                        <div class="brgy-clearance-for-others-specify2">Other requirement</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         {{-- Brgy Renovation Construction Permit Preview --}}
         <div class="document-preview-cont d-none" id="brgy-con-ren-cont">
                 <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
@@ -146,7 +90,7 @@
             </div>
 
 
-            <div class="long-cont d-flex flex-direction-y gap1">
+            <div class="long-cont d-flex flex-direction-y gap1" id="request-cont">
                 {{-- Title --}}
                 <div class="text-l1">
                     {{$document->document_types()->first()->document_name}} 
@@ -272,6 +216,40 @@
                     <div class="primary-btn-blue1 d-flex align-items-center gap3" id="preview-document-btn"><i class="bi bi-eye"></i> See Preview</div>
                 </div>
             </div>
+
+            {{-- Brgy Id Preview --}}
+            <div class="long-cont d-none" id="brgy-id-prev-cont">
+                {{-- Front --}}
+                <div class="text-l3 text-center mar-bottom-3 fw-bold"> Front Page</div>
+                <x-barangay_id_prev position="front" brgyCapt="Kit H. Taguiang"/>
+
+                {{-- Back --}}
+                <div class="text-l3 mar-top-1 text-center mar-bottom-3 fw-bold"> Back Page</div>
+                <x-barangay_id_prev position="Back" brgyCapt="Kit H. Taguiang"/>
+
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center close-btn">Close</div>
+                </div>      
+            </div>
+
+
+            {{-- Brgy Clearance Prev --}}
+            <div class="long-cont d-none" id="brgy-clearance-prev-cont">
+                
+                <div class="d-flex justify-content-center">
+                    {{-- Front --}}
+                    <div>
+                        <x-barangay_clearance_prev/>
+                    </div>
+                </div>
+
+                
+
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center close-btn">Close</div>
+                </div>      
+            </div>
+            
         </div>
 
         
