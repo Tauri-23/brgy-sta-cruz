@@ -115,6 +115,38 @@ function formatPhoneNumIn(phoneNum) {
     });
 }
 
+function onlyNumericInput(textInput) {
+    $(textInput).on('keypress', function(event) {
+        var charCode = event.which ? event.which : event.keyCode;
+        // Allow: backspace, delete, tab, escape, enter
+        if ($.inArray(charCode, [8, 9, 27, 13]) !== -1 ||
+            // Allow: Ctrl/cmd+A
+            (charCode == 65 && (event.ctrlKey === true || event.metaKey === true)) ||
+            // Allow: home, end, left, right, down, up
+            (charCode >= 35 && charCode <= 40)) {
+            // let it happen, don't do anything
+            return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if (charCode < 48 || charCode > 57) {
+            event.preventDefault();
+        }
+    });
+
+    $(textInput).on('paste', function(event) {
+        // Prevent paste event if it contains non-numeric characters
+        var pasteData = event.originalEvent.clipboardData.getData('text');
+        if (!/^\d*$/.test(pasteData)) {
+            event.preventDefault();
+        }
+    });
+
+    $(textInput).on('input', function() {
+        // Ensure that the input value only contains numeric characters
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+}
+
 
 // Files
 function checkFileType(fileName) {

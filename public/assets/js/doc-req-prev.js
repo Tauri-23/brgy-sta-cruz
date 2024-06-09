@@ -4,6 +4,7 @@ const pdfReqModal = $('#requirement-modal-pdf');
 const rejectRequestModal = $('#admin-reject-req-modal');
 const approveRequestModal = $('#admin-accept-req-modal');
 
+const adminCompleteReqModal = $('#admin-complete-req-modal');
 const infoYNModals = $('.info-yn-modal');
 const successModal = $('#success-modal');
 const errorModal = $('#error-modal');
@@ -153,17 +154,32 @@ infoYNModals.eq(1).find('.yes-btn').click(() => {
 })
 
 // Mark as complete
+const referenceNumIn = adminCompleteReqModal.find('#reference-in');
+const completeReqBtn = adminCompleteReqModal.find('.complete-btn');
 markASCompleteBtn.click(() => {
+
+    onlyNumericInput(referenceNumIn);
+    showModal(adminCompleteReqModal);
+    closeModal(adminCompleteReqModal, false);
+    
+})
+
+completeReqBtn.click(() => {
+    if(isEmptyOrSpaces(referenceNumIn.val())) {
+        return;
+    }
+
     infoYNModals.eq(2).find('.modal1-txt-title').html('Complete Application?');
     infoYNModals.eq(2).find('.modal1-txt').html('Do you want to mark as complete this application?');
     showModal(infoYNModals.eq(2));
     closeModal(infoYNModals.eq(2));
-})
+});
 
 infoYNModals.eq(2).find('.yes-btn').click(() => {
     
     let formData = new FormData();
     formData.append('type', type);
+    formData.append('refNum', referenceNumIn.val());
     formData.append('id', reqId);
 
     $.ajax({

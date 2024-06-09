@@ -22,6 +22,10 @@ const infoYNModal = $('#info-yn-modal');
 addAnnouncementBtn.click(() => {
     if(isEmptyOrSpaces(announcementTitleIn.val()) || isEmptyOrSpaces(announcementContent.html())
         || isEmptyOrSpaces(announcementPic.val())) {
+        errorModal.find('.modal1-txt-title').html('Failed.');
+        errorModal.find('.modal-text').html('Please input all the fields.');
+        showModal(errorModal);
+        closeModal(errorModal, false);
         return;
     }
 
@@ -60,6 +64,10 @@ addAnnouncementBtn.click(() => {
 
 editAnnouncementBtn.click(() => {
     if(isEmptyOrSpaces(announcementTitleIn.val()) || isEmptyOrSpaces(announcementContent.html())) {
+        errorModal.find('.modal1-txt-title').html('Failed.');
+        errorModal.find('.modal-text').html('Please input all the fields.');
+        showModal(errorModal);
+        closeModal(errorModal, false);
         return;
     }
 

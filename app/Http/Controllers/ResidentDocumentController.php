@@ -13,6 +13,7 @@ use App\Models\document_requirements_brgy_id;
 use App\Models\document_type_requirements;
 use App\Models\document_types;
 use App\Models\Residents;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ResidentDocumentController extends Controller
@@ -116,12 +117,42 @@ class ResidentDocumentController extends Controller
 
     public function requestDocumentPost(Request $request) {
         if($request->documentType == 2) {
+            $threeMonthsAgo = Carbon::now()->subMonths(3);
+
+            $isDocumentAlreadyReq = document_request_brgy_id::where('resident', session('logged_resident'))
+                ->where('document_type', $request->documentType)
+                ->where('created_at', '>=', $threeMonthsAgo)
+                ->whereNot('status', 'Rejected')
+                ->exists();
+
             $docRequestTable = new document_request_brgy_id;
             $document_request_id = $this->generateId->generate(document_request_brgy_id::class, 6);
+
+            if($isDocumentAlreadyReq) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'You can only request this document every 3 months.'
+                ]);
+            }
         }
         else {
+            $threeMonthsAgo = Carbon::now()->subMonths(3);
+
+            $isDocumentAlreadyReq = document_requests::where('resident', session('logged_resident'))
+                ->where('document_type', $request->documentType)
+                ->where('created_at', '>=', $threeMonthsAgo)
+                ->whereNot('status', 'Rejected')
+                ->exists();
+
             $docRequestTable = new document_requests;
             $document_request_id = $this->generateId->generate(document_requests::class, 6);
+
+            if($isDocumentAlreadyReq) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'You can only request this document every 3 months.'
+                ]);
+            }
         }
 
 

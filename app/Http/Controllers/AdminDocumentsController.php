@@ -128,6 +128,7 @@ class AdminDocumentsController extends Controller
         $document = $request->type == "brgyId" ? document_request_brgy_id::find($request->id) : document_requests::find($request->id);
 
         $document->status = "Completed";
+        $document->reference_num = $request->refNum;
 
         if($document->save()) {
             return response()->json([

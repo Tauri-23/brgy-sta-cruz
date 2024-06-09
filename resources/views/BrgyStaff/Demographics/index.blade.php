@@ -54,14 +54,14 @@
                 </div>
 
                 <div class="long-cont">
-                    <div class="text-l2">0</div>
+                    <div class="text-l2">{{$totalCompletedReq}}</div>
                     <div class="text-end text-m1">
                         Total Completed
                     </div>
                 </div>
 
                 <div class="long-cont">
-                    <div class="text-l2">0</div>
+                    <div class="text-l2">{{$totalRejectedReq}}</div>
                     <div class="text-end text-m1">
                         Total Rejected
                     </div>

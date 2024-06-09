@@ -108,6 +108,12 @@
 
                 {{-- Information --}}
                 @if ($type == "brgyId")
+                    @if ($document->status == "Completed")
+                        <div class="mar-bottom-1">
+                            <div class="text-m2">Reference Number:</div>
+                            <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
+                        </div>                        
+                    @endif
                     <div class="d-flex w-100 mar-top-1">
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>
@@ -148,6 +154,12 @@
                         </div>
                     </div>
                 @else
+                    @if ($document->status == "Completed")
+                        <div class="mar-bottom-1">
+                            <div class="text-m2">Reference Number:</div>
+                            <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
+                        </div>                        
+                    @endif
                     <div class="d-flex w-100 mar-top-1">
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>

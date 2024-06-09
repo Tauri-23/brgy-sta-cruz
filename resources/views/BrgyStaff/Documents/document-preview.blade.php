@@ -31,6 +31,7 @@
     </head>
     <body>
         {{-- modals --}}
+        <x-modals modalType="admin-complete-req"/>
         <x-modals modalType="admin-reject-req"/>
         <x-modals modalType="admin-accept-req"/>
         <x-modals modalType="info-yn"/>
@@ -117,7 +118,7 @@
         </div>
 
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="3" pfp="null"/>
+        <x-navbar navType="admin-page" activeLink="4" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
@@ -144,6 +145,12 @@
 
                 {{-- Information --}}
                 @if ($type == "brgyId")
+                    @if ($document->status == "Completed")
+                        <div class="mar-bottom-1">
+                            <div class="text-m2">Reference Number:</div>
+                            <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
+                        </div>                        
+                    @endif
                     <div class="d-flex w-100 mar-top-1">
                         <div class="d-flex w-50 flex-direction-y gap3">
                             <div>
@@ -184,8 +191,14 @@
                         </div>
                     </div>
                 @else
+                    @if ($document->status == "Completed")
+                        <div class="mar-bottom-1">
+                            <div class="text-m2">Reference Number:</div>
+                            <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
+                        </div>                        
+                    @endif
                     <div class="d-flex w-100 mar-top-1">
-                        <div class="d-flex w-50 flex-direction-y gap3">
+                        <div class="d-flex w-50 flex-direction-y gap3">                            
                             <div>
                                 <div class="text-m2">Name:</div>
                                 <div class="text-l3">{{$document->name}}</div>

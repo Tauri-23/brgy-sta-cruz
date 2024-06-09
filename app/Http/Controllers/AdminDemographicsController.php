@@ -33,10 +33,15 @@ class AdminDemographicsController extends Controller
         $brgyIdReqToday = document_request_brgy_id::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
         $brgyReqToday = document_requests::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
 
-        $brgyIdReqToday = document_request_brgy_id::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
-        $brgyReqToday = document_requests::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
+        $brgyIdReqCompleted = document_request_brgy_id::where('status', 'Completed')->count();
+        $brgyReqCompleted= document_requests::where('status', 'Completed')->count();
+
+        $brgyIdReqRejected = document_request_brgy_id::where('status', 'Rejected')->count();
+        $brgyReqRejected = document_requests::where('status', 'Rejected')->count();     
 
         $totalReqToday = $brgyIdReqToday + $brgyReqToday;
+        $totalCompletedReq = $brgyIdReqCompleted + $brgyReqCompleted;
+        $totalRejectedReq = $brgyIdReqRejected + $brgyReqRejected;
 
         $totalDocReqBrgyId = document_request_brgy_id::whereNot('status', 'rejected')->count();
         $totalDocReqBrgyCert = document_requests::whereNot('status', 'rejected')->where('document_type', 2)->count();
@@ -52,6 +57,8 @@ class AdminDemographicsController extends Controller
             'totalFemaleReq' => $totalFemaleReq,
             'totalMaleReq' => $totalMaleReq,
             'totalReqToday' => $totalReqToday,
+            'totalCompletedReq' => $totalCompletedReq,
+            'totalRejectedReq' => $totalRejectedReq
         ]);
     }
 }

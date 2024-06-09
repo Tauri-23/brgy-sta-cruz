@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('reason')->nullable();
             $table->dateTime('pickup_date')->nullable();
             $table->string('status');
+            $table->string('reference_num')->nullable();
             $table->timestamp('created_at')->useCurrent()->useCurrentOnUpdate();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
 

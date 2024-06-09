@@ -302,6 +302,25 @@
             
         </div>
     </div>
+@elseif($modalType == "admin-complete-req")
+    <div class="modal1 d-none" id="admin-complete-req-modal">
+        <div class="modal1-box-small">
+            <i id="modal-close-btn" class="modal1-x-icon bi bi-x-lg"></i>
+            <div class="d-flex gap1 flex-direction-y">
+                <div class="text-l2 text-center">Mark As Complete</div>
+                
+                <div>
+                    <label for="reference-in">Reference Number</label>
+                    <input type="text" class="edit-text-1 w-100" maxlength="8" id="reference-in">
+                </div>
+                
+            </div>
+            <div class="d-flex justify-content-center gap1 mar-top-2">
+                <div class="primary-btn-blue1 w-100 text-center complete-btn">Mark as Complete</div>
+            </div>
+            
+        </div>
+    </div>
 
 
 
