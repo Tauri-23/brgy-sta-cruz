@@ -18,6 +18,8 @@ const requirementsFor = $('.requirements-for');
 const formCont = $('#form-cont');
 
 
+const startHour = 8;
+const endHour = 10;
 
 if(documentType == 2) { // If Brgy Id
     const nameIn = $('#name-in');
@@ -45,6 +47,18 @@ if(documentType == 2) { // If Brgy Id
 
     submitBtn.click(() => {
         let isCompleteReq = false;
+
+        const currentHour = new Date().getHours();
+        console.log(`Current Hour: ${currentHour}`);
+        if (currentHour < startHour || currentHour >= endHour) {
+            
+            errorModal.find('.modal1-txt-title').html('Failed');
+            errorModal.find('.modal1-txt').html('Requesting is only available from 8am to 10pm. Please try again later.');
+
+            showModal(errorModal);
+            closeModal(errorModal, false);
+            return;
+        }
 
         if(isEmptyOrSpaces(nameIn.val()) || isEmptyOrSpaces(addressIn.val()) || isEmptyOrSpaces(phoneIn.val()) ||
             isEmptyOrSpaces(bdateIn.val()) || isEmptyOrSpaces(bdatePlaceIn.val())) {
@@ -75,6 +89,8 @@ if(documentType == 2) { // If Brgy Id
             
             return;
         }
+
+        
 
         brgyidname.html(nameIn.val());
         brgyidpfp.attr('src', URL.createObjectURL(requirementsIn[0].files[0]));
@@ -163,6 +179,17 @@ else if(documentType == 1) { // IF BRGY CLEARANCE
     submitBtn.click(() => {
         let isCompleteReq = false;
 
+        const currentHour = new Date().getHours();
+        console.log(`Current Hour: ${currentHour}`);
+        if (currentHour < startHour || currentHour >= endHour) {
+            
+            errorModal.find('.modal1-txt-title').html('Failed');
+            errorModal.find('.modal1-txt').html('Requesting is only available from 8am to 10pm. Please try again later.');
+
+            showModal(errorModal);
+            closeModal(errorModal, false);
+            return;
+        }
         if(isEmptyOrSpaces(nameIn.val()) || 
             isEmptyOrSpaces(addressIn.val()) || 
             isEmptyOrSpaces(phoneIn.val()) || 
@@ -286,6 +313,17 @@ else { // IF RENOVATION OR BUILDING HOUSE CLEARANCE
     submitBtn.click(() => {
         let isCompleteReq = false;
 
+        const currentHour = new Date().getHours();
+        console.log(`Current Hour: ${currentHour}`);
+        if (currentHour < startHour || currentHour >= endHour) {
+            
+            errorModal.find('.modal1-txt-title').html('Failed');
+            errorModal.find('.modal1-txt').html('Requesting is only available from 8am to 10pm. Please try again later.');
+
+            showModal(errorModal);
+            closeModal(errorModal, false);
+            return;
+        }
         if(isEmptyOrSpaces(nameIn.val()) || isEmptyOrSpaces(addressIn.val()) || isEmptyOrSpaces(phoneIn.val()) ||
             isEmptyOrSpaces(bdateIn.val())) {
             
@@ -411,4 +449,20 @@ function addApplicationToDb(formData) {
             alert('error');
         }
     });
+}
+
+
+
+function timeRestriction() {
+    const currentHour = new Date().getHours();
+    console.log(`Current Hour: ${currentHour}`);
+    if (currentHour < startHour || currentHour >= endHour) {
+        console.log('Button disabled');
+        requestDocumentBtn.css('pointer-events', 'none');
+        requestDocumentBtn.text('OPEN FROM 8AM to 10AM');
+    } else {
+        console.log('Button enabled');
+        requestDocumentBtn.prop('disabled', false);
+        requestDocumentBtn.text('Request Document Now')
+    }
 }

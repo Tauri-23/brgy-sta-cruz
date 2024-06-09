@@ -19,6 +19,8 @@ const forPickupBtn = $('#for-pickup-btn');
 const rejectedBtn = $('#rejected-btn');
 const completedBtn = $('#completed-btn');
 
+const startHour = 7;
+const endHour = 10;
 
 selectDocumentIn.change(function() {
     const value = $(this).val();
@@ -37,6 +39,7 @@ selectDocumentIn.change(function() {
             requirementsList.append(`<li>${req.requirement}</li>`);
         });
         requirementsCont.append(requirementsList);
+        timeRestriction()
 });
 
 navReqDocBtn.click(() => {
@@ -75,3 +78,17 @@ function changeContainerAndLinkActive(activeCont, activeLink) {
 requestDocumentBtn.click(() => {
     window.location.href = `/RequestDocument/${selectDocumentIn.val()}`;
 });
+
+function timeRestriction() {
+    const currentHour = new Date().getHours();
+    console.log(`Current Hour: ${currentHour}`);
+    if (currentHour < startHour || currentHour >= endHour) {
+        console.log('Button disabled');
+        requestDocumentBtn.css('pointer-events', 'none');
+        requestDocumentBtn.text('OPEN FROM 8AM to 10AM');
+    } else {
+        console.log('Button enabled');
+        requestDocumentBtn.prop('disabled', false);
+        requestDocumentBtn.text('Request Document Now')
+    }
+}
