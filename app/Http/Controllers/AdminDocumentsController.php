@@ -26,8 +26,8 @@ class AdminDocumentsController extends Controller
         $docReqPending = document_requests::where('status', 'Pending')->get();
         $docReqBrgyIdsPending = document_request_brgy_id::where('status', 'Pending')->get();
 
-        $docReqFP = document_requests::where('status', "For Pickup")->get();
-        $docReqBrgyIdsFP = document_request_brgy_id::where('status', "For Pickup")->get();
+        $docReqFP = document_requests::where('status', "On Process")->get();
+        $docReqBrgyIdsFP = document_request_brgy_id::where('status', "On Process")->get();
 
         $docReqRejected = document_requests::where('status', "Rejected")->get();
         $docReqBrgyIdsRejected = document_request_brgy_id::where('status', "Rejected")->get();
@@ -107,7 +107,7 @@ class AdminDocumentsController extends Controller
     public function acceptDocumentPost(Request $request) {
         $document = $request->type == "brgyId" ? document_request_brgy_id::find($request->id) : document_requests::find($request->id);
 
-        $document->status = "For Pickup";
+        $document->status = "On Process";
         $document->pickup_date = $request->pickupDate;
 
         if($document->save()) {

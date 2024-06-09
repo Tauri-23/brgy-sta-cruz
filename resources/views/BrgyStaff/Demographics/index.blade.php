@@ -47,35 +47,50 @@
 
             <div class="d-flex gap1">
                 <div class="long-cont">
-                    <div class="text-l2">{{$totalReqToday}}</div>
-                    <div class="text-end text-m1">
-                        Total Request Today
+                    <div class=" cellcont">
+                        <div class="text-l2">Total Requests Today:</div>
+                        <div class="text-end text-l2">
+                        {{$totalReqToday}}
+                        </div>
+                    </div>
+                    <div class=" cellcont">
+                        <div class="text-l2">Total Requests Completed Today:</div>
+                        <div class="text-end text-l2">
+                        {{$totalCompToday}}
+                        </div>
+                    </div>
+                    <div class=" cellcont">
+                        <div class="text-l2">Total Requests On Processing Today:</div>
+                        <div class="text-end text-l2">
+                        {{$totalOnPToday}}
+                        </div>
                     </div>
                 </div>
 
                 <div class="long-cont">
-                    <div class="text-l2">{{$totalCompletedReq}}</div>
-                    <div class="text-end text-m1">
-                        Total Completed
+                    <div class=" cellcont">
+                        <div class="text-l2">Total Completed:</div>
+                        <div class="text-end text-l2">
+                        {{$totalCompletedReq}}
+                        </div>
                     </div>
-                </div>
-
-                <div class="long-cont">
-                    <div class="text-l2">{{$totalRejectedReq}}</div>
-                    <div class="text-end text-m1">
-                        Total Rejected
+                    <div class=" cellcont">
+                        <div class="text-l2">Total Rejected:</div>
+                        <div class="text-end text-l2">
+                        {{$totalRejectedReq}}
+                        </div>
                     </div>
-                </div>
+                    </div>
             </div>
 
             <div class="d-flex gap1">
                 <div class="long-cont">
-                    <div class="text-l3 mar-bottom-3">Request per document types overall</div>
+                    <div class="text-l3 mar-bottom-3">Requests per document type overall</div>
                     <canvas class="mar-bottom-1" id="req-per-docs-chart"></canvas>
                 </div>
 
                 <div class="long-cont">
-                    <div class="text-l3 mar-bottom-3">Request per gender overall</div>
+                    <div class="text-l3 mar-bottom-3">Requests per gender overall</div>
                     <canvas class="mar-bottom-1" id="req-per-gender-chart"></canvas>
                 </div>
             </div>

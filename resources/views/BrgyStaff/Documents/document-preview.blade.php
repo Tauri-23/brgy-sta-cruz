@@ -133,7 +133,7 @@
                     {{$document->document_types()->first()->document_name}} 
                     @if ($document->status == "Pending")
                         <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
-                    @elseif($document->status == "For Pickup")
+                    @elseif($document->status == "On Process")
                         <span class="badge bg-yellow1 mar-start-1">On Process</span>
                     @elseif($document->status == "Completed")
                         <span class="badge bg-green1 mar-start-1">{{$document->status}}</span>
@@ -267,7 +267,7 @@
                     @elseif($document->status == 'Rejected')
                         <div class="text-l2">Reason: </div>
                         <div class="text-l3">{{$document->reason}}</div>
-                    @elseif($document->status == 'For Pickup')
+                    @elseif($document->status == 'On Process')
                         <div class="primary-btn-green1" id="mark-as-complete-btn">Mark as Completed</div>                
                         
                     @endif

@@ -29,3 +29,7 @@
     
     height: 70%;
 }
+
+    .cellcont{display: flex;
+    flex-direction: row;
+    justify-content: space-between; }

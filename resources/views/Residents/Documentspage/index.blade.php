@@ -46,7 +46,7 @@
             <div class="long-cont-nopadding d-flex gap1">
                 <div class="mini-nav-link active" id="req-a-doc-btn">Request a Document</div>
                 <div class="mini-nav-link" id="pending-btn">Pending</div>
-                <div class="mini-nav-link" id="for-pickup-btn">For Pickup</div>
+                <div class="mini-nav-link" id="for-pickup-btn">On Process</div>
                 <div class="mini-nav-link" id="rejected-btn">Rejected</div>
                 <div class="mini-nav-link" id="completed-btn">Completed</div>
             </div>
@@ -85,7 +85,7 @@
                 <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="resident"/>             
             </div>
 
-            {{-- For Pickup Documents --}}
+            {{-- On Process Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="for-pickup-cont">
                 <x-render_doc_req :docReq="$docReqFP" :docReqBrgyId="$docReqBrgyIdsFP" mode="for-pickup" user="resident"/>
             </div>

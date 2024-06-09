@@ -35,9 +35,9 @@ class ResidentDocumentController extends Controller
             ->where('status', "Pending")->orderBy('created_at', 'ASC')->get();
 
         $docReqFP = document_requests::where('resident', $resident->id)
-            ->where('status', "For Pickup")->orderBy('updated_at', 'ASC')->get();
+            ->where('status', "On Process")->orderBy('updated_at', 'ASC')->get();
         $docReqBrgyIdsFP = document_request_brgy_id::where('resident', $resident->id)
-            ->where('status', "For Pickup")->orderBy('created_at', 'ASC')->get();
+            ->where('status', "On Process")->orderBy('created_at', 'ASC')->get();
 
         $docReqRejected = document_requests::where('resident', $resident->id)
             ->where('status', "Rejected")->orderBy('updated_at', 'ASC')->get();

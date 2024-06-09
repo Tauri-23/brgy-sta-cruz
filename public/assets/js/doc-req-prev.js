@@ -80,14 +80,14 @@ infoYNModals.eq(0).find('.yes-btn').click(() => {
         success: function(response) {
             if(response.status == 200) {
                 successModal.find('.modal1-txt-title').html('Success');
-                successModal.find('.modal1-txt').html('Document Application Rejected.');
+                successModal.find('.modal1-txt').html('Document application rejected.');
 
                 showModal(successModal);
                 closeModalRedirect(successModal, '/AdminDocuments');
             }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
-                errorModal.find('.modal1-txt').html('Failed, Try again later.');
+                errorModal.find('.modal1-txt').html('Failed. Try again later.');
 
                 showModal(errorModal);
                 closeModal(errorModal, false);
@@ -133,14 +133,14 @@ infoYNModals.eq(1).find('.yes-btn').click(() => {
         success: function(response) {
             if(response.status == 200) {
                 successModal.find('.modal1-txt-title').html('Success');
-                successModal.find('.modal1-txt').html('Document Application Accepted and its for pickup.');
+                successModal.find('.modal1-txt').html('Document application accepted and is submitted for processing.');
 
                 showModal(successModal);
                 closeModalRedirect(successModal, '/AdminDocuments');
             }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
-                errorModal.find('.modal1-txt').html('Failed, Try again later.');
+                errorModal.find('.modal1-txt').html('Failed. Try again later.');
 
                 showModal(errorModal);
                 closeModal(errorModal, false);
@@ -170,7 +170,7 @@ completeReqBtn.click(() => {
     }
 
     infoYNModals.eq(2).find('.modal1-txt-title').html('Complete Application?');
-    infoYNModals.eq(2).find('.modal1-txt').html('Do you want to mark as complete this application?');
+    infoYNModals.eq(2).find('.modal1-txt').html('Do you want to mark this application as complete?');
     showModal(infoYNModals.eq(2));
     closeModal(infoYNModals.eq(2));
 });
@@ -191,14 +191,14 @@ infoYNModals.eq(2).find('.yes-btn').click(() => {
         success: function(response) {
             if(response.status == 200) {
                 successModal.find('.modal1-txt-title').html('Success');
-                successModal.find('.modal1-txt').html('Document Application Completed.');
+                successModal.find('.modal1-txt').html('Document application completed.');
 
                 showModal(successModal);
                 closeModalRedirect(successModal, '/AdminDocuments');
             }
             else {
                 errorModal.find('.modal1-txt-title').html('Failed');
-                errorModal.find('.modal1-txt').html('Failed, Try again later.');
+                errorModal.find('.modal1-txt').html('Failed. Try again later.');
 
                 showModal(errorModal);
                 closeModal(errorModal, false);
