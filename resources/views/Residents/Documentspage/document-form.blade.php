@@ -228,6 +228,22 @@
                     <div class="primary-btn-blue1 text-center approve-btn">Approve</div>
                 </div>      
             </div>
+
+
+            {{-- Brgy Permits Prev --}}
+            <div class="long-cont d-none" id="brgy-permit-prev-cont">
+                
+                <div class="d-flex justify-content-center">
+                    {{-- Back --}}
+                    <div>
+                        <x-brgy_permit_prev/>
+                    </div>
+                </div>
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center cancel-btn">Cancel</div>
+                    <div class="primary-btn-blue1 text-center approve-btn">Approve</div>
+                </div>     
+            </div>
             
             
         </div>

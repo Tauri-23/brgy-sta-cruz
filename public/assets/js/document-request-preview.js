@@ -1,7 +1,7 @@
 // Modals
 const brgyIdPreview = $('#brgy-id-prev-cont');
 const brgyClearancePrev = $('#brgy-clearance-prev-cont');
-const brgyConRenoPrev = $('#brgy-con-ren-cont');
+const brgyConRenoPrev = $('#brgy-permit-prev-cont');
 const requestPrevCont = $('#request-cont');
 
 // Btns
@@ -80,25 +80,30 @@ prevDocBtn.click(() => {
         });
     }
     else { // Brgy Build and Renovation
-        const brgyConREnName= $('.brgy-con-ren-name');
-        const brgyConRenBuild = $('.brgy-for-build');
-        const brgyConRenRenovate = $('.brgy-for-renovation');
+        const brgyConREnName= $('#brgy-permit-name');
+        const brgyConREnAddress= $('#brgy-permit-address');
+        const brgyConRenBuild = $('#brgy-permit-build');
+        const brgyConRenRenovate = $('#brgy-permit-renov');
 
         brgyConREnName.html(documentInfo.name);
-        $('.brgy-clearance-name-2').html(documentInfo.name);
-        $('.brgy-clearance-address-2').html(documentInfo.address);
+        brgyConREnAddress.html(documentInfo.address);
 
 
         if(documentType == 3) { // Building Permit
-            brgyConRenBuild.removeClass('d-none');
-            brgyConRenRenovate.addClass('d-none');
+            brgyConRenBuild.html('X');
+            brgyConRenRenovate.html('');
         }
         else if(documentType == 4) { // Renovation Permit
-            brgyConRenBuild.addClass('d-none');
-            brgyConRenRenovate.removeClass('d-none');
+            brgyConRenBuild.html('');
+            brgyConRenRenovate.html('X');
         }
 
-        showModal(brgyConRenoPrev);
-        closeModal(brgyConRenoPrev, false);
+        requestPrevCont.addClass('d-none');
+        brgyConRenoPrev.removeClass('d-none');
+
+        brgyConRenoPrev.find('.close-btn').click(() => {
+            requestPrevCont.removeClass('d-none');
+            brgyConRenoPrev.addClass('d-none');
+        });
     }
 });

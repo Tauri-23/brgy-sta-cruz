@@ -8,7 +8,7 @@ const infoYNs = $('.info-yn-modal');
 
 const brgyIdPrev = $('#brgy-id-prev-cont');
 const brgyClearancePrev = $('#brgy-clearance-prev-cont');
-const brgyConRenPrev = $('#brgy-con-ren-cont');
+const brgyConRenPrev = $('#brgy-permit-prev-cont');
 
 
 const requirementsIn = $('.req-in');
@@ -316,36 +316,39 @@ else { // IF RENOVATION OR BUILDING HOUSE CLEARANCE
             return;
         }
 
-        const brgyConREnName= $('.brgy-con-ren-name');
-        const brgyConRenBuild = $('.brgy-for-build');
-        const brgyConRenRenovate = $('.brgy-for-renovation');
+        
+
+        const brgyConREnName= $('#brgy-permit-name');
+        const brgyConREnAddress= $('#brgy-permit-address');
+        const brgyConRenBuild = $('#brgy-permit-build');
+        const brgyConRenRenovate = $('#brgy-permit-renov');
 
             
         brgyConREnName.html(nameIn.val());
-        $('.brgy-clearance-name-2').html(nameIn.val());
-        $('.brgy-clearance-address-2').html(addressIn.val());
+        brgyConREnAddress.html(addressIn.val());
 
         if(documentType == 3) { // Building Permit
-            brgyConRenBuild.removeClass('d-none');
-            brgyConRenRenovate.addClass('d-none');
+            brgyConRenBuild.html('X');
+            brgyConRenRenovate.html('');
         }
         else if(documentType == 4) { // Renovation Permit
-            brgyConRenBuild.addClass('d-none');
-            brgyConRenRenovate.removeClass('d-none');
+            brgyConRenBuild.html('');
+            brgyConRenRenovate.html('X');
         }
 
 
 
         let cancelBtn = brgyConRenPrev.find('.cancel-btn');
         let approveBtn = brgyConRenPrev.find('.approve-btn');
-        showModal(brgyConRenPrev);
+        formCont.addClass('d-none');
+        brgyConRenPrev.removeClass('d-none');
 
         cancelBtn.click(() => {
-            closeModalNoEvent(brgyConRenPrev);
+            formCont.removeClass('d-none');
+            brgyConRenPrev.addClass('d-none');
         });
 
         approveBtn.click(() => {
-            closeModalNoEvent(brgyConRenPrev);
             showModal(infoYNs.eq(0));
             closeModal(infoYNs.eq(0), false);
         });

@@ -246,6 +246,21 @@
                     <div class="primary-btn-yellow1 text-center close-btn">Close</div>
                 </div>      
             </div>
+
+
+            {{-- Brgy Permits Prev --}}
+            <div class="long-cont d-none" id="brgy-permit-prev-cont">
+                
+                <div class="d-flex justify-content-center">
+                    {{-- Back --}}
+                    <div>
+                        <x-brgy_permit_prev/>
+                    </div>
+                </div>
+                <div class="d-flex gap3 mar-top-1 justify-content-end">
+                    <div class="primary-btn-yellow1 text-center close-btn">Close</div>
+                </div>      
+            </div>
             
         </div>
 

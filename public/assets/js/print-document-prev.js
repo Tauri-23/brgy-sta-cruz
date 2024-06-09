@@ -1,12 +1,16 @@
 // Btns
 const printBarangayCertBtn = $('#print-brgy-cert-btn');
 const printBarangayIdBtn = $('#print-brgy-id-btn');
+const printBarangayPertmitBtn = $('#print-brgy-permit-btn');
 
 printBarangayCertBtn.click(() => {
     printElement($('#brgy-clearance-canvas'), `brgy_clearance.pdf`);
 });
 printBarangayIdBtn.click(() => {
     printElement($('#brgy-id-canvas'), `Brgy_id.pdf`);
+});
+printBarangayPertmitBtn.click(() => {
+    printElement($('#brgy-permit-canvas'), `Brgy_permit.pdf`);
 });
 
 
