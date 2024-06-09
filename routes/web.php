@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminAnnouncementsController;
 use App\Http\Controllers\AdminDashController;
+use App\Http\Controllers\AdminDemographicsController;
 use App\Http\Controllers\AdminDocumentsController;
 use App\Http\Controllers\AdminMonitorAdminsController;
 use App\Http\Controllers\AdminResidentsController;
@@ -94,6 +95,8 @@ Route::get('/editAnnouncement/{id}', [AdminAnnouncementsController::class, 'edit
 Route::post('/addAnnouncementPost', [AdminAnnouncementsController::class, 'addAnnouncementPost']);
 Route::post('/editAnnouncementPost', [AdminAnnouncementsController::class, 'editAnnouncementPost']);
 Route::post('/deleteAnnouncementPost', [AdminAnnouncementsController::class, 'deleteAnnouncementPost']);
+
+Route::get('/AdminDemographics', [AdminDemographicsController::class, 'index']);
 
 
 // Documents

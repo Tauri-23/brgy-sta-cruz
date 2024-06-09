@@ -38,5 +38,3 @@ function changeActiveContent(activeBtn, activeCont) {
     activeBtn.addClass('active');
     activeCont.removeClass('d-none');
 }
-
-

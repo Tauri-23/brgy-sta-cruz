@@ -186,3 +186,66 @@ function calculateAge(birthDate) {
     }
     return age;
 }
+
+
+
+
+
+// Charts
+function createLineChart(ctx, labels, data, title, backgroundColor, borderColor) {
+    if (ctx.chart) {
+        ctx.chart.destroy();
+    }
+
+    ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: title,
+                data: data,
+                borderWidth: 1,
+                fill: true,
+                backgroundColor: backgroundColor,
+                borderColor: borderColor,
+                tension: .3
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function createBarChart(ctx, labels, data, title, backgroundColor, borderColor) {
+    if (ctx.chart) {
+        ctx.chart.destroy();
+    }
+
+    ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: title,
+                data: data,
+                borderWidth: 1,
+                fill: true,
+                backgroundColor: backgroundColor,
+                borderColor: borderColor,
+                tension: .3
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                beginAtZero: true
+                }
+            }
+        }
+    });
+}

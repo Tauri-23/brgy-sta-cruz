@@ -34,7 +34,7 @@
         <x-modals modalType="error"/>
 
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="4" pfp="null"/>
+        <x-navbar navType="admin-page" activeLink="5" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex justify-content-center">

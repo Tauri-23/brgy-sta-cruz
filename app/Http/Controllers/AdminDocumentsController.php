@@ -12,6 +12,7 @@ use App\Models\document_request_brgy_id;
 use App\Models\document_requests;
 use App\Models\document_requirements;
 use App\Models\document_requirements_brgy_id;
+use App\Models\document_types;
 use Illuminate\Http\Request;
 
 class AdminDocumentsController extends Controller
@@ -21,7 +22,7 @@ class AdminDocumentsController extends Controller
     public function __construct(IGenerateIdService $generateId) {
         $this->generateId = $generateId;
     }
-    public function index() {
+    public function index() {    
         $docReqPending = document_requests::where('status', 'Pending')->get();
         $docReqBrgyIdsPending = document_request_brgy_id::where('status', 'Pending')->get();
 

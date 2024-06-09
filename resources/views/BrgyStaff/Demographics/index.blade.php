@@ -37,7 +37,7 @@
 
 
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="4" pfp="null"/>
+        <x-navbar navType="admin-page" activeLink="3" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
@@ -45,28 +45,39 @@
                 <div class="text-l1">Document Requests</div>
             </div>
 
-            <div class="long-cont-nopadding d-flex gap1">
-                <div class="mini-nav-link active" id="pending-btn">Pending  ({{$docReqPending->count() + $docReqBrgyIdsPending->count()}})</div>
-                <div class="mini-nav-link" id="FP-btn">For Pickup ({{$docReqFP->count() + $docReqBrgyIdsFP->count()}})</div>
-                <div class="mini-nav-link" id="rejected-btn">Rejected</div>
-                <div class="mini-nav-link" id="completed-btn">Completed</div>
-            </div>
-    
-            {{-- Render Document Requests --}}
-            <div class="long-cont d-flex align-items-center" id="pending-cont">
-                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="admin"/>                
+            <div class="d-flex gap1">
+                <div class="long-cont">
+                    <div class="text-l2">{{$totalReqToday}}</div>
+                    <div class="text-end text-m1">
+                        Total Request Today
+                    </div>
+                </div>
+
+                <div class="long-cont">
+                    <div class="text-l2">0</div>
+                    <div class="text-end text-m1">
+                        Total Completed
+                    </div>
+                </div>
+
+                <div class="long-cont">
+                    <div class="text-l2">0</div>
+                    <div class="text-end text-m1">
+                        Total Rejected
+                    </div>
+                </div>
             </div>
 
-            <div class="long-cont d-flex align-items-center d-none" id="to-be-pickup-cont">
-                <x-render_doc_req :docReq="$docReqFP" :docReqBrgyId="$docReqBrgyIdsFP" mode="for-pickup" user="admin"/>                
-            </div>
+            <div class="d-flex gap1">
+                <div class="long-cont">
+                    <div class="text-l3 mar-bottom-3">Request per document types overall</div>
+                    <canvas class="mar-bottom-1" id="req-per-docs-chart"></canvas>
+                </div>
 
-            <div class="long-cont d-flex align-items-center d-none" id="completed-cont">
-                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="admin"/>                
-            </div>
-
-            <div class="long-cont d-flex align-items-center d-none" id="rejected-cont">
-                <x-render_doc_req :docReq="$docReqCompleted" :docReqBrgyId="$docReqBrgyIdsCompleted" mode="completed" user="admin"/>                
+                <div class="long-cont">
+                    <div class="text-l3 mar-bottom-3">Request per gender overall</div>
+                    <canvas class="mar-bottom-1" id="req-per-gender-chart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -80,8 +91,18 @@
     </body>
     <script src="/assets/js/app.js"></script>
     {{-- chart.js --}}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="/assets/js/admin-documents.js"></script>
+    <script>
+        const documentTypes = @json($documentTypes);
+        const totalDocReqBrgyId = @json($totalDocReqBrgyId);
+        const totalDocReqBrgyCert = @json($totalDocReqBrgyCert);
+        const totalDocReqPermitBuild = @json($totalDocReqPermitBuild);
+        const totalDocReqPermitReno = @json($totalDocReqPermitReno);
+        const totalFemaleReq = @json($totalFemaleReq);
+        const totalMaleReq = @json($totalMaleReq);
+    </script>   
+
+    <script src="/assets/js/admin-demographics.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>

@@ -37,7 +37,7 @@
 
 
         {{-- Navs --}}
-        <x-navbar navType="admin-page" activeLink="6" pfp="null"/>
+        <x-navbar navType="admin-page" activeLink="7" pfp="null"/>
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">

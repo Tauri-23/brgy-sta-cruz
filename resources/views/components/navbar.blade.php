@@ -43,10 +43,11 @@
         <div class="nav1-links">
             <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
             <a href="/AdminAnnouncements" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
-            <a href="/AdminDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
-            <a href="/AdminResidents" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Residents</a>
-            <a href="/Admins" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Admins</a>
-            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Feedbacks</a>
+            <a href="/AdminDemographics" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Demographics</a>
+            <a href="/AdminDocuments" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Documents</a>
+            <a href="/AdminResidents" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Residents</a>
+            <a href="/Admins" class="nav1-link {{$activeLink == 6 ? "active" : ""}}">Admins</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Feedbacks</a>
         </div>
 
         <a class="primary-btn-red1" href="/signout">Sign Out</a>
@@ -60,7 +61,7 @@
         <div class="nav1-links">
             <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
             <a href="/AdminAnnouncements" class="nav1-link {{$activeLink == 2 ? "active" : ""}}">Announcements</a>
-            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Feedbacks</a>
         </div>
 
         <a class="primary-btn-red1" href="/signout">Sign Out</a>
@@ -73,8 +74,9 @@
         </div>
         <div class="nav1-links">
             <a href="/AdminDashboard" class="nav1-link {{$activeLink == 1 ? "active" : ""}}">Home</a>
-            <a href="/AdminDocuments" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Documents</a>
-            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 5 ? "active" : ""}}">Feedbacks</a>
+            <a href="/AdminDemographics" class="nav1-link {{$activeLink == 3 ? "active" : ""}}">Demographics</a>
+            <a href="/AdminDocuments" class="nav1-link {{$activeLink == 4 ? "active" : ""}}">Documents</a>
+            <a href="/AdminFeedbacks" class="nav1-link {{$activeLink == 7 ? "active" : ""}}">Feedbacks</a>
         </div>
 
         <a class="primary-btn-red1" href="/signout">Sign Out</a>
