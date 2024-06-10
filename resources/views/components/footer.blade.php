@@ -1,6 +1,6 @@
 <div class="footer1">
     <div class="d-flex justify-content-center gap2">
-        <a href="" class="footer-link">
+        <a href="https://www.facebook.com/BarangayStaCruzMakati" class="footer-link">
             <i class="bi bi-facebook"></i>
         </a>
         <a href="" class="footer-link">

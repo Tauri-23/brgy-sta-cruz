@@ -93,10 +93,19 @@
                     <div class="text-l3 mar-bottom-3">Requests per gender overall</div>
                     <canvas class="mar-bottom-1" id="req-per-gender-chart"></canvas>
                 </div>
+                
+            </div>
+
+            <div class="d-flex gap1 demothirdcont">
+
+                <div class="long-cont demothird">
+                    <div class="text-l3 mar-bottom-3">Requests per age group overall</div>
+                    <canvas class="mar-bottom-1" id="req-per-age-chart"></canvas>
+                </div>
+                
             </div>
         </div>
 
-        
 
 
         {{-- footer --}}
@@ -116,6 +125,9 @@
         const totalDocReqPermitReno = @json($totalDocReqPermitReno);
         const totalFemaleReq = @json($totalFemaleReq);
         const totalMaleReq = @json($totalMaleReq);
+        const totalYoungReq = @json($totalYoungReq);
+        const totalMiddleReq = @json($totalMiddleReq);
+        const totalElderlyReq = @json($totalElderlyReq);
     </script>   
 
     <script src="/assets/js/admin-demographics.js"></script>

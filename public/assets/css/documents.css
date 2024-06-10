@@ -33,3 +33,11 @@
     .cellcont{display: flex;
     flex-direction: row;
     justify-content: space-between; }
+
+    .demothird{
+        width:50%;
+    }
+    
+    .demothirdcont{
+        justify-content: center;
+    }

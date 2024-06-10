@@ -12,6 +12,42 @@ class AdminDemographicsController extends Controller
 {
     public function index() {
         $documentTypes = document_types::all();
+        
+                // Current date
+        $now = Carbon::now();  
+
+        // Calculate date ranges for different age groups
+        $youngAdultMaxAge = $now->copy()->subYears(18)->format('Y-m-d');
+        $youngAdultMinAge = $now->copy()->subYears(35)->format('Y-m-d');
+        $middleAgeMaxAge = $now->copy()->subYears(36)->format('Y-m-d');
+        $middleAgeMinAge = $now->copy()->subYears(60)->format('Y-m-d');
+        $elderlyAge = $now->copy()->subYears(61)->format('Y-m-d');
+
+        // Now you can use these date ranges in your queries
+        $docReqYoungAdults = document_request_brgy_id::whereHas('residents', function ($query) use ($youngAdultMinAge, $youngAdultMaxAge) {
+            $query->whereBetween('bdate', [$youngAdultMinAge, $youngAdultMaxAge]);
+        })->count();
+
+        $docReqMiddleAge = document_request_brgy_id::whereHas('residents', function ($query) use ($middleAgeMinAge, $middleAgeMaxAge) {
+            $query->whereBetween('bdate', [$middleAgeMinAge, $middleAgeMaxAge]);
+        })->count();
+
+        $docReqElderly = document_request_brgy_id::whereHas('residents', function ($query) use ($elderlyAge) {
+            $query->where('bdate', '<=', $elderlyAge);
+        })->count();
+
+        $docReqYoungAdults2 = document_requests::whereHas('residents', function ($query) use ($youngAdultMinAge, $youngAdultMaxAge) {
+            $query->whereBetween('bdate', [$youngAdultMinAge, $youngAdultMaxAge]);
+        })->count();
+
+        $docReqMiddleAge2 = document_requests::whereHas('residents', function ($query) use ($middleAgeMinAge, $middleAgeMaxAge) {
+            $query->whereBetween('bdate', [$middleAgeMinAge, $middleAgeMaxAge]);
+        })->count();
+
+        $docReqElderly2 = document_requests::whereHas('residents', function ($query) use ($elderlyAge) {
+            $query->where('bdate', '<=', $elderlyAge);
+        })->count();
+
 
         $docReqFemaleCount = document_request_brgy_id::whereHas('residents', function ($query) {
             $query->where('gender', 'Female');
@@ -29,6 +65,10 @@ class AdminDemographicsController extends Controller
 
         $totalFemaleReq = $docReqFemaleCount + $docReqFemaleCount2;
         $totalMaleReq = $docReqMaleCount + $docReqMaleCount2;
+
+        $totalYoungReq= $docReqYoungAdults+$docReqYoungAdults2;
+        $totalMiddleReq= $docReqMiddleAge+$docReqMiddleAge2;
+        $totalElderlyReq=$docReqElderly2+$docReqElderly;
 
         $brgyIdReqToday = document_request_brgy_id::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
         $brgyReqToday = document_requests::whereDate('created_at', Carbon::now())->where('status', 'Pending')->count();
@@ -68,7 +108,10 @@ class AdminDemographicsController extends Controller
             'totalCompletedReq' => $totalCompletedReq,
             'totalRejectedReq' => $totalRejectedReq,
             'totalCompToday' => $totalCompToday,
-            'totalOnPToday' => $totalCompToday,
+            'totalOnPToday' => $totalOnPToday,
+            'totalYoungReq' => $totalYoungReq,
+            'totalMiddleReq' => $totalMiddleReq,
+            'totalElderlyReq' => $totalElderlyReq,
         ]);
     }
 }
