@@ -54,7 +54,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/admin-residents.js"></script>

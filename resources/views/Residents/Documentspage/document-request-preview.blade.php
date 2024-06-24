@@ -64,7 +64,7 @@
                         <div class="brgy-clearance-name-2">Resident Name</div>
                         <div class="brgy-clearance-address-2">Address</div>
                     </div>
-    
+
                     <div>
                         <div class="text-l3">Back Page</div>
                         <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
@@ -73,7 +73,7 @@
                         <div class="brgy-for-renovation">x</div>
                     </div>
                 </div>
-                
+
                 <div class="d-flex gap3 mar-top-1">
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <div class="long-cont d-flex flex-direction-y gap1" id="request-cont">
                 {{-- Title --}}
                 <div class="text-l1">
-                    {{$document->document_types()->first()->document_name}} 
+                    {{$document->document_types()->first()->document_name}}
                     @if ($document->status == "Pending")
                         <span class="badge bg-blue1 mar-start-1">{{$document->status}}</span>
                     @elseif($document->status == "On Process")
@@ -103,7 +103,7 @@
                     @else
                         <span class="badge bg-red1 mar-start-1">{{$document->status}}</span>
                     @endif
-                    
+
                 </div>
 
                 {{-- Information --}}
@@ -112,7 +112,7 @@
                         <div class="mar-bottom-1">
                             <div class="text-m2">Reference Number:</div>
                             <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
-                        </div>                        
+                        </div>
                     @endif
                     <div class="d-flex w-100 mar-top-1">
                         <div class="d-flex w-50 flex-direction-y gap3">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                         <div class="d-flex w-50 flex-direction-y gap3">
-                            
+
                             <div>
                                 <div class="text-m2">Birth Place:</div>
                                 <div class="text-l3">{{$document->bdate_place}}</div>
@@ -158,7 +158,7 @@
                         <div class="mar-bottom-1">
                             <div class="text-m2">Reference Number:</div>
                             <div class="text-l3 fw-bold">{{$document->reference_num}}</div>
-                        </div>                        
+                        </div>
                     @endif
                     <div class="d-flex w-100 mar-top-1">
                         <div class="d-flex w-50 flex-direction-y gap3">
@@ -188,8 +188,8 @@
                     </div>
                 @endif
 
-                
-                
+
+
                 <div class="mar-top-1">
                     <div class="text-l2 mar-bottom-1">Requirements:</div>
 
@@ -209,14 +209,14 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         @endforeach
                     </div>
 
                 </div>
 
 
-               
+
                 @if($document->status == 'Rejected')
                     <div class="mar-top-1 d-flex flex-direction-y gap3">
                         <div class="text-l2">Reason: </div>
@@ -241,13 +241,13 @@
 
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center close-btn">Close</div>
-                </div>      
+                </div>
             </div>
 
 
             {{-- Brgy Clearance Prev --}}
             <div class="long-cont d-none" id="brgy-clearance-prev-cont">
-                
+
                 <div class="d-flex justify-content-center">
                     {{-- Front --}}
                     <div>
@@ -256,13 +256,13 @@
                 </div>
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center close-btn">Close</div>
-                </div>      
+                </div>
             </div>
 
 
             {{-- Brgy Permits Prev --}}
             <div class="long-cont d-none" id="brgy-permit-prev-cont">
-                
+
                 <div class="d-flex justify-content-center">
                     {{-- Back --}}
                     <div>
@@ -271,18 +271,18 @@
                 </div>
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center close-btn">Close</div>
-                </div>      
+                </div>
             </div>
-            
+
         </div>
 
-        
-        
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
 

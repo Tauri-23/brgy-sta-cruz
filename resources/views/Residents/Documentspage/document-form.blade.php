@@ -54,7 +54,7 @@
                         <div class="brgy-clearance-for-others">x</div>
                         <div class="brgy-clearance-for-others-specify">Other requirement</div>
                     </div>
-    
+
                     <div>
                         <div class="text-l3">Back Page</div>
                         <img class="brgy-clearance-front" src="/assets/media/documents/CLEARANCE-BACK-CLEAN.png" alt="">
@@ -64,7 +64,7 @@
                         <div class="brgy-clearance-for-others-specify2">Other requirement</div>
                     </div>
                 </div>
-                
+
                 <div class="d-flex gap3 mar-top-1">
                     <div class="primary-btn-yellow1 w-50 text-center cancel-btn">Cancel</div>
                     <div class="primary-btn-blue1 w-50 text-center approve-btn">Approve</div>
@@ -84,7 +84,7 @@
                         <div class="brgy-clearance-name-2">Resident Name</div>
                         <div class="brgy-clearance-address-2">Address</div>
                     </div>
-    
+
                     <div>
                         <div class="text-l3">Back Page</div>
                         <img class="brgy-clearance-front" src="/assets/media/documents/CON-REN.png" alt="">
@@ -93,7 +93,7 @@
                         <div class="brgy-for-renovation">x</div>
                     </div>
                 </div>
-                
+
                 <div class="d-flex gap3 mar-top-1">
                     <div class="primary-btn-yellow1 w-50 text-center cancel-btn">Cancel</div>
                     <div class="primary-btn-blue1 w-50 text-center approve-btn">Approve</div>
@@ -176,7 +176,7 @@
                             </div>
                         </div>
                     @endif
-                    
+
 
                     {{-- Requirements --}}
                     <div class="w-50 d-flex flex-direction-y gap3">
@@ -207,13 +207,13 @@
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center cancel-btn">Cancel</div>
                     <div class="primary-btn-blue1 text-center approve-btn">Approve</div>
-                </div>      
+                </div>
             </div>
 
 
             {{-- Brgy Clearance Prev --}}
             <div class="long-cont d-none" id="brgy-clearance-prev-cont">
-                
+
                 <div class="d-flex justify-content-center">
                     {{-- Front --}}
                     <div>
@@ -221,18 +221,18 @@
                     </div>
                 </div>
 
-                
+
 
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center cancel-btn">Cancel</div>
                     <div class="primary-btn-blue1 text-center approve-btn">Approve</div>
-                </div>      
+                </div>
             </div>
 
 
             {{-- Brgy Permits Prev --}}
             <div class="long-cont d-none" id="brgy-permit-prev-cont">
-                
+
                 <div class="d-flex justify-content-center">
                     {{-- Back --}}
                     <div>
@@ -242,22 +242,22 @@
                 <div class="d-flex gap3 mar-top-1 justify-content-end">
                     <div class="primary-btn-yellow1 text-center cancel-btn">Cancel</div>
                     <div class="primary-btn-blue1 text-center approve-btn">Approve</div>
-                </div>     
+                </div>
             </div>
-            
-            
+
+
         </div>
 
-        
-        
 
-        
-        
+
+
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -31,13 +31,13 @@
         {{-- Navs --}}
         <x-navbar navType="resident-page" activeLink="4" pfp="{{$resident->pfp}}"/>
         <x-nav_small_option/>
-        
+
 
         {{-- Services --}}
         <div class="content1">
             <div class="services-cont">
                 <div class="text-l1">Services</div>
-    
+
                 {{-- Render Services Here --}}
                 <div class="services-cont1">
                     <div class="service-box">
@@ -48,7 +48,7 @@
                             Violence Against Women and Children
                         </div>
                     </div>
-    
+
                     <div class="service-box">
                         <div class="service-pfp">
                             <img class="position-absolute h-100" src="/assets/media/services-img/stonino.jpg" alt="service-picture">
@@ -57,7 +57,7 @@
                             Santo Nino
                         </div>
                     </div>
-    
+
                     <div class="service-box">
                         <div class="service-pfp">
                             <img class="position-absolute h-100" src="/assets/media/services-img/4ps.png" alt="service-picture">
@@ -66,7 +66,7 @@
                             4 P's
                         </div>
                     </div>
-    
+
                     <div class="service-box">
                         <div class="service-pfp">
                             <img class="position-absolute h-100" src="/assets/media/services-img/katarungan.jpg" alt="service-picture">
@@ -82,7 +82,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

@@ -69,7 +69,7 @@
                         <div>
                             <div class="text-l2" style="font-weight:600; margin-bottom:1rem;">Requirements</div>
                             <div id="requirements-cont">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
 
             {{-- Pending Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="pending-cont">
-                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="resident"/>             
+                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="resident"/>
             </div>
 
             {{-- On Process Documents --}}
@@ -92,7 +92,7 @@
 
             {{-- Rejected Documents --}}
             <div class="long-cont d-flex align-items-center d-none" id="rejected-cont">
-                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="resident"/>    
+                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="resident"/>
             </div>
 
             {{-- Completed Documents --}}
@@ -104,13 +104,13 @@
 
         </div>
 
-        
-        
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

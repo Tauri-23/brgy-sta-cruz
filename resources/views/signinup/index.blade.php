@@ -48,7 +48,7 @@
                         </div>
                         <div>
                             <label for="password-in" class="text-m1">Password</label>
-                            
+
                             <div class="position-relative w-100 d-flex align-items-center">
                                 <input data-lpignore="true" autocomplete="off" type="password" class="edit-text-1 w-100 password-input" id="password-in">
                                 <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
@@ -56,7 +56,7 @@
                         </div>
                         <div id="forgot-pass-btn" class="text-decoration-none color-black-2">Forgot Password?</div>
                     </div>
-    
+
                     <div class="d-flex flex-direction-y gap3">
                         <div class="primary-btn-blue1 text-m1 text-center" id="signin-btn">Sign In</div>
                         <a href="/signup" class="secondary-btn-blue1 text-m1 text-center color-blue1">Sign Up</a>
@@ -75,7 +75,7 @@
                             <input type="text" class="edit-text-1 w-100" id="otp-in">
                         </div>
                     </div>
-        
+
                     <div class="d-flex flex-direction-y gap3">
                         <div class="primary-btn-blue1 text-m1 text-center" id="verify-btn">Verify</div>
                         <div class="secondary-btn-blue1 text-m1 text-center color-blue1" id="resend-otp-btn">Resend Code</div>
@@ -96,7 +96,7 @@
                             <input type="text" class="edit-text-1 w-100" id="forgot-pass-email-in">
                         </div>
                     </div>
-        
+
                     <div class="d-flex flex-direction-y gap3">
                         <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
                     </div>
@@ -113,7 +113,7 @@
                             <input type="text" class="edit-text-1 w-100" id="forgot-pass-otp-in">
                         </div>
                     </div>
-        
+
                     <div class="d-flex flex-direction-y gap3">
                         <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
                     </div>
@@ -127,7 +127,7 @@
                     <div class="d-flex flex-direction-y gap3">
                         <div>
                             <label for="new-pass-in" class="text-m1">New Password</label>
-                            
+
                             <div class="position-relative w-100 d-flex align-items-center">
                                 <input type="password" class="edit-text-1 w-100 password-input" id="new-pass-in">
                                 <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
@@ -135,14 +135,14 @@
                         </div>
                         <div>
                             <label for="con-pass-in" class="text-m1">Confirm Password</label>
-                            
+
                             <div class="position-relative w-100 d-flex align-items-center">
                                 <input type="password" class="edit-text-1 w-100 password-input" id="con-pass-in">
                                 <i class="bi bi-eye-fill position-absolute right3 txt-l3 see-pass cursor-pointer"></i>
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="d-flex flex-direction-y gap3">
                         <div class="primary-btn-blue1 text-m1 text-center" id="next-btn">Next</div>
                     </div>
@@ -150,13 +150,13 @@
             </form>
         </div>
 
-        
-        
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
 
     <script src="/assets/js/app.js"></script>

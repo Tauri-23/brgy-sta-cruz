@@ -63,18 +63,18 @@
                         <button type="button" class="btn-text-editor" data-element="underline">
                             <i class="bi bi-type-underline"></i>
                         </button>
-                        
+
                         <button type="button" class="btn-text-editor" data-element="insertUnorderedList">
                             <i class="bi bi-list-ul"></i>
                         </button>
                         <button type="button" class="btn-text-editor" data-element="insertOrderedList">
                             <i class="bi bi-list-ol"></i>
                         </button>
-    
+
                         <button type="button" class="btn-text-editor" data-element="createLink">
                             <i class="bi bi-link-45deg"></i>
                         </button>
-    
+
                         <button type="button" class="btn-text-editor btn-text-editor-active" data-element="justifyLeft">
                             <i class="bi bi-justify-left"></i>
                         </button>
@@ -94,7 +94,7 @@
                         <label class="text-m1" for="featured-checkbox">Set as Featured.</label>
                     </div>
                 </div>
-    
+
                 <div class="text-editor-content" id="text-editor-content" contenteditable="true">
                     {!! $announcement->content !!}
                 </div>
@@ -112,7 +112,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/text-editor.js"></script>

@@ -51,36 +51,36 @@
                 <div class="mini-nav-link" id="rejected-btn">Rejected</div>
                 <div class="mini-nav-link" id="completed-btn">Completed</div>
             </div>
-    
+
             {{-- Render Document Requests --}}
             <div class="long-cont d-flex align-items-center" id="pending-cont">
-                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="admin"/>                
+                <x-render_doc_req :docReq="$docReqPending" :docReqBrgyId="$docReqBrgyIdsPending" mode="pending" user="admin"/>
             </div>
 
             <div class="long-cont d-flex align-items-center d-none" id="to-be-pickup-cont">
-                <x-render_doc_req :docReq="$docReqFP" :docReqBrgyId="$docReqBrgyIdsFP" mode="for-pickup" user="admin"/>                
+                <x-render_doc_req :docReq="$docReqFP" :docReqBrgyId="$docReqBrgyIdsFP" mode="for-pickup" user="admin"/>
             </div>
 
             <div class="long-cont d-flex align-items-center d-none" id="completed-cont">
-                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="admin"/>                
+                <x-render_doc_req :docReq="$docReqRejected" :docReqBrgyId="$docReqBrgyIdsRejected" mode="rejected" user="admin"/>
             </div>
 
             <div class="long-cont d-flex align-items-center d-none" id="rejected-cont">
-                <x-render_doc_req :docReq="$docReqCompleted" :docReqBrgyId="$docReqBrgyIdsCompleted" mode="completed" user="admin"/>                
+                <x-render_doc_req :docReq="$docReqCompleted" :docReqBrgyId="$docReqBrgyIdsCompleted" mode="completed" user="admin"/>
             </div>
         </div>
 
-        
+
 
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     {{-- chart.js --}}
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="/assets/js/admin-documents.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

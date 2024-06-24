@@ -3,6 +3,10 @@
 | Buttons
 |----------------------------------------
 */
+html{
+    zoom:.8;
+}
+
 .primary-btn-blue1,
 .primary-btn-blue2,
 .primary-btn-yellow1,
@@ -61,7 +65,7 @@
 .content1 {
     width: 100%;
     padding: 50px;
-    min-height: 70vh;
+    min-height: calc(100vh - 22.5vh);
 }
 .content2 {
     width: 100%;
@@ -102,7 +106,7 @@
 
 /*
 |----------------------------------------
-| Modals 
+| Modals
 |----------------------------------------
 */
 .modal1 {

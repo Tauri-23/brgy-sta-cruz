@@ -54,7 +54,7 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 01-06</div>
                             <div class="text-l3">
-                                June 05, 2006 - An ordinance requiring car stickers on vehicles of 
+                                June 05, 2006 - An ordinance requiring car stickers on vehicles of
                                 Barangay Santa Cruz residents for proper control and identification with penalties thereof.
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 009-2013</div>
                             <div class="text-l3">
-                                December 07, 2013 - An ordinance re-affirming ordinance No. 002-2012 passed, 
+                                December 07, 2013 - An ordinance re-affirming ordinance No. 002-2012 passed,
                                 an ordinance declaring Panama Street as "One Side Parking" and charging corresponding fees for the use thereof.
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 002-2015</div>
                             <div class="text-l3">
-                                February 10, 2015 - An ordinance reaffirming Ordinance No. 004-2012, 
+                                February 10, 2015 - An ordinance reaffirming Ordinance No. 004-2012,
                                 an ordinance enacting the charging of fees for the use of facilities of the Barangay.
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 015-2017</div>
                             <div class="text-l3">
-                                December 4, 2017 - An ordinance establishing the dues/fees for Issurance of Demolition, 
+                                December 4, 2017 - An ordinance establishing the dues/fees for Issurance of Demolition,
                                 Excavation and Building New Construction & Renovation Permits.
                             </div>
                         </div>
@@ -117,8 +117,8 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 001-2018</div>
                             <div class="text-l3">
-                                February 5, 2018 - An ordinance standardalizing the Barangay Clearance of all legitimate 
-                                cooperatives operating within Barangay Santa Cruz in the amount of One Hundred Fifty Pesos (150.00php), 
+                                February 5, 2018 - An ordinance standardalizing the Barangay Clearance of all legitimate
+                                cooperatives operating within Barangay Santa Cruz in the amount of One Hundred Fifty Pesos (150.00php),
                                 persuant to City Resolution No. 2017-039.
                             </div>
                         </div>
@@ -132,7 +132,7 @@
                         <div>
                             <div class="text-l1 fw-bold">ORDINANCE NO. 003-2019</div>
                             <div class="text-l3">
-                                March 4, 2019 - An ordinance to increase the filing fees due 
+                                March 4, 2019 - An ordinance to increase the filing fees due
                                 filing of formal complaint under the Lupon Tagapamayapa Cases filed.
                             </div>
                         </div>
@@ -144,8 +144,8 @@
                         <div>
                             <div class="text-l1 fw-bold">CITY ORDINANCE NO. 2018-090</div>
                             <div class="text-l3">
-                                AN ORDINANCE PROHIBITING EXCESSIVE, UNNECESSARY, AND UNUSUALLY LOUD SOUNDS GENERATED FROM NOISE PRODUCING EQUIPMENT AND CONTRIVANCES, 
-                                AND OTHER FORMS OF NOISE POLLUTION WITHIN THE CITY OF MAKATI, AND FURTHER PROVIDING PENALTIES FOR VIOLATIONS THEREOF, 
+                                AN ORDINANCE PROHIBITING EXCESSIVE, UNNECESSARY, AND UNUSUALLY LOUD SOUNDS GENERATED FROM NOISE PRODUCING EQUIPMENT AND CONTRIVANCES,
+                                AND OTHER FORMS OF NOISE POLLUTION WITHIN THE CITY OF MAKATI, AND FURTHER PROVIDING PENALTIES FOR VIOLATIONS THEREOF,
                                 SUBJECT TO ALL LAWS AND EXISTING LEGAL RULES AND REGULATIONS.
                             </div>
                         </div>
@@ -160,7 +160,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

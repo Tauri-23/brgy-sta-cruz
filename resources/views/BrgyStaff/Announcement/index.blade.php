@@ -41,7 +41,7 @@
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="text-l1">Announcements</div>
+                <div class="text-l1">Announcements</b></div>
                 <a href="/addAnnouncement" class="primary-btn-yellow1">Add Announcement</a>
             </div>
 
@@ -64,7 +64,7 @@
                             <div class="announcement-prev-content text-m2">{!! $ann->content !!}</div>
                         </div>
 
-                        
+
                         <div class="buttons d-flex flex-direction-y justify-content-center gap1">
                             <a href="/viewAnnouncement/{{$ann->id}}" class="centered-btns primary-btn-yellow1 w-100 d-flex"><i class="bi bi-eye mar-end-3"></i> Preview</a>
                             <a href="editAnnouncement/{{$ann->id}}" class="centered-btns primary-btn-blue1 w-100 d-flex"><i class="bi bi-pen mar-end-3"></i> Edit</a>
@@ -83,7 +83,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/announcement.js"></script>

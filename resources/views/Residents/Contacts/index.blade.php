@@ -83,13 +83,13 @@
 
 
 
-        
-        
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/add-feedback.js"></script>

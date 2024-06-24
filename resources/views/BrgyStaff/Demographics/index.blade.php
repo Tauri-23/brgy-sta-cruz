@@ -93,7 +93,7 @@
                     <div class="text-l3 mar-bottom-3">Requests per gender overall</div>
                     <canvas class="mar-bottom-1" id="req-per-gender-chart"></canvas>
                 </div>
-                
+
             </div>
 
             <div class="d-flex gap1 demothirdcont">
@@ -102,7 +102,7 @@
                     <div class="text-l3 mar-bottom-3">Requests per age group overall</div>
                     <canvas class="mar-bottom-1" id="req-per-age-chart"></canvas>
                 </div>
-                
+
             </div>
         </div>
 
@@ -111,7 +111,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     {{-- chart.js --}}
@@ -128,7 +128,7 @@
         const totalYoungReq = @json($totalYoungReq);
         const totalMiddleReq = @json($totalMiddleReq);
         const totalElderlyReq = @json($totalElderlyReq);
-    </script>   
+    </script>
 
     <script src="/assets/js/admin-demographics.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

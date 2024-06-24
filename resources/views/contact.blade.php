@@ -38,11 +38,10 @@
 
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
-            <div class="text-l1">Contact</div>
+            <div class="text-l1">Contact Information</b></div>
 
             <div class="d-flex justify-content-center gap1">
                 <div class="d-flex flex-direction-y gap2">
-                    <div class="text-l2">Contact Information</div>
                     <div class="d-flex gap1">
                         <div class="text-center flex-grow-1">
                             <img src="/assets/media/icons/facebook.svg" style="width: 150px; height: 150px;">
@@ -83,13 +82,13 @@
 
 
 
-        
-        
+
+
 
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/add-feedback.js"></script>

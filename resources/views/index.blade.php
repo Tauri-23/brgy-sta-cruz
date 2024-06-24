@@ -37,18 +37,18 @@
             {{-- Embed Live --}}
             @if ($livestream->is_live)
                 <div class="live-cont-main">
-                    <iframe 
+                    <iframe
                         class="live-cont"
                         width="100%"
-                        height="1000px" 
-                        src="https://www.youtube.com/embed/{{$livestream->link}}" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" 
+                        height="1000px"
+                        src="https://www.youtube.com/embed/{{$livestream->link}}"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen>
                     </iframe>
-                </div>                
+                </div>
             @endif
 
             <div class="mySlides fade">
@@ -60,7 +60,7 @@
             <div class="mySlides fade">
                 <img src="/assets/media/home-cover/3.jpg" class='banners'>
             </div>
-          
+
         </div>
 
 
@@ -71,11 +71,11 @@
             {{-- Render Announcements here --}}
             <div class="news-cont1">
                 <x-render_announcement_2 :announcements="$announcementsFt" userType="Public"/>
-                <x-render_announcement_2 :announcements="$announcements" userType="Public"/>                
+                <x-render_announcement_2 :announcements="$announcements" userType="Public"/>
             </div>
 
             <a href="/announcementsPublic" class="primary-btn-blue1 text-l3 m-auto">See More</a>
-            
+
         </div>
 
         <div class="line1"></div>
@@ -129,7 +129,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/landing-page.js"></script>

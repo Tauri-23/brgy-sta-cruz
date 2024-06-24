@@ -41,7 +41,7 @@
         {{-- Content --}}
         <div class="content1 d-flex flex-direction-y gap1">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="text-l1">Announcements</div>
+                <div class="text-l1">Announcements</b></div>
             </div>
 
             {{-- Render Announcement --}}
@@ -86,7 +86,7 @@
         {{-- footer --}}
         <x-footer/>
 
-        
+
     </body>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/announcement.js"></script>
